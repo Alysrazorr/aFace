@@ -1,0 +1,26 @@
+﻿{
+	"data" : [{
+		"id" : "178FF",
+		"hphm" : "粤S178FF",
+		"kkmc" : "东城",
+		"xsfx" : "2南"
+	}, {
+		"id" : "V320U",
+		"hphm" : "粤SV320U",
+		"kkmc" : "常平",
+		"xsfx" : "2西"
+	}, {
+		"id" : "S9L40",
+		"hphm" : "粤SS9L40",
+		"kkmc" : "南城",
+		"xsfx" : "2东"
+	}],
+	"pagination" : {
+		"currPage" : "1",
+		"pageSize" : "3",
+		"totalResults" : "9",
+		"totalPages" : "3"
+	},
+    "success" : true,
+    "message" : ""
+}

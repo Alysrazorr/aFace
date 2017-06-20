@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/aface.css" />
+        <title></title>
+        <style type="text/css">
+            body {
+                padding: 5px !important;
+            }
+        </style>
+    </head>
+    <body class="aface">
+        <div class="aface tabs" id="tabs">
+            <ul class="aface tab-indices">
+                <li class="aface tab-index">Tab 1</li>
+                <li class="aface tab-index">Tab 2</li>
+                <li class="aface tab-index">Tab 3</li>
+            </ul>
+            <div class="aface tab-contents" style="height: 300px;">
+                <div class="aface tab-content" style="background-color: #aaa;"></div>
+                <div class="aface tab-content" style="background-color: #bbb;"></div>
+                <div class="aface tab-content" style="background-color: #ccc;"></div>
+            </div>
+        </div>
+        
+        <input type="text" class="aface textbox validate-hint" style="margin-top: 5px;" placeholder="该项不能为空" />
+        
+        <div class="aface toolbar" style="margin-top: 5px;">
+            <div class="left">
+                <input class="aface textbox" id="ddlist" name="ddlist" placeholder="DdList..." style="width: 300px;" data-ddlist-value="value2"/>
+                <input class="aface textbox" type="file" id="fileupload" name="fileupload" />
+                <input type="text" class="aface textbox" placeholder="Search..." />
+                <button class="aface button primary" onclick="getVal()"><i class="fa fa-search"></i>搜索</button>
+            </div>
+            <div class="right">
+                <button class="aface button" id="submit">提交</button>
+                <button class="aface button success" onclick="showTooltip();">showTooltip</button>
+                <button class="aface button info" onclick="getCheckboxs();">getCheckboxs</button>
+                <button class="aface button warning" onclick="showLoader();">提交</button>
+                <button class="aface button danger">提交</button>
+            </div>
+        </div>
+
+        <div id="grid" style="height: 300px; margin-top: 5px;"></div>
+        
+        <table class="aface form" style="margin-top: 5px;">
+            <colgroup>
+                <col style="width: 10%;"></col>
+                <col style="width: 80%;"></col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td class="lbl notnull">ABC</td>
+                    <td class="val"><span class="aface val">ABC<a href="javascript:;">测试</a></span></td>
+                </tr>
+                <tr>
+                    <td class="lbl">ABC</td>
+                    <td class="val">
+                        <input type="text" class="aface textbox" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lbl notnull">ABC</td>
+                    <td class="val">
+                        <input type="text" class="aface textbox " />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lbl">ABC</td>
+                    <td class="val">
+                        <button class="aface button">提交</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lbl">ABC</td>
+                    <td class="val">
+                        <input class="aface textbox testddlist fluid" placeholder="DdList..." data-ddlist-value="value2"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!--<div style="height: 100px; margin-top: 5px;">
+            <div class="aface loader-container">
+                <div class="aface loader">
+                    <span class="aface loader-core"></span>
+                    <span class="aface loader-leaf"></span>
+                    <span class="aface loader-leaf"></span>
+                    <span class="aface loader-leaf"></span>
+                    <span class="aface loader-leaf"></span>
+                    <span class="aface loader-leaf"></span>
+                </div>
+            </div>
+        </div>-->
+
+        <div class="aface modal-mask" id="modal">
+            <div class="aface modal-window" style="height: calc(100% - 20px); width: calc(100% - 20px); margin-top: 10px;">
+                <div class="aface modal-title">
+                    <span class="aface title"></span>
+                    <!-- <i class="fa fa-check"></i> -->
+                    <i class="fa fa-times"></i>
+                </div>
+                <div class="aface modal-body">
+                </div>
+            </div>
+        </div>
+        
+        <div class="aface modal-mask" id="running">
+            <div class="aface modal-window" style="height: 100px; width: 100px;">
+                <div class="aface modal-body">
+                    文件上传中，请稍候...
+                </div>
+            </div>
+        </div>
+	</body>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="js/aface.base.js"></script>
+	<script src="js/aface.datagrid.js"></script>
+	<script src="js/aface.modal.js"></script>
+	<script src="js/aface.tabs.js"></script>
+	<script src="js/aface.datalist.js"></script>
+	<script src="js/aface.fileupload.js"></script>
+	<script type="text/javascript">
+    var fuck;
+    function showTooltip() {
+        fuck.show($('#ddlist'));
+    }
+    function getCheckboxs() {
+        $('input[type="checkbox"][id="cb_0"]').each(function(idx, elem) {
+            console.log($(elem).prop('checked'));
+        });
+    }
+    function showLoader() {
+        // $(document.body).loader();
+        // var loader = $(document.body).target('loader');
+        $('#grid').loader();
+        var loader = $('#grid').target('loader');
+        loader.show();
+    }
+
+	$(function() {
+        $.post('json/traffic1.json', null, function(result) {
+            var x = JSON.parse(result);
+            $.each(x.data, function(idx, elem) {
+                $('#fuck').append('<tr>'
+                    + '<td class="aface cb">'
+                        + '<label class="aface checkbox-label" for="cb_' + idx + '">'
+                            + '<input type="checkbox" id="cb_' + idx + '"/>'
+                        + '</label>'
+                    + '</td>'
+                    + '<td class="aface sn">' + idx + '</td>'
+                    + '<td>' + elem.id + '</td>'
+                    + '<td>' + elem.hphm + '</td>'
+                    + '<td>' + elem.xsfx + '</td>'
+                + '</tr>');
+            });
+            $('input[type="checkbox"][id^="cb_"]').each(function(idx, elem) {
+                $(elem).on('click.chkbox', function(e) {
+                    $(elem).parent().toggleClass('active');
+                });
+            });
+        });
+
+
+        $('#fileupload').fileupload();
+
+		$('#grid').datagrid({
+			url : 'json/traffic1.json',
+			columns : [{
+				title : '号牌号码',
+				field : 'hphm',
+				width : '150px',
+                align : 'right',
+                formatter : function(rowIndex, rowData) {
+                    return '<a href="javascript:void(0)">' + rowData['hphm'] + '</a>';
+                }
+			}, {
+				title : '卡口名称',
+				field : 'kkmc',
+				width : '150px',
+                nopadding : true
+			}, {
+				title : '行驶方向',
+				field : 'xsfx',
+				width : '150px',
+                nopadding : true,
+                formatter : function() {
+                    return '<input class="aface textbox testddlist" style="width: 100%;" data-ddlist-value="value2"/>';
+                }
+			}, {
+				title : '行驶方向',
+				field : 'xsfx',
+				width : '150px'
+			}, {
+				title : '行驶方向',
+				field : 'xsfx',
+				width : '150px'
+			}, {
+				title : '行驶方向',
+				field : 'xsfx',
+				width : '150px'
+			}, {
+                title : '操作',
+                field : '',
+                width : '200px',
+                formatter : function(rowIndex, rowData) {
+                    return '<i class="fa fa-times button"></i>'
+                     + '<i class="fa fa-pencil button success"></i><i class="fa fa-eye button danger"></i>';
+                }
+            } ]
+		});
+        $('#modal').modal();
+        var modal = $('#modal').target('modal');
+        $('#submit').on('click', function(e) {
+            modal.show();
+        });
+
+        $('#tabs').tabs();
+        var tabs = $('#tabs').target('tabs');
+	});
+	</script>
+</html>

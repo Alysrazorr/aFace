@@ -1,0 +1,91 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/aface.css" />
+    <link rel="stylesheet" type="text/css" href="syntaxhighlighter_3.0.83/styles/shCore.css" />
+    <link rel="stylesheet" type="text/css" href="syntaxhighlighter_3.0.83/styles/shCoreDefault.css" />
+    <title></title>
+    <style type="text/css">
+        body {
+            padding: 5px !important;
+        }
+    </style>
+</head>
+<body class="aface">
+    <div id="grid" style="height: 300px;"></div>
+    
+    <span class="aface blockquote" style="margin-top: 5px;">HTML代码</span>
+    <pre class="brush:xml">
+        <div id="grid"></div>
+    </pre>
+    
+    <span class="aface blockquote" style="margin-top: 5px;">JavaScript代码</span>
+    <pre class="brush:javascript">
+        // 默认值
+        defaultOptions : {
+            selectedTabIndex : 0,
+            onSelectedTabChange : null
+        }
+        
+        // 初始化
+        $('#tabs').tabs({
+            // 初始化时默认选中Tab的索引
+            selectedTabIndex : 0,
+            /**
+                * 选中Tab发生变化时触发的事件
+                * 
+                * @param index: 选中的Tab的索引
+                * @param event: 鼠标单击事件
+                */
+            onSelectedTabChange : function(index, event) {
+                console.log('selectedTabIndex: ' + index);
+            }
+        });
+        
+        // 获取指定dom对象上绑定的js对象
+        var tabs = $('#tabs').target('tabs');
+        
+        /**
+            * 获取当前选中的Tab的索引
+            * 
+            * @return: 0 索引
+            */
+        tabs.getSelectedTabIndex();
+        
+        /**
+            * 按索引选中Tab
+            * 
+            * @param idx: 0 要选中的Tab的索引
+            */
+        tabs.selectByIndex(1);
+    </pre>
+</body>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="js/aface.base.js"></script>
+<script src="js/aface.datagrid.js"></script>
+<script src="syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+<script src="syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+<script src="syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+<script src="syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+<script type="text/javascript">
+    $(function() {
+        SyntaxHighlighter.all();
+        
+        $('#grid').datagrid({
+            url : 'json/traffic1.json',
+            hasCheckbox : true,
+            columns : [ {
+                title : '号牌号码',
+                field : 'hphm',
+                width : '200px'
+            }, {
+                title : '行驶方向',
+                field : 'xsfx',
+                width : '200px'
+            } ]
+        });
+    });
+</script>
+</html>

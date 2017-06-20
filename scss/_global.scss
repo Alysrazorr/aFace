@@ -1,0 +1,264 @@
+﻿$color-0: #000;
+$color-1: #111;
+$color-2: #222;
+$color-3: #333;
+$color-4: #444;
+$color-5: #555;
+$color-6: #666;
+$color-7: #777;
+$color-8: #888;
+$color-9: #999;
+$color-a: #aaa;
+$color-b: #bbb;
+$color-c: #ccc;
+$color-d: #ddd;
+$color-e: #eee;
+$color-f: #fff;
+
+$color-primary: #428bca;
+$color-success: #5cb85c;
+$color-warning: #f0ad4e;
+$color-info: #5bc0de;
+$color-danger: #d9534f;
+
+$color-hc-blue: #7CB5EC;
+$color-hc-gray: #434348;
+$color-hc-green: #90ED7D;
+$color-hc-orange: #F7A35C;
+$color-hc-purple: #8085E9;
+$color-hc-pink: #F15C80;
+$color-hc-yellow: #E4D354;
+
+// $color-project: #09c; // blue
+// $color-project: #d00; // light red
+// $color-project: #399; // dark green
+// $color-project: #069; // dark blue
+$color-project: #4e8cd7;
+// $color-project: #09c;
+$color-project-thin: lighten($color-project, 30%);
+$color-project-hover: lighten($color-project, 5%);
+// $color-project-hover: #98c5fe;
+$color-project-active: darken($color-project, 5%);
+$color-project-abyss: darken($color-project, 10%);
+$color-project-bg: $color-f;
+
+$color-steel: rgb(59,69,79);
+$color-steel-thin: lighten($color-steel, 35%);
+$color-steel-hover: lighten($color-steel, 5%);
+$color-steel-active: darken($color-steel, 5%);
+$color-steel-abyss: darken($color-steel, 10%);
+
+$steel-border: solid 1px lighten($color-steel, 30%);
+
+$font-size: 12px;
+$font-yahei: 'Microsoft YaHei';
+$font-family: 'Microsoft YaHei', 'Times New Roman';
+
+$transition-speed: 300ms;
+
+@mixin base-cell($size) {
+	width: $size;
+	height: $size;
+	line-height: $size;
+}
+
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+@mixin content-box {
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+}
+
+@mixin box-shadow {
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+@mixin zero {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    text-decoration: none;
+}
+
+@mixin clearfix {
+    &:after {
+        content: ' ';
+        display: block;
+        height: 0;
+		width: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+@mixin border-color {
+    &.primary {
+        border-color: $color-primary;
+    }
+    &.success {
+        border-color: $color-success;
+    }
+    &.info {
+        border-color: $color-info;
+    }
+    &.warning {
+        border-color: $color-warning;
+    }
+    &.danger {
+        border-color: $color-danger;
+    }
+}
+
+@mixin bg-color {
+	&.primary {
+        background-color: $color-primary;
+    }
+    &.success {
+        background-color: $color-success;
+    }
+    &.info {
+        background-color: $color-info;
+    }
+    &.warning {
+        background-color: $color-warning;
+    }
+    &.danger {
+        background-color: $color-danger;
+    }
+}
+
+@mixin nowrap {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nowrap {
+    @include nowrap;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@mixin rotate($angle) {
+	-webkit-transform: rotate($angle);
+       -moz-transform: rotate($angle);
+        -ms-transform: rotate($angle);
+            transform: rotate($angle);
+}
+
+.rotate-90 {
+	@include rotate(90deg);
+}
+
+.rotate-n90 {
+	@include rotate(-90deg);
+}
+
+.rotate-180 {
+	@include rotate(180deg);
+}
+
+.rotate-n180 {
+	@include rotate(-180deg);
+}
+
+html,
+body {
+	font-family: $font-family;
+    color: $color-3;
+}
+
+*.aface {
+	@include zero;
+	@include border-box;
+	font-family: $font-family;
+	
+	&:after {
+		@include border-box;
+	}
+	&:before {
+		@include border-box;
+	}
+}
+
+i.fa {
+    font-size: 14px;
+	
+	&.block {
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		line-height: 16px;
+		text-align: center;
+	}
+}
+
+hr {
+	margin: 5px 0;
+	border-bottom: solid 1px $color-d;
+    
+    &.lg {
+        margin: 10px 0;
+    }
+}
+
+.absolute {
+	position: absolute;
+}
+
+.fluid {
+	width: 100%;
+}
+
+.of-hidden {
+    overflow: hidden;
+}
+
+ul {
+	&.aface {
+		&.list {
+			list-style-type: none;
+			&.horizontal {
+				&>li.aface {
+					float: left;
+				}
+			}
+		}
+	}
+}
+
+a {
+    color: $color-3;
+    &:hover {
+        color: $color-5;
+    }
+    
+    &.aface.project {
+        color: $color-project;
+        
+        &:hover {
+            color: $color-project-hover;
+            text-decoration: underline;
+        }
+    }
+}

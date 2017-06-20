@@ -1,0 +1,126 @@
+﻿div.datetime-picker {
+	position: absolute;
+	z-index: 11000;
+	
+	border: solid 1px $color-c;
+	background-color: $color-f;
+    
+	@include box-shadow;
+	
+	&>table {
+		border-spacing: 2px;
+		background-color: $color-f;
+		
+		&>thead {
+			&>tr {
+				&>th {
+                    @include base-cell(30px);
+					font-size: 12px;
+					border-bottom: solid 1px $color-c;
+				}
+				
+				&.pagination {
+					&>th {
+						font-size: 16px;
+						&>a {
+							&>i.fa {
+								display: block;
+                                @include base-cell(30px);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		&>tbody {
+			&>tr {
+				&>td {
+					&>label {
+						@include base-cell(30px);
+						display: block;
+						overflow: hidden;
+						cursor: pointer;
+						transition: background-color $transition-speed;
+						
+						&:hover {
+							background-color: $color-primary;
+							color: $color-f;
+						}
+						
+						&>input[type=radio] {
+							@include base-cell(30px);
+							margin-left: -31px;
+							&:active,&:checked {
+								&+span {
+									background-color: $color-primary;
+									color: $color-f;
+								}
+							}
+						}
+						&>span {
+							@include base-cell(30px);
+							display: block;
+							text-align: center;
+							font-size: 12px;
+						}
+					}
+				}
+			}
+		}
+        
+        &>tfoot {
+            &>tr {
+                &.time {
+					&>td {
+						&>i.fa {
+                            @include base-cell(30px);
+							display: block;
+							font-size: 24px;
+							text-align: center;
+						}
+						&>button {
+							width: 100%;
+						}
+						&>ul {
+							@include border-box;
+							display: block;
+							border: solid 1px $color-c;
+							height: 30px;
+							padding-top: 4px;
+							padding-left: 4px;
+							transition: border $transition-speed;
+							
+							&:hover {
+								border: solid 1px $color-primary;
+							}
+							
+							&>li {
+								float: left;
+								&>input {
+									padding: 0;
+									width: 20px;
+                                    min-width: 20px !important;
+									height: 20px;
+									line-height: 20px;
+									text-align: center;
+									border: 0;
+									box-shadow: none;
+								}
+								&>span {
+									float: left;
+									display: block;
+									font-size: 12px;
+									width: 3px;
+									height: 20px;
+									line-height: 20px;
+								}
+							}
+							@include clearfix;
+						}
+					}
+				}
+            }
+        }
+	}
+}

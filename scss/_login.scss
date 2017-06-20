@@ -1,0 +1,135 @@
+$login-container-width: 1024px;
+
+$login-footer-height: 80px;
+$login-header-height: 80px;
+
+body.aface.login {
+    @include zero;
+    background-size: 100%;
+    background-image: url('../images/img4.jpg');
+
+    div.aface.container {
+        width: $login-container-width;
+        margin: 0 auto;
+    }
+
+    &>div.aface.login {
+        z-index: 20000;
+    }
+
+    &>div.aface.login.header {
+        position: absolute;
+        height: $login-header-height;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: $color-f;
+    }
+
+    &>div.aface.login.center {
+        position: absolute;
+        top: $login-header-height;
+        left: 0;
+        right: 0;
+        bottom: $login-footer-height;
+        border-top: solid 1px $color-a;
+        border-bottom: solid 1px $color-a;
+        background-color: rgba(255,255,255,0.6);
+
+        &>div.aface.container {
+            overflow: hidden;
+            
+            form.aface.login.login-form {
+                padding: 20px 20px 35px 20px;
+                background-color: $color-f;
+                border: solid 1px $color-a;
+                border-radius: 2px;
+                box-shadow: 0 6px 6px rgba(0,0,0,0.2);
+                width: 350px;
+                margin: 0 auto;
+                margin-top: 50px;
+
+                &>input, &>button {
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 13px;
+                    border-radius: 2px;
+                    width: 100%;
+                }
+
+                &>span.aface.login {
+                    float: left;
+                    height: 50px;
+                    line-height: 50px;
+                    width: auto;
+                    margin: 0;
+
+                    &.title {
+                        font-size: 20px;
+                    }
+                    &.errors {
+                        font-size: 12px;
+                        color: red;
+                        line-height: 57px;
+                        margin-left: 5px;
+                    }
+                    &.account, &.password {
+                        width: 100%;
+                        display: block;
+                        font-size: 13px;
+                        height: 30px;
+                        line-height: 30px;
+                    }
+                }
+                
+                &>button.aface.login.button.primary {
+                    margin-top: 20px;
+                    font-size: 16px;
+                    box-shadow: 0 3px 0 lighten($color-primary, 10%);
+                }
+            }
+        }
+    }
+
+    &>div.aface.login.footer {
+        position: absolute;
+        height: $login-footer-height;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px;
+        font-size: 0;
+        background-color: $color-f;
+
+        &>div {
+            text-align: center;
+        }
+
+        ul.aface.list {
+            margin: 0 auto;
+            display: inline-block;
+
+            &>li {
+                float: left;
+                margin-left: 10px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 12px;
+                color: $color-a;
+
+                &:first-child {
+                    margin: 0;
+                }
+
+                &>a.aface {
+                    color: $color-a;
+
+                    &:hover {
+                        color: $color-3;
+                    }
+                }
+            }
+            @include clearfix;
+        }
+    }
+}

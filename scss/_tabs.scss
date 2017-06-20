@@ -1,0 +1,50 @@
+$tabs-height: 30px;
+$tab-index-font-color: $color-steel;
+$tab-index-bg-color: lighten($color-steel-thin, 15%);
+$tab-index-hover-bg-color: $color-steel-hover;
+
+div.aface {
+    &.tabs {
+        &>ul.aface.tab-indices {
+			list-style-type: none;
+			
+            &>li.aface.tab-index {
+                float: left;
+				cursor: pointer;
+				
+				padding: 0 10px;
+                text-align: center;
+                
+                margin-left: 5px;
+                &:first-child { margin-left: 0; }
+				
+                height: $tabs-height;
+                line-height: $tabs-height;
+				
+				color: $tab-index-font-color;
+                background-color: $tab-index-bg-color;
+				
+                font-size: 13px;
+				
+                &.active, &:hover {
+					color: $color-f;
+                    background-color: $tab-index-hover-bg-color;
+                }
+            }
+            @include clearfix;
+        }
+        
+        &>div.aface.tab-contents {
+            margin-top: 5px;
+            
+            &>div.tab-content {
+                display: none;
+                width: 100%;
+                height: 100%;
+				&.active {
+					display: block;
+				}
+            }
+        }
+    }
+}

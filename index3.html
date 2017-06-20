@@ -1,0 +1,140 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/aface.css" />
+        <title></title>
+        <style>
+            body {
+                padding: 10px !important;
+                padding-top: 60px !important;
+            }
+            img.fav-icon {
+                width: 40px;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body class="aface index3-body">
+        <nav class="aface top-menu" style="z-index: 9999;">
+            <ul class="aface pull-left top-menu">
+                <li class="aface brand">
+                    <a class="aface" href="/nsgxpt-ms/"><img class="fav-icon" src="images/logo.png" style="float: left;">智慧南沙公共信息资源服务平台</a>
+                </li>
+                <li class="aface dropdown-content">
+                    <a class="aface trigger" href="javascript:;"><small>业务管理系统</small></a>
+                    <div class="aface dropdown-content" id="menu-lv0">
+                        <span class="aface arrow" style="left: 464px;"></span>
+                        <ul class="aface left-indices" id="menu-lv1">
+                            <li class="aface active" data-target="#CE54BEA17732417BAE445D6AAE9660C9">系统管理</li>
+                            <li class="aface" data-target="#99FC79DCACA54A769A91CCEC8D64D620">资源服务中心</li>
+                            <li class="aface" data-target="#CA9C1BBE7F654D48AFDCCC9776575C72">门户系统管理</li>
+                            <li class="aface" data-target="#838A1210633946B291B309E4CB30CA80">前置机管理</li>
+                            <li class="aface" data-target="#98DA93C91F554FA682550EE61E9BC7BC">数据中心</li>
+                            <li class="aface" data-target="#1258A23A4D25438CBE82BF7D80C01D8B">资源目录管理</li>
+                            <li class="aface" data-target="#9AE68A79AF5245C587ABF850A2F0B31F">双公示数据报送</li>
+                        </ul>
+                        <div class="aface right-content active" id="CE54BEA17732417BAE445D6AAE9660C9">
+                            <span class="aface item active" onclick="page.showView('/nsgxpt-ms/department/')"><span class="aface item-title">部门管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/user/')"><span class="aface item-title">用户管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/role/')"><span class="aface item-title">角色管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/menu/')"><span class="aface item-title">菜单管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/dictionary/')"><span class="aface item-title">字典管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/scheduler/')"><span class="aface item-title">定时任务</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                        </div>
+                        <div class="aface right-content" id="99FC79DCACA54A769A91CCEC8D64D620">
+                            <span class="aface item active" onclick="page.showView('/nsgxpt-ms/zyfwzx/bdfwgl/')"><span class="aface item-title">本地服务管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/zyfwzx/ycfwgl/')"><span class="aface item-title">远程服务管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/dirGroupService/')"><span class="aface item-title">目录组服务管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                        </div>
+                        <div class="aface right-content" id="CA9C1BBE7F654D48AFDCCC9776575C72">
+                            <span class="aface item active" onclick="page.showView('/nsgxpt-ms/article/')"><span class="aface item-title">文章管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/resourceGrade/')"><span class="aface item-title">资源评分管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                        </div>
+                        <div class="aface right-content" id="838A1210633946B291B309E4CB30CA80">
+                            <span class="aface item active" onclick="page.showView('/nsgxpt-ms/frontEndProcessor/')"><span class="aface item-title">前置机管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/frontEndProcessorScan/')"><span class="aface item-title">前置机扫描任务管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                        </div>
+                        <div class="aface right-content" id="98DA93C91F554FA682550EE61E9BC7BC">
+                            <span class="aface item active" onclick="page.showView('/nsgxpt-ms/resourcePullTask/')"><span class="aface item-title">资源入库任务管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/dataVerificationTask/')"><span class="aface item-title">数据校验任务管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/pzgl/sjqxrwpz/')"><span class="aface item-title">数据清洗任务管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/dataSubmission/')"><span class="aface item-title">数据报送任务管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                        </div>
+                        <div class="aface right-content" id="1258A23A4D25438CBE82BF7D80C01D8B">
+                            <span class="aface item active" onclick="page.showView('/nsgxpt-ms/directory/dirMetaData/')"><span class="aface item-title">资源管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/directory/dirLayer/')"><span class="aface item-title">目录管理</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/shareApplication/')"><span class="aface item-title">共享审批</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                        </div>
+                        <div class="aface right-content" id="9AE68A79AF5245C587ABF850A2F0B31F">
+                            <span class="aface item active" onclick="page.showView('/nsgxpt-ms/dpAdministrativePenalty/')"><span class="aface item-title">双公示处罚信息</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                            <span class="aface item" onclick="page.showView('/nsgxpt-ms/dpAdministrativeLicense/')"><span class="aface item-title">双公示许可信息</span><span class="aface item-desc"><small>测试说明</small></span></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="aface pull-right top-menu">
+                <li class="aface dropdown-menu">
+                    <a class="aface trigger" href="javascript:;"><span class="aface circle-icon"><i class="fa fa-user" style="color: #000;"></i></span>admin</a>
+                    <ul class="aface dropdown-menu">
+                        <li class="aface"><span class="aface arrow"></span></li>
+                        <li class="aface"><a class="aface item" href="javascript:;">个人信息</a></li>
+                        <li class="aface"><a class="aface item" href="javascript:;">退出登录</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="aface center-frame">
+            <iframe class="aface inner-frame" id="centerFrame" src="inner7.html"></iframe>
+        </div>
+    </body>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="js/aface.base.js"></script>
+	<script src="js/aface.modal.js"></script>
+	<script type="text/javascript">
+        var Page = Clazz.create({
+            loader : null,
+            init : function() {
+                $(window.document.body).loader();
+                this.loader = $(window.document.body).target('loader');
+            }
+        });
+        var page = new Page();
+        page.init();
+        
+		$(function() {
+			$('a.aface.trigger').on('click', function() {
+				$(this).next().toggle();
+                // $(this).parent().toggleClass('active');
+			});
+			$('ul.aface.left-indices>li.aface').on('mouseenter', function(e) {
+				$('ul.aface.left-indices>li.aface.active').removeClass('active');
+				$(this).addClass('active');
+				$('div.aface.right-content').removeClass('active');
+				$($(this).data('target')).addClass('active');
+			});
+			$('span.aface.item').on('mouseenter', function(e) {
+				$('span.aface.item.active').removeClass('active');
+				$(this).addClass('active');
+			});
+			$('span.aface.item').on('click', function(e) {
+				e.stopPropagation();
+				$(this).trigger('close-menu');
+			});
+			$('li.aface.dropdown-content').on('close-menu', function(e) {
+				$(this).toggleClass('active');
+			});
+            $('li.aface.dropdown-content').on('click', function(e) {
+                e.stopPropagation();
+            });
+            $('li.aface.dropdown-menu').on('click', function(e) {
+                e.stopPropagation();
+            });
+            $(window.document.body).on('click', function() {
+                $('li.aface.dropdown-content').removeClass('active');
+                $('li.aface.dropdown-menu').removeClass('active');
+            });
+		});
+	</script>
+</html>

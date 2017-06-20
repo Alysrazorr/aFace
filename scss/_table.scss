@@ -1,0 +1,123 @@
+$table-border: solid 1px $color-d;
+$td-padding: 0 8px;
+$td-height: 35px;
+
+table.aface {
+    &.form {
+        width: 100%;
+        table-layout: fixed;
+        border-spacing: 1px;
+        background-color: $color-d;
+        
+        &>tbody {
+            &>tr {
+                &>td {
+                    font-size: 12px;
+                    height: $td-height;
+                    padding: $td-padding;
+                    
+                    &.lbl {
+                        text-align: right;
+                        background-color: $color-e;
+						overflow: hidden;
+                        
+                        &.notnull {
+                            &:before {
+                                content: '*';
+                                color: #F00;
+                                font-family: 'Consolas';
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    
+                    &.val {
+                        text-align: left;
+                        background-color: $color-f;
+                        padding: 0;
+                    }
+                    
+                    &>input.aface.textbox {
+                        float: left;
+                        box-shadow: none;
+                        height: $td-height;
+                        background-color: $color-f;
+                        border: 0;
+                        font-size: 12px;
+                        padding: 0 8px;
+                        
+                        &.fluid {
+                            width: 100%;
+                        }
+                    }
+                    
+                    &>span.aface.val {
+                        display: block;
+                        float: left;
+                        width: 100%;
+                        line-height: 22px;
+                        padding: $td-padding;
+                        background-color: $color-f;
+                    }
+                    
+                    &>button.aface.button {
+                        height: 30px;
+                        line-height: 30px;
+                        margin-top: 1px;
+                        margin-left: 2px;
+                        float: left;
+                    }
+                    
+                    &>textarea.aface.textarea {
+                        border: 0;
+                        display: block;
+                        font-size: 12px;
+                        resize: none;
+                        width: 100%;
+                        padding: 8px;
+                        background-color: $color-f;
+                    }
+                    
+                    &>span.aface.facade.datalist {
+                        float: left;
+                        height: $td-height;
+                        line-height: $td-height;
+                        border: 0;
+                        box-shadow: none;
+                        
+                        &>input.aface.textbox, &>i.fa {
+                            box-shadow: none;
+                            height: $td-height !important;
+                            line-height: $td-height !important;
+                        }
+                        &>ul.aface.facade.datalist.list {
+                            top: $td-height !important;
+                            width: calc(100% + 2px) !important;
+                        }
+                    }
+                    &>span.aface.facade.fileupload {
+                        float: left;
+                        height: $td-height;
+                        line-height: $td-height;
+                        border: 0;
+                        box-shadow: none;
+                        
+                        &>input.aface.textbox {
+                            box-shadow: none;
+                            height: $td-height !important;
+                            line-height: $td-height !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+iframe.aface.inner-frame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}

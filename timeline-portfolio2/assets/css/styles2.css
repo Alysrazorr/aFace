@@ -1,0 +1,4 @@
+#timeline .navigation .toolbar{background-color:#333!important;border:none!important;}
+.slider .nav-previous,.slider .nav-next{color:#555}
+.slider .slider-item .content .content-container .media .media-wrapper .media-container img,.slider .slider-item .content .content-container .media .media-wrapper .media-container iframe{border:none !important;}
+#timeline h2{margin-bottom:5px;}

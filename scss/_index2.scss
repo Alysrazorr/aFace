@@ -1,0 +1,52 @@
+﻿$height-top-menu: 60px;
+
+body.aface.index2-body {    
+    nav.aface.top-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $height-top-menu;
+        line-height: $height-top-menu;
+        background-color: $color-steel;
+        padding-left: 10px;
+        
+        &>ul.aface.top-menu {
+            list-style-type: none;
+            &>li {
+                float: left;
+                height: $height-top-menu;
+                line-height: $height-top-menu;
+                border-left: solid 1px darken($color-steel-abyss, 3%);
+                &>a.aface {
+                    font-size: 15px;
+                    color: $color-f;
+                }
+                &.aface.brand {
+                    border: none;
+                    &>a {
+                        font-size: 30px;
+                    }
+                }
+                &.has-dropdown {
+                    &:hover {
+                        background-color: darken($color-steel-abyss, 3%);
+                    }
+                    &>a.aface.trigger {
+                        display: block;
+                        padding: 0 20px;
+                        height: $height-top-menu;
+                        line-height: $height-top-menu;
+                    }
+                }
+            }
+        }
+    }
+    div.aface.center-frame {
+        position: fixed;
+        top: $height-top-menu;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}

@@ -1,0 +1,74 @@
+﻿div.aface {
+    &.panel {
+        overflow: visible;
+        border: solid 1px $color-d;
+        
+        &>div.aface.panel-title {
+            height: 40px;
+            line-height: 40px;
+            padding-left: 8px;
+            border-bottom: solid 1px $color-d;
+            background-color: $color-e;
+            
+            &>span.aface.title {
+                height: 39px;
+                line-height: 39px;
+            }
+            
+            &>a.aface.icon-button {
+                float: right;
+                border-left: solid 1px $color-d;
+                
+                &>i.fa {
+                    @include border-box;
+                    width: 39px;
+                    height: 39px;
+                    line-height: 39px;
+                    display: block;
+                    text-align: center;
+                    font-size: 20px;
+                    
+                    transition: transform $transition-speed;
+                }
+            }
+            
+            &>div.aface.button-group {
+                float: right;
+                
+                &>a.aface {
+                    float: left;
+                    border-left: solid 1px $color-d;
+                    
+                    &>i.fa {
+                        width: 40px;
+                        height: 39px;
+                        line-height: 39px;
+                        display: block;
+                        text-align: center;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        
+        &>div.aface.panel-body {
+            overflow: visible;
+            height: calc(100% - 40px);
+            
+            &>div.aface.datagrid { border: 0; }
+            &>table.aface.form { border: 0; }
+        }
+        
+        &.collapsed {
+            height: 41px !important;
+            
+            &>div.aface.panel-body {
+                overflow: hidden;
+            }
+            
+            &>div.aface.panel-title>a.aface.icon-button>i.fa {
+                @include rotate(-180deg);
+            }
+        }
+    }
+}
