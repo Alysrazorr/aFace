@@ -7,27 +7,17 @@
         <title></title>
     </head>
     <body class="aface index">
-        <nav class="aface navbar topbar">
-            <ul class="aface list horizontal pull-left">
-                <li class="aface list-brand">
-                    <img class="aface brand-icon" /><a href="javascript:;" onclick="fuck();">智慧南沙公共信息资源服务平台</a>
-                </li>
-            </ul>
-            <ul class="aface list horizontal pull-right">
-                <li class="aface list-item hover-dropdown">
-                    <a class="aface link" href="javascript:;">
-                        <i class="fa fa-user"></i>
-                        <i class="fa fa-angle-down"></i>
-                    </a>
-                    <ul class="aface list dropdown-list">
-                        <li class="aface list-item"><a class="aface link" href="${basePath}/auth/logout/">退出登录</a></li>
-                    </ul>
-                </li>
-            </ul>
+        <nav class="aface fix-top">
+            <span class="aface dropdown-toggle">菜单一</span>
+            <span class="aface dropdown-toggle">菜单一</span>
+            <span class="aface dropdown-toggle">菜单一</span>
         </nav>
     </body>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="js/aface.base.js"></script>
 	<script type="text/javascript">
+        $('span.aface.dropdown-toggle').hover(function(e) {
+            $(this).append('<span class="aface dt-underline"></span>');
+        });
 	</script>
 </html>

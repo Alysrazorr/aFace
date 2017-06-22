@@ -29,28 +29,13 @@ $color-hc-purple: #8085E9;
 $color-hc-pink: #F15C80;
 $color-hc-yellow: #E4D354;
 
-// $color-project: #09c; // blue
-// $color-project: #d00; // light red
-// $color-project: #399; // dark green
-// $color-project: #069; // dark blue
-$color-project: #4e8cd7;
-// $color-project: #09c;
-$color-project-thin: lighten($color-project, 30%);
-$color-project-hover: lighten($color-project, 5%);
-// $color-project-hover: #98c5fe;
-$color-project-active: darken($color-project, 5%);
-$color-project-abyss: darken($color-project, 10%);
-$color-project-bg: $color-f;
-
 $color-steel: rgb(59,69,79);
 $color-steel-thin: lighten($color-steel, 35%);
 $color-steel-hover: lighten($color-steel, 5%);
 $color-steel-active: darken($color-steel, 5%);
 $color-steel-abyss: darken($color-steel, 10%);
 
-$steel-border: solid 1px lighten($color-steel, 30%);
-
-$font-size: 12px;
+$font-size: 13px;
 $font-yahei: 'Microsoft YaHei';
 $font-family: 'Microsoft YaHei', 'Times New Roman';
 
@@ -99,42 +84,6 @@ $transition-speed: 300ms;
 
 .clearfix {
     @include clearfix;
-}
-
-@mixin border-color {
-    &.primary {
-        border-color: $color-primary;
-    }
-    &.success {
-        border-color: $color-success;
-    }
-    &.info {
-        border-color: $color-info;
-    }
-    &.warning {
-        border-color: $color-warning;
-    }
-    &.danger {
-        border-color: $color-danger;
-    }
-}
-
-@mixin bg-color {
-	&.primary {
-        background-color: $color-primary;
-    }
-    &.success {
-        background-color: $color-success;
-    }
-    &.info {
-        background-color: $color-info;
-    }
-    &.warning {
-        background-color: $color-warning;
-    }
-    &.danger {
-        background-color: $color-danger;
-    }
 }
 
 @mixin nowrap {
@@ -201,27 +150,6 @@ body {
 	}
 }
 
-i.fa {
-    font-size: 14px;
-	
-	&.block {
-		display: inline-block;
-		width: 16px;
-		height: 16px;
-		line-height: 16px;
-		text-align: center;
-	}
-}
-
-hr {
-	margin: 5px 0;
-	border-bottom: solid 1px $color-d;
-    
-    &.lg {
-        margin: 10px 0;
-    }
-}
-
 .absolute {
 	position: absolute;
 }
@@ -232,33 +160,4 @@ hr {
 
 .of-hidden {
     overflow: hidden;
-}
-
-ul {
-	&.aface {
-		&.list {
-			list-style-type: none;
-			&.horizontal {
-				&>li.aface {
-					float: left;
-				}
-			}
-		}
-	}
-}
-
-a {
-    color: $color-3;
-    &:hover {
-        color: $color-5;
-    }
-    
-    &.aface.project {
-        color: $color-project;
-        
-        &:hover {
-            color: $color-project-hover;
-            text-decoration: underline;
-        }
-    }
 }
