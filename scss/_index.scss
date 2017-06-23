@@ -10,6 +10,7 @@ $sidebar-toggle-height: 30px;
 $location-height: $sidebar-toggle-height;
 
 body.aface.index {
+    background-color: rgb(246,246,246);
     nav.aface.fix-top {
         position: fixed;
         top: 0;
@@ -20,15 +21,42 @@ body.aface.index {
 
         background-color: $color-steel;
 
-        &>span.aface.dropdown-toggle {
+        &>img.aface.icon {
+            @include zero;
+            display: block;
+            float: left;
+            width: $fixed-top-height;
+            height: $fixed-top-height;
+            line-height: $fixed-top-height;
+        }
+
+        &>span.aface.menuItem {
             display: block;
             float: left;
             height: $fixed-top-height;
             line-height: $fixed-top-height;
-            padding: 0 10px;
+            padding: 0 15px;
             font-size: 14px;
             color: $color-f;
             cursor: pointer;
+            position: relative;
+            transition: color $transition-speed;
+
+            &.active {
+                color: $color-info;
+            }
+        }
+
+        &>span.aface.underline {
+            position: absolute;
+            bottom: 0;
+            height: 5px;
+            background-color: transparent;
+            transition: background-color $transition-speed;
+
+            &.active {
+                background-color: $color-info;
+            }
         }
     }
 }

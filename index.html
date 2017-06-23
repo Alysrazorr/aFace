@@ -8,16 +8,52 @@
     </head>
     <body class="aface index">
         <nav class="aface fix-top">
-            <span class="aface dropdown-toggle">菜单一</span>
-            <span class="aface dropdown-toggle">菜单一</span>
-            <span class="aface dropdown-toggle">菜单一</span>
+            <img class="aface icon" src="images/mmqrcode.png" />
+            <span class="aface underline"></span>
+            <span class="aface menuItem" data-menu-id="1">菜单一</span>
+            <span class="aface menuItem" data-menu-id="2">菜单二</span>
+            <span class="aface menuItem" data-menu-id="3">菜单三</span>
+            <span class="aface menuItem" data-menu-id="4">菜单一</span>
+            <span class="aface menuItem" data-menu-id="5">菜单二</span>
+            <span class="aface menuItem" data-menu-id="6">菜单三</span>
+            <span class="aface menuItem" data-menu-id="7">菜单一</span>
+            <span class="aface menuItem" data-menu-id="8">菜单二</span>
+            <span class="aface menuItem" data-menu-id="9">菜单三</span>
+            <span class="aface menuItem" data-menu-id="0">菜单一</span>
+            <span class="aface menuItem" data-menu-id="10">菜单二</span>
+            <span class="aface menuItem" data-menu-id="11">菜单三</span>
         </nav>
     </body>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="js/aface.base.js"></script>
 	<script type="text/javascript">
-        $('span.aface.dropdown-toggle').hover(function(e) {
-            $(this).append('<span class="aface dt-underline"></span>');
+        var isMouseOnMenus = false;
+        $('nav.aface.fix-top').on({
+            mouseenter : function(e) {
+                isMouseOnMenus = true;
+            },
+            mouseleave : function(e) {
+                isMouseOnMenus = false;
+                $('span.aface.underline').removeClass('active');
+            }
+        });
+        $('span.aface.menuItem').on('mouseenter', function(e) {
+            window.currMenuItem = $(this).data('menu-id');
+        });
+        $('span.aface.menuItem').on('mouseover', function(e) {
+            var thiz = $(this);
+            if (!isMouseOnMenus) {
+                $('span.aface.underline').css({ left : thiz.offset().left, width: thiz.outerWidth() });
+            }
+            // $('span.aface.menuItem').removeClass('active');
+            // thiz.addClass('active');
+            setTimeout(function() {
+                if (thiz.data('menu-id') == this.currMenuItem) {
+                    $('span.aface.underline').addClass('active');
+                    $('span.aface.underline').animate({ width: thiz.outerWidth(), left : thiz.offset().left }, 200);
+                }
+            }, 200);
+            
         });
 	</script>
 </html>
