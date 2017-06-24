@@ -34,15 +34,26 @@
             },
             mouseleave : function(e) {
                 isMouseOnMenus = false;
+                currMenuItem = undefined;
+                setTimeout(function() {
+                    $('span.aface.underline').animate({ width: 0 }, 200);
+                }, 200);
             }
         });
         $('span.aface.menuItem').on('mouseenter', function(e) {
-            window.currMenuItem = $(this).data('menu-id');
             var thiz = $(this);
+            var line = $('span.aface.underline');
+            window.currMenuItem = thiz.data('menu-id');
+            if (!isMouseOnMenus) {
+                line.css({ left : thiz.offset().left });
+            }
             setTimeout(function() {
+                if (!isMouseOnMenus) {
+                    return false;
+                }
                 if (thiz.data('menu-id') == this.currMenuItem) {
-                    $('span.aface.underline').addClass('active');
-                    $('span.aface.underline').animate({ width: thiz.outerWidth(), left : thiz.offset().left }, 200);
+                    line.addClass('active');
+                    line.animate({ width: thiz.outerWidth(), left : thiz.offset().left }, 200);
                     this.currMenuItem = undefined;
                 }
             }, 200);
