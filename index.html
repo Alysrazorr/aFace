@@ -40,33 +40,36 @@
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="js/aface.base.js"></script>
 	<script type="text/javascript">
-        var isMouseOnMenus = false;
-        $('nav.aface.top-menu').on({
-            mouseenter : function(e) {
-                isMouseOnMenus = true;
-            },
-            mouseleave : function(e) {
-                isMouseOnMenus = false;
-                currmenuitem = undefined;
-                $('span.aface.underline').animate({ width: 0 }, 200);
-            }
-        });
-        $('span.aface.menu-item').on('mouseenter', function(e) {
-            var thiz = $(this);
-            var line = $('span.aface.underline');
-            window.currmenuitem = thiz.data('menu-id');
-            if (!isMouseOnMenus) {
-                line.css({ left : thiz.offset().left });
-            }
-            setTimeout(function() {
-                if (!isMouseOnMenus) {
-                    return false;
+        $(function() {
+            var _transitionSpeed = 200;
+            var _isMouseOnTopMenu = false;
+            var _topMenu = $('nav.aface.top-menu');
+            var _menuItems = _topMenu.find('span.aface.menu-item');
+            var _underline = _topMenu.find('span.aface.underline');
+            _topMenu.on({
+                mouseenter : function(e) { _isMouseOnTopMenu = true; },
+                mouseleave : function(e) {
+                    _isMouseOnTopMenu = false;
+                    _currMenuItem = undefined;
+                    _underline.animate({ width: 0 }, _transitionSpeed);
                 }
-                if (thiz.data('menu-id') == this.currmenuitem) {
-                    line.animate({ width: thiz.find('div').outerWidth(), left : thiz.offset().left }, 200);
-                    this.currmenuitem = undefined;
+            });
+            _menuItems.on({
+                mouseenter : function(e) {
+                    var thiz = $(this);
+                    _currMenuItem = thiz.data('menu-id');
+                    if (!_isMouseOnTopMenu) { _underline.css({ left : thiz.offset().left }); }
+                    setTimeout(function() {
+                        if (!_isMouseOnTopMenu) {
+                            return false;
+                        }
+                        if (thiz.data('menu-id') == _currMenuItem) {
+                            _underline.animate({ width: thiz.find('div').length ? thiz.find('div').outerWidth() : thiz.outerWidth(), left : thiz.offset().left }, _transitionSpeed);
+                            _currMenuItem = undefined;
+                        }
+                    }, _transitionSpeed);
                 }
-            }, 200);
+            });
         });
 	</script>
 </html>

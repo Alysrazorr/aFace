@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .clearfix:after {
   content: ' ';
   display: block;
@@ -78,15 +79,16 @@ body {
   overflow: hidden; }
 
 body.aface.index {
-  background-color: #f6f6f6; }
+  background-color: #D2D8DE; }
   body.aface.index nav.aface.top-menu {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     font-size: 0;
-    height: 50px;
-    background-color: #373d41; }
+    height: 60px;
+    background-color: #373d41;
+    box-shadow: 0 2px 2px rgba(55, 61, 65, 0.3); }
     body.aface.index nav.aface.top-menu > img.aface.icon {
       margin: 0;
       padding: 0;
@@ -95,38 +97,49 @@ body.aface.index {
       text-decoration: none;
       display: block;
       float: left;
-      width: 50px;
-      height: 50px;
-      line-height: 50px; }
-    body.aface.index nav.aface.top-menu > span.aface.menu-item {
-      display: block;
-      float: left;
-      height: 50px;
-      line-height: 50px;
-      font-size: 14px;
-      position: relative; }
-      body.aface.index nav.aface.top-menu > span.aface.menu-item > a.aface.title {
+      width: 60px;
+      height: 60px;
+      line-height: 60px; }
+    body.aface.index nav.aface.top-menu > span.aface {
+      display: block; }
+      body.aface.index nav.aface.top-menu > span.aface.brand {
+        float: left;
+        height: 60px;
+        line-height: 60px;
+        font-size: 30px;
+        font-family: '黑体';
+        text-shadow: 2px 2px rgba(8, 9, 10, 0.8);
+        padding: 0 10px;
         color: #fff;
-        text-decoration: none;
-        display: block;
-        height: 50px;
-        line-height: 50px;
-        padding: 0 15px;
-        transition: color 300ms; }
-      body.aface.index nav.aface.top-menu > span.aface.menu-item > div.aface.content {
+        cursor: default; }
+      body.aface.index nav.aface.top-menu > span.aface.menu-item {
+        position: relative;
+        float: left;
+        height: 60px;
+        line-height: 60px;
+        font-size: 14px; }
+        body.aface.index nav.aface.top-menu > span.aface.menu-item > a.aface.title {
+          color: #fff;
+          text-decoration: none;
+          display: block;
+          height: 60px;
+          line-height: 60px;
+          padding: 0 15px;
+          transition: color 300ms; }
+        body.aface.index nav.aface.top-menu > span.aface.menu-item > div.aface.content {
+          position: absolute;
+          display: none;
+          background-color: #373d41;
+          box-shadow: 2px 2px 2px rgba(55, 61, 65, 0.3); }
+        body.aface.index nav.aface.top-menu > span.aface.menu-item:hover > a.aface.title {
+          color: #00c0dd; }
+        body.aface.index nav.aface.top-menu > span.aface.menu-item:hover > div.aface.content {
+          display: block; }
+      body.aface.index nav.aface.top-menu > span.aface.underline {
         position: absolute;
-        display: none;
-        background-color: #373d41;
-        box-shadow: 0 3px 6px rgba(55, 61, 65, 0.3); }
-      body.aface.index nav.aface.top-menu > span.aface.menu-item:hover > a.aface.title {
-        color: #00c0dd; }
-      body.aface.index nav.aface.top-menu > span.aface.menu-item:hover > div.aface.content {
-        display: block; }
-    body.aface.index nav.aface.top-menu > span.aface.underline {
-      position: absolute;
-      bottom: 0;
-      height: 4px;
-      background-color: #00c0dd; }
+        bottom: 0;
+        height: 4px;
+        background-color: #00c0dd; }
 
 div.aface.datagrid {
   overflow: visible;
