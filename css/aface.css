@@ -79,7 +79,7 @@ body {
 
 body.aface.index {
   background-color: #f6f6f6; }
-  body.aface.index nav.aface.fix-top {
+  body.aface.index nav.aface.top-menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -87,7 +87,7 @@ body.aface.index {
     font-size: 0;
     height: 60px;
     background-color: #3b454f; }
-    body.aface.index nav.aface.fix-top > img.aface.icon {
+    body.aface.index nav.aface.top-menu > img.aface.icon {
       margin: 0;
       padding: 0;
       border: 0;
@@ -98,7 +98,7 @@ body.aface.index {
       width: 60px;
       height: 60px;
       line-height: 60px; }
-    body.aface.index nav.aface.fix-top > span.aface.menuItem {
+    body.aface.index nav.aface.top-menu > span.aface.menu-item {
       display: block;
       float: left;
       height: 60px;
@@ -109,15 +109,15 @@ body.aface.index {
       cursor: pointer;
       position: relative;
       transition: color 300ms; }
-      body.aface.index nav.aface.fix-top > span.aface.menuItem.active {
+      body.aface.index nav.aface.top-menu > span.aface.menu-item.active {
         color: #5bc0de; }
-    body.aface.index nav.aface.fix-top > span.aface.underline {
+    body.aface.index nav.aface.top-menu > span.aface.underline {
       position: absolute;
       bottom: 0;
       height: 5px;
       background-color: transparent;
       transition: background-color 300ms; }
-      body.aface.index nav.aface.fix-top > span.aface.underline.active {
+      body.aface.index nav.aface.top-menu > span.aface.underline.active {
         background-color: #5bc0de; }
 
 div.aface.datagrid {

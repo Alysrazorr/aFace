@@ -11,7 +11,7 @@ $location-height: $sidebar-toggle-height;
 
 body.aface.index {
     background-color: rgb(246,246,246);
-    nav.aface.fix-top {
+    nav.aface.top-menu {
         position: fixed;
         top: 0;
         left: 0;
@@ -30,7 +30,7 @@ body.aface.index {
             line-height: $fixed-top-height;
         }
 
-        &>span.aface.menuItem {
+        &>span.aface.menu-item {
             display: block;
             float: left;
             height: $fixed-top-height;
