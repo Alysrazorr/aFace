@@ -9,44 +9,49 @@
     <body class="aface index">
         <nav class="aface top-menu">
             <img class="aface icon" src="images/mmqrcode.png" />
+            <span class="aface brand">治安卡口管理系统</span>
             <span class="aface underline"></span>
-            <span class="aface menu-item" data-menu-id="1"><a>菜单</a></span>
-            <span class="aface menu-item" data-menu-id="2"><a>菜单</a></span>
-            <span class="aface menu-item" data-menu-id="3"><a>菜单</a></span>
-            <span class="aface menu-item" data-menu-id="4"><a>菜单</a></span>
-            <span class="aface menu-item" data-menu-id="5"><a>菜单</a></span>
-            <span class="aface menu-item" data-menu-id="6"><a>菜单</a></span>
-            <span class="aface menu-item" data-menu-id="7"><a>菜单</a></span>
-            <span class="aface menu-item" data-menu-id="8"><a>菜单</a></span>
-            <span class="aface menu-item" data-menu-id="9"><a>菜单</a></span>
+            <span class="aface menu-item" data-menu-id="1">
+                <a href="javascript:;" class="aface title">菜单</a>
+                <div class="aface content" style="width: 150px; height: 150px;"></div>
+            </span>
+            <span class="aface menu-item" data-menu-id="2">
+                <a href="javascript:;" class="aface title">菜单</a>
+                <div class="aface content" style="width: 300px; height: 200px;"></div>
+            </span>
+            <span class="aface menu-item" data-menu-id="3">
+                <a href="javascript:;" class="aface title">菜单</a>
+                <div class="aface content" style="width: 250px; height: 100px;"></div>
+            </span>
+            <span class="aface menu-item" data-menu-id="4">
+                <a href="javascript:;" class="aface title">菜单</a>
+                <div class="aface content" style="width: 150px; height: 400px;"></div>
+            </span>
+            <span class="aface menu-item" data-menu-id="5">
+                <a href="javascript:;" class="aface title">菜单</a>
+                <div class="aface content" style="width: 450px; height: 100px;"></div>
+            </span>
+            <span class="aface menu-item" data-menu-id="6">
+                <a href="javascript:;" class="aface title">菜单</a>
+                <div class="aface content" style="width: 150px; height: 50px;"></div>
+            </span>
         </nav>
     </body>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="js/aface.base.js"></script>
 	<script type="text/javascript">
         var isMouseOnMenus = false;
-        var isLock = false;
         $('nav.aface.top-menu').on({
             mouseenter : function(e) {
-                if (isLock) {
-                    return false;
-                }
                 isMouseOnMenus = true;
             },
             mouseleave : function(e) {
                 isMouseOnMenus = false;
-                isLock = true;
                 currmenuitem = undefined;
-                setTimeout(function() {
-                    $('span.aface.underline').animate({ width: 0 }, 200);
-                    isLock = false;
-                }, 200);
+                $('span.aface.underline').animate({ width: 0 }, 200);
             }
         });
         $('span.aface.menu-item').on('mouseenter', function(e) {
-            if (isLock) {
-                return false;
-            }
             var thiz = $(this);
             var line = $('span.aface.underline');
             window.currmenuitem = thiz.data('menu-id');
@@ -54,15 +59,11 @@
                 line.css({ left : thiz.offset().left });
             }
             setTimeout(function() {
-                if (isLock) {
-                    return false;
-                }
                 if (!isMouseOnMenus) {
                     return false;
                 }
                 if (thiz.data('menu-id') == this.currmenuitem) {
-                    line.addClass('active');
-                    line.animate({ width: thiz.outerWidth(), left : thiz.offset().left }, 200);
+                    line.animate({ width: thiz.find('div').outerWidth(), left : thiz.offset().left }, 200);
                     this.currmenuitem = undefined;
                 }
             }, 200);

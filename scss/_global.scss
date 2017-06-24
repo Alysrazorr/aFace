@@ -28,12 +28,14 @@ $color-hc-orange: #F7A35C;
 $color-hc-purple: #8085E9;
 $color-hc-pink: #F15C80;
 $color-hc-yellow: #E4D354;
+$color-light-blue: rgb(0, 192, 221);
 
-$color-steel: rgb(59,69,79);
-$color-steel-thin: lighten($color-steel, 35%);
-$color-steel-hover: lighten($color-steel, 5%);
-$color-steel-active: darken($color-steel, 5%);
-$color-steel-abyss: darken($color-steel, 10%);
+
+$color-steel: rgb(55,61,65);
+$color-steel-thin: lighten($color-steel, 40%);
+$color-steel-hover: lighten($color-steel, 10%);
+$color-steel-active: darken($color-steel, 15%);
+$color-steel-abyss: darken($color-steel, 20%);
 
 $font-size: 13px;
 $font-yahei: 'Microsoft YaHei';

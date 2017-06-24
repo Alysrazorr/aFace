@@ -1,4 +1,4 @@
-﻿$fixed-top-height: 60px;
+﻿$fixed-top-height: 50px;
 $fixed-top-dropdown-item-height: 40px;
 
 $sidebar-width: 220px;
@@ -18,7 +18,6 @@ body.aface.index {
         right: 0;
         font-size: 0;
         height: $fixed-top-height;
-
         background-color: $color-steel;
 
         &>img.aface.icon {
@@ -35,28 +34,37 @@ body.aface.index {
             float: left;
             height: $fixed-top-height;
             line-height: $fixed-top-height;
-            padding: 0 15px;
             font-size: 14px;
-            color: $color-f;
-            cursor: pointer;
             position: relative;
-            transition: color $transition-speed;
 
-            &.active {
-                color: $color-info;
+            &>a.aface.title {
+                color: $color-f;
+                text-decoration: none;
+                display: block;
+                height: $fixed-top-height;
+                line-height: $fixed-top-height;
+                padding: 0 15px;
+                transition: color $transition-speed;
+            }
+
+            &>div.aface.content {
+                position: absolute;
+                display: none;
+                background-color: $color-steel;
+                box-shadow: 0 3px 6px rgba($color-steel, 0.3);
+            }
+
+            &:hover {
+                &>a.aface.title { color: $color-light-blue; }
+                &>div.aface.content { display: block; }
             }
         }
 
         &>span.aface.underline {
             position: absolute;
             bottom: 0;
-            height: 5px;
-            background-color: transparent;
-            transition: background-color $transition-speed;
-
-            &.active {
-                background-color: $color-info;
-            }
+            height: 4px;
+            background-color: $color-light-blue;
         }
     }
 }
