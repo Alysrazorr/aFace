@@ -9,6 +9,7 @@
     <body class="aface index">
         <nav class="aface fix-top">
             <img class="aface icon" src="images/mmqrcode.png" />
+            <span class="aface underline"></span>
             <span class="aface menuItem" data-menu-id="1">菜单一</span>
             <span class="aface menuItem" data-menu-id="2">菜单二</span>
             <span class="aface menuItem" data-menu-id="3">菜单三</span>
@@ -30,21 +31,14 @@
         $('nav.aface.fix-top').on({
             mouseenter : function(e) {
                 isMouseOnMenus = true;
-                $(this).append('<span class="aface underline"></span>');
             },
             mouseleave : function(e) {
                 isMouseOnMenus = false;
-                $('span.aface.underline').remove();
             }
         });
         $('span.aface.menuItem').on('mouseenter', function(e) {
             window.currMenuItem = $(this).data('menu-id');
             var thiz = $(this);
-            if (!isMouseOnMenus) {
-                $('span.aface.underline').css({ left : thiz.offset().left, width: thiz.outerWidth() });
-            }
-            // $('span.aface.menuItem').removeClass('active');
-            // thiz.addClass('active');
             setTimeout(function() {
                 if (thiz.data('menu-id') == this.currMenuItem) {
                     $('span.aface.underline').addClass('active');
