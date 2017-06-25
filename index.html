@@ -11,30 +11,49 @@
             <img class="aface icon" src="images/mmqrcode.png" />
             <span class="aface brand">治安卡口管理系统</span>
             <span class="aface underline"></span>
-            <span class="aface menu-item" data-menu-id="1">
-                <a href="javascript:;" class="aface title">菜单</a>
-                <div class="aface content" style="width: 150px; height: 150px;"></div>
-            </span>
-            <span class="aface menu-item" data-menu-id="2">
-                <a href="javascript:;" class="aface title">菜单</a>
-                <div class="aface content" style="width: 300px; height: 200px;"></div>
-            </span>
-            <span class="aface menu-item" data-menu-id="3">
-                <a href="javascript:;" class="aface title">菜单</a>
-                <div class="aface content" style="width: 250px; height: 100px;"></div>
-            </span>
-            <span class="aface menu-item" data-menu-id="4">
-                <a href="javascript:;" class="aface title">菜单</a>
-                <div class="aface content" style="width: 150px; height: 400px;"></div>
-            </span>
-            <span class="aface menu-item" data-menu-id="5">
-                <a href="javascript:;" class="aface title">菜单</a>
-                <div class="aface content" style="width: 450px; height: 100px;"></div>
-            </span>
-            <span class="aface menu-item" data-menu-id="6">
-                <a href="javascript:;" class="aface title">菜单</a>
-                <div class="aface content" style="width: 150px; height: 50px;"></div>
-            </span>
+            <ul class="aface menu">
+                <li class="aface menu-item" data-menu-id="1">
+                    <a href="javascript:;" class="aface title">菜单</a>
+                    <div class="aface content" style="width: 150px; height: 150px;"></div>
+                </li>
+                <li class="aface menu-item" data-menu-id="2">
+                    <a href="javascript:;" class="aface title">菜单</a>
+                    <div class="aface content" style="width: 300px; height: 200px;"></div>
+                </li>
+                <li class="aface menu-item" data-menu-id="3">
+                    <a href="javascript:;" class="aface title">菜单</a>
+                    <div class="aface content" style="width: 250px; height: 100px;"></div>
+                </li>
+                <li class="aface menu-item" data-menu-id="4">
+                    <a href="javascript:;" class="aface title">菜单</a>
+                    <div class="aface content" style="width: 150px;">
+                        <a class="aface menu-item" href="javascript:;">按钮</a>
+                        <a class="aface menu-item" href="javascript:;">按钮</a>
+                        <a class="aface menu-item" href="javascript:;">按钮</a>
+                        <a class="aface menu-item" href="javascript:;">按钮</a>
+                        <a class="aface menu-item" href="javascript:;">按钮</a>
+                    </div>
+                </li>
+                <li class="aface menu-item" data-menu-id="5">
+                    <a href="javascript:;" class="aface title">菜单</a>
+                    <div class="aface content" style="width: 400px;">
+                        <a class="aface menu-icon" href="javascript:;">
+                            <i class="fa fa-home" title="根目录"></i>
+                        </a>
+                        <a class="aface menu-icon" href="javascript:;"></a>
+                        <a class="aface menu-icon" href="javascript:;"></a>
+                        <a class="aface menu-icon" href="javascript:;"></a>
+                    </div>
+                </li>
+                <li class="aface menu-item" data-menu-id="6">
+                    <a href="javascript:;" class="aface title">QRCode</a>
+                    <div class="aface content" style="width: 200px; height: 200px;">
+                        <a class="aface menu-icon">
+                            <img class="aface icon" src="images/mmqrcode.png" style="height: 200px; width: 200px;" />
+                        </a>
+                    </div>
+                </li>
+            </ul>
         </nav>
     </body>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -43,9 +62,9 @@
         $(function() {
             var _transitionSpeed = 200;
             var _isMouseOnTopMenu = false;
-            var _topMenu = $('nav.aface.top-menu');
-            var _menuItems = _topMenu.find('span.aface.menu-item');
-            var _underline = _topMenu.find('span.aface.underline');
+            var _topMenu = $('ul.aface.menu');
+            var _underline = $('span.aface.underline');
+            var _menuItems = _topMenu.find('li.aface.menu-item');
             _topMenu.on({
                 mouseenter : function(e) { _isMouseOnTopMenu = true; },
                 mouseleave : function(e) {

@@ -19,7 +19,7 @@ body.aface.index {
         font-size: 0;
         height: $fixed-top-height;
         background-color: $color-steel;
-        box-shadow: 0 2px 2px rgba($color-steel, 0.3);
+        box-shadow: 0 2px 2px rgba($color-steel, 0.6);
 
         &>img.aface.icon {
             @include zero;
@@ -30,22 +30,9 @@ body.aface.index {
             line-height: $fixed-top-height;
         }
 
-        &>span.aface {
-            display: block;
-
-            &.brand {
-                float: left;
-                height: $fixed-top-height;
-                line-height: $fixed-top-height;
-                font-size: 30px;
-                font-family: '黑体';
-                text-shadow: 2px 2px rgba($color-steel-abyss, 0.8);
-                padding: 0 10px;
-                color: $color-f;
-                cursor: default;
-            }
-
-            &.menu-item {
+        &>ul.aface.menu {
+            &>li.menu-item {
+                list-style-type: none;
                 position: relative;
                 float: left;
                 height: $fixed-top-height;
@@ -66,13 +53,66 @@ body.aface.index {
                     position: absolute;
                     display: none;
                     background-color: $color-steel;
-                    box-shadow: 2px 2px 2px rgba($color-steel, 0.3);
+                    box-shadow: 0 2px 2px rgba($color-steel, 0.6);
+
+                    &>a.aface.menu-item {
+                        display: block;
+                        padding: 0 10px;
+                        font-size: 13px;
+                        color: $color-f;
+                        height: $fixed-top-dropdown-item-height;
+                        line-height: $fixed-top-dropdown-item-height;
+
+                        &:hover {
+                            background-color: $color-light-blue;
+                        }
+                    }
+
+                    &>a.aface.menu-icon {
+                        display: block;
+                        float: left;
+                        width: 100px;
+                        height: 100px;
+                        line-height: 100px;
+                        text-align: center;
+                        color: $color-f;
+
+                        &>i.fa, &>img {
+                            display: block;
+                            float: left;
+                            width: 100px;
+                            height: 100px;
+                            line-height: 100px;
+                            font-size: 40px;
+                        }
+
+                        &:hover {
+                            background-color: $color-light-blue;
+                        }
+                    }
                 }
 
                 &:hover {
                     &>a.aface.title { color: $color-light-blue; }
                     &>div.aface.content { display: block; }
                 }
+            }
+        }
+            
+
+        &>span.aface {
+            display: block;
+
+            &.brand {
+                float: left;
+                height: $fixed-top-height;
+                line-height: $fixed-top-height;
+                font-size: 30px;
+                font-family: '黑体';
+                text-shadow: 2px 2px rgba($color-steel-abyss, 0.8);
+                padding: 0 10px;
+                color: $color-f;
+                cursor: default;
             }
 
             &.underline {
@@ -82,9 +122,5 @@ body.aface.index {
                 background-color: $color-light-blue;
             }
         }
-
-        
-
-        
     }
 }

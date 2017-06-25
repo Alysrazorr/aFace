@@ -88,7 +88,7 @@ body.aface.index {
     font-size: 0;
     height: 60px;
     background-color: #373d41;
-    box-shadow: 0 2px 2px rgba(55, 61, 65, 0.3); }
+    box-shadow: 0 2px 2px rgba(55, 61, 65, 0.6); }
     body.aface.index nav.aface.top-menu > img.aface.icon {
       margin: 0;
       padding: 0;
@@ -100,6 +100,56 @@ body.aface.index {
       width: 60px;
       height: 60px;
       line-height: 60px; }
+    body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item {
+      list-style-type: none;
+      position: relative;
+      float: left;
+      height: 60px;
+      line-height: 60px;
+      font-size: 14px; }
+      body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > a.aface.title {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        height: 60px;
+        line-height: 60px;
+        padding: 0 15px;
+        transition: color 300ms; }
+      body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content {
+        position: absolute;
+        display: none;
+        background-color: #373d41;
+        box-shadow: 0 2px 2px rgba(55, 61, 65, 0.6); }
+        body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-item {
+          display: block;
+          padding: 0 10px;
+          font-size: 13px;
+          color: #fff;
+          height: 40px;
+          line-height: 40px; }
+          body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-item:hover {
+            background-color: #00c0dd; }
+        body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon {
+          display: block;
+          float: left;
+          width: 100px;
+          height: 100px;
+          line-height: 100px;
+          text-align: center;
+          color: #fff; }
+          body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon > i.fa, body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon > img {
+            display: block;
+            float: left;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            font-size: 40px; }
+          body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon:hover {
+            background-color: #00c0dd; }
+      body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item:hover > a.aface.title {
+        color: #00c0dd; }
+      body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item:hover > div.aface.content {
+        display: block; }
     body.aface.index nav.aface.top-menu > span.aface {
       display: block; }
       body.aface.index nav.aface.top-menu > span.aface.brand {
@@ -112,29 +162,6 @@ body.aface.index {
         padding: 0 10px;
         color: #fff;
         cursor: default; }
-      body.aface.index nav.aface.top-menu > span.aface.menu-item {
-        position: relative;
-        float: left;
-        height: 60px;
-        line-height: 60px;
-        font-size: 14px; }
-        body.aface.index nav.aface.top-menu > span.aface.menu-item > a.aface.title {
-          color: #fff;
-          text-decoration: none;
-          display: block;
-          height: 60px;
-          line-height: 60px;
-          padding: 0 15px;
-          transition: color 300ms; }
-        body.aface.index nav.aface.top-menu > span.aface.menu-item > div.aface.content {
-          position: absolute;
-          display: none;
-          background-color: #373d41;
-          box-shadow: 2px 2px 2px rgba(55, 61, 65, 0.3); }
-        body.aface.index nav.aface.top-menu > span.aface.menu-item:hover > a.aface.title {
-          color: #00c0dd; }
-        body.aface.index nav.aface.top-menu > span.aface.menu-item:hover > div.aface.content {
-          display: block; }
       body.aface.index nav.aface.top-menu > span.aface.underline {
         position: absolute;
         bottom: 0;
