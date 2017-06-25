@@ -32,10 +32,10 @@ $color-light-blue: rgb(0, 192, 221);
 
 
 $color-steel: rgb(55,61,65);
-$color-steel-thin: lighten($color-steel, 40%);
+$color-steel-thin: lighten($color-steel, 20%);
 $color-steel-hover: lighten($color-steel, 10%);
-$color-steel-active: darken($color-steel, 15%);
-$color-steel-abyss: darken($color-steel, 20%);
+$color-steel-active: darken($color-steel, 5%);
+$color-steel-abyss: darken($color-steel, 10%);
 
 $font-size: 13px;
 $font-yahei: 'Microsoft YaHei';

@@ -1,8 +1,9 @@
-﻿$fixed-top-height: 60px;
-$fixed-top-dropdown-item-height: 40px;
+﻿$menu-height: 60px;
+$drop-menu-item-height: 40px;
+$menu-shadow: 0 2px 1px rgba($color-steel, 0.3);
 
 $sidebar-width: 220px;
-$sidebar-collapsed-width: $fixed-top-height;
+$sidebar-collapsed-width: $menu-height;
 $sidebar-item-height: 40px;
 $sidebar-item-height-sm: 35px;
 $sidebar-toggle-height: 30px;
@@ -17,17 +18,17 @@ body.aface.index {
         left: 0;
         right: 0;
         font-size: 0;
-        height: $fixed-top-height;
+        height: $menu-height;
         background-color: $color-steel;
-        box-shadow: 0 2px 2px rgba($color-steel, 0.6);
+        box-shadow: $menu-shadow;
 
         &>img.aface.icon {
             @include zero;
             display: block;
             float: left;
-            width: $fixed-top-height;
-            height: $fixed-top-height;
-            line-height: $fixed-top-height;
+            width: $menu-height;
+            height: $menu-height;
+            line-height: $menu-height;
         }
 
         &>ul.aface.menu {
@@ -35,16 +36,16 @@ body.aface.index {
                 list-style-type: none;
                 position: relative;
                 float: left;
-                height: $fixed-top-height;
-                line-height: $fixed-top-height;
+                height: $menu-height;
+                line-height: $menu-height;
                 font-size: 14px;
 
                 &>a.aface.title {
                     color: $color-f;
                     text-decoration: none;
                     display: block;
-                    height: $fixed-top-height;
-                    line-height: $fixed-top-height;
+                    height: $menu-height;
+                    line-height: $menu-height;
                     padding: 0 15px;
                     transition: color $transition-speed;
                 }
@@ -53,15 +54,16 @@ body.aface.index {
                     position: absolute;
                     display: none;
                     background-color: $color-steel;
-                    box-shadow: 0 2px 2px rgba($color-steel, 0.6);
+                    box-shadow: $menu-shadow;
 
                     &>a.aface.menu-item {
                         display: block;
                         padding: 0 10px;
                         font-size: 13px;
                         color: $color-f;
-                        height: $fixed-top-dropdown-item-height;
-                        line-height: $fixed-top-dropdown-item-height;
+                        height: $drop-menu-item-height;
+                        line-height: $drop-menu-item-height;
+                        transition: background-color $transition-speed;
 
                         &:hover {
                             background-color: $color-light-blue;
@@ -76,6 +78,7 @@ body.aface.index {
                         line-height: 100px;
                         text-align: center;
                         color: $color-f;
+                        transition: background-color $transition-speed;
 
                         &>i.fa, &>img {
                             display: block;
@@ -83,7 +86,7 @@ body.aface.index {
                             width: 100px;
                             height: 100px;
                             line-height: 100px;
-                            font-size: 40px;
+                            font-size: 50px;
                         }
 
                         &:hover {
@@ -105,8 +108,8 @@ body.aface.index {
 
             &.brand {
                 float: left;
-                height: $fixed-top-height;
-                line-height: $fixed-top-height;
+                height: $menu-height;
+                line-height: $menu-height;
                 font-size: 30px;
                 font-family: '黑体';
                 text-shadow: 2px 2px rgba($color-steel-abyss, 0.8);

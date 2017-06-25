@@ -88,7 +88,7 @@ body.aface.index {
     font-size: 0;
     height: 60px;
     background-color: #373d41;
-    box-shadow: 0 2px 2px rgba(55, 61, 65, 0.6); }
+    box-shadow: 0 2px 1px rgba(55, 61, 65, 0.3); }
     body.aface.index nav.aface.top-menu > img.aface.icon {
       margin: 0;
       padding: 0;
@@ -119,14 +119,15 @@ body.aface.index {
         position: absolute;
         display: none;
         background-color: #373d41;
-        box-shadow: 0 2px 2px rgba(55, 61, 65, 0.6); }
+        box-shadow: 0 2px 1px rgba(55, 61, 65, 0.3); }
         body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-item {
           display: block;
           padding: 0 10px;
           font-size: 13px;
           color: #fff;
           height: 40px;
-          line-height: 40px; }
+          line-height: 40px;
+          transition: background-color 300ms; }
           body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-item:hover {
             background-color: #00c0dd; }
         body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon {
@@ -136,14 +137,15 @@ body.aface.index {
           height: 100px;
           line-height: 100px;
           text-align: center;
-          color: #fff; }
+          color: #fff;
+          transition: background-color 300ms; }
           body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon > i.fa, body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon > img {
             display: block;
             float: left;
             width: 100px;
             height: 100px;
             line-height: 100px;
-            font-size: 40px; }
+            font-size: 50px; }
           body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon:hover {
             background-color: #00c0dd; }
       body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item:hover > a.aface.title {
@@ -158,7 +160,7 @@ body.aface.index {
         line-height: 60px;
         font-size: 30px;
         font-family: '黑体';
-        text-shadow: 2px 2px rgba(8, 9, 10, 0.8);
+        text-shadow: 2px 2px rgba(32, 35, 37, 0.8);
         padding: 0 10px;
         color: #fff;
         cursor: default; }
@@ -732,7 +734,7 @@ div.aface.loader-mask {
     margin: auto;
     width: 50px;
     height: 50px;
-    background-color: #08090a;
+    background-color: #202325;
     border-radius: 3px; }
     div.aface.loader-mask > div.aface.loader-container > div.aface.loader {
       position: relative;
@@ -751,7 +753,7 @@ div.aface.loader-mask {
           top: 8px;
           left: 8px;
           border-radius: 9999px;
-          background-color: #08090a; }
+          background-color: #202325; }
         div.aface.loader-mask > div.aface.loader-container > div.aface.loader > span.aface.loader-leaf {
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
@@ -976,7 +978,7 @@ div.aface.tabs > ul.aface.tab-indices {
     height: 30px;
     line-height: 30px;
     color: #373d41;
-    background-color: #c4c9cd;
+    background-color: #8c979e;
     font-size: 13px; }
     div.aface.tabs > ul.aface.tab-indices > li.aface.tab-index:first-child {
       margin-left: 0; }
