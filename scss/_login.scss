@@ -1,135 +1,139 @@
-$login-container-width: 1024px;
-
-$login-footer-height: 80px;
-$login-header-height: 80px;
+﻿$login-window-height: 275px;
+$login-window-width: 400px;
 
 body.aface.login {
-    @include zero;
-    background-size: 100%;
-    background-image: url('../images/img4.jpg');
+    background-color: $color-steel;
+    background: -webkit-gradient(linear, 0 0, 50% 70%, from($color-steel), to($color-steel-abyss));
 
-    div.aface.container {
-        width: $login-container-width;
+    &>div.aface.login-window {
+        position: relative;
+        width: $login-window-width;
+        height: $login-window-height;
         margin: 0 auto;
-    }
-
-    &>div.aface.login {
-        z-index: 20000;
-    }
-
-    &>div.aface.login.header {
-        position: absolute;
-        height: $login-header-height;
-        left: 0;
-        right: 0;
-        top: 0;
-        background-color: $color-f;
-    }
-
-    &>div.aface.login.center {
-        position: absolute;
-        top: $login-header-height;
-        left: 0;
-        right: 0;
-        bottom: $login-footer-height;
-        border-top: solid 1px $color-a;
-        border-bottom: solid 1px $color-a;
-        background-color: rgba(255,255,255,0.6);
-
-        &>div.aface.container {
-            overflow: hidden;
-            
-            form.aface.login.login-form {
-                padding: 20px 20px 35px 20px;
-                background-color: $color-f;
-                border: solid 1px $color-a;
-                border-radius: 2px;
-                box-shadow: 0 6px 6px rgba(0,0,0,0.2);
-                width: 350px;
-                margin: 0 auto;
-                margin-top: 50px;
-
-                &>input, &>button {
-                    height: 40px;
-                    line-height: 40px;
-                    font-size: 13px;
-                    border-radius: 2px;
-                    width: 100%;
-                }
-
-                &>span.aface.login {
-                    float: left;
-                    height: 50px;
-                    line-height: 50px;
-                    width: auto;
-                    margin: 0;
-
-                    &.title {
-                        font-size: 20px;
-                    }
-                    &.errors {
-                        font-size: 12px;
-                        color: red;
-                        line-height: 57px;
-                        margin-left: 5px;
-                    }
-                    &.account, &.password {
-                        width: 100%;
-                        display: block;
-                        font-size: 13px;
-                        height: 30px;
-                        line-height: 30px;
-                    }
-                }
-                
-                &>button.aface.login.button.primary {
-                    margin-top: 20px;
-                    font-size: 16px;
-                    box-shadow: 0 3px 0 lighten($color-primary, 10%);
-                }
-            }
-        }
-    }
-
-    &>div.aface.login.footer {
-        position: absolute;
-        height: $login-footer-height;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 10px;
-        font-size: 0;
+        top: calc(40% - 130px);
         background-color: $color-f;
 
-        &>div {
+        border-top: solid 5px $color-light-blue;
+        box-shadow: 0 2px 4px rgba($color-steel-abyss, 0.8);
+        border-radius: 2px;
+
+        &>span.aface.title {
+            position: absolute;
+            width: 100%;
+            top: -70px;
+            color: $color-f;
+            font-size: 40px;
+            font-family: '黑体';
             text-align: center;
+            text-shadow: 8px 8px 8px rgba($color-steel-abyss, 0.6);
+            cursor: default;
         }
 
-        ul.aface.list {
+        &>span.aface.triangle {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            top: -10px;
+            left: calc(50% - 10px);
+            background-color: $color-light-blue;
+            transform: rotate(45deg);
+            z-index: -1;
+        }
+
+        &>div.aface.line {
             margin: 0 auto;
-            display: inline-block;
+            margin-top: 30px;
+            width: calc(100% - 60px);
+            height: 50px;
+            border-radius: 2px;
 
-            &>li {
+            &>i.fa {
                 float: left;
-                margin-left: 10px;
-                height: 30px;
-                line-height: 30px;
-                font-size: 12px;
-                color: $color-a;
+                font-size: 24px;
+                display: block;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                background-color: $color-c;
+                color: $color-f;
+                border-top-left-radius: 2px;
+                border-bottom-left-radius: 2px;
+            }
+            &>input {
+                @include zero;
+                float: left;
+                width: calc(100% - 70px);
+                height: 50px;
+                padding: 0 10px;
+                font-size: 15px;
+                font-family: 'Consolas', '黑体';
+                background-color: #F2F2F2;
+                border-top-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+            }
+            &>a.aface.button {
+                border-radius: 2px;
+                display: block;
+                float: left;
+                width: 47%;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                color: $color-f;
+                font-size: 18px;
+                font-family: '黑体';
+                transition: background-color $transition-speed;
 
-                &:first-child {
-                    margin: 0;
-                }
-
-                &>a.aface {
-                    color: $color-a;
+                &.submit {
+                    background-color: $color-hc-orange;
+                    border-bottom: solid 3px darken($color-hc-orange, 5%);
 
                     &:hover {
-                        color: $color-3;
+                        background-color: lighten($color-hc-orange, 5%);
+                    }
+                    &:active {
+                        background-color: $color-hc-orange;
+                    }
+                }
+
+                &.register {
+                    background-color: $color-hc-blue;
+                    border-bottom: solid 3px darken($color-hc-blue, 5%);
+
+                    &:hover {
+                        background-color: lighten($color-hc-blue, 5%);
+                    }
+                    &:active {
+                        background-color: $color-hc-blue;
                     }
                 }
             }
-            @include clearfix;
         }
+
+        &>a.aface.forget-password {
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+            font-size: 14px;
+            font-family: '黑体';
+            color: $color-f;
+            text-shadow: 0 2px 4px rgba($color-steel-abyss, 0.6);
+
+            &:hover {
+                color: $color-light-blue;
+            }
+        }
+    }
+
+    &>div.aface.copyright {
+        position: absolute;
+        width: 200px;
+        bottom: 5px;
+        left: calc(50% - 100px);
+        text-align: center;
+        color: lighten($color-steel-thin, 10%);
+        font-size: 13px;
     }
 }

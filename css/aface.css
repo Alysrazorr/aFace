@@ -78,6 +78,9 @@ body {
 .of-hidden {
   overflow: hidden; }
 
+i.fa {
+  font-size: 14px; }
+
 body.aface.index {
   background-color: #D2D8DE; }
   body.aface.index nav.aface.top-menu {
@@ -133,19 +136,19 @@ body.aface.index {
         body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon {
           display: block;
           float: left;
-          width: 100px;
-          height: 100px;
-          line-height: 100px;
+          width: 80px;
+          height: 80px;
+          line-height: 80px;
           text-align: center;
           color: #fff;
           transition: background-color 300ms; }
           body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon > i.fa, body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon > img {
             display: block;
             float: left;
-            width: 100px;
-            height: 100px;
-            line-height: 100px;
-            font-size: 50px; }
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 40px; }
           body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon:hover {
             background-color: #00c0dd; }
       body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item:hover > a.aface.title {
@@ -864,108 +867,115 @@ div.aface.loader-mask {
   100% {
     transform: rotate(360deg); } }
 body.aface.login {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: none;
-  text-decoration: none;
-  background-size: 100%;
-  background-image: url("../images/img4.jpg"); }
-  body.aface.login div.aface.container {
-    width: 1024px;
-    margin: 0 auto; }
-  body.aface.login > div.aface.login {
-    z-index: 20000; }
-  body.aface.login > div.aface.login.header {
-    position: absolute;
-    height: 80px;
-    left: 0;
-    right: 0;
-    top: 0;
-    background-color: #fff; }
-  body.aface.login > div.aface.login.center {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    bottom: 80px;
-    border-top: solid 1px #aaa;
-    border-bottom: solid 1px #aaa;
-    background-color: rgba(255, 255, 255, 0.6); }
-    body.aface.login > div.aface.login.center > div.aface.container {
-      overflow: hidden; }
-      body.aface.login > div.aface.login.center > div.aface.container form.aface.login.login-form {
-        padding: 20px 20px 35px 20px;
-        background-color: #fff;
-        border: solid 1px #aaa;
-        border-radius: 2px;
-        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
-        width: 350px;
-        margin: 0 auto;
-        margin-top: 50px; }
-        body.aface.login > div.aface.login.center > div.aface.container form.aface.login.login-form > input, body.aface.login > div.aface.login.center > div.aface.container form.aface.login.login-form > button {
-          height: 40px;
-          line-height: 40px;
-          font-size: 13px;
-          border-radius: 2px;
-          width: 100%; }
-        body.aface.login > div.aface.login.center > div.aface.container form.aface.login.login-form > span.aface.login {
-          float: left;
-          height: 50px;
-          line-height: 50px;
-          width: auto;
-          margin: 0; }
-          body.aface.login > div.aface.login.center > div.aface.container form.aface.login.login-form > span.aface.login.title {
-            font-size: 20px; }
-          body.aface.login > div.aface.login.center > div.aface.container form.aface.login.login-form > span.aface.login.errors {
-            font-size: 12px;
-            color: red;
-            line-height: 57px;
-            margin-left: 5px; }
-          body.aface.login > div.aface.login.center > div.aface.container form.aface.login.login-form > span.aface.login.account, body.aface.login > div.aface.login.center > div.aface.container form.aface.login.login-form > span.aface.login.password {
-            width: 100%;
-            display: block;
-            font-size: 13px;
-            height: 30px;
-            line-height: 30px; }
-        body.aface.login > div.aface.login.center > div.aface.container form.aface.login.login-form > button.aface.login.button.primary {
-          margin-top: 20px;
-          font-size: 16px;
-          box-shadow: 0 3px 0 #6aa3d5; }
-  body.aface.login > div.aface.login.footer {
-    position: absolute;
-    height: 80px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 10px;
-    font-size: 0;
-    background-color: #fff; }
-    body.aface.login > div.aface.login.footer > div {
-      text-align: center; }
-    body.aface.login > div.aface.login.footer ul.aface.list {
+  background-color: #373d41;
+  background: -webkit-gradient(linear, 0 0, 50% 70%, from(#373d41), to(#202325)); }
+  body.aface.login > div.aface.login-window {
+    position: relative;
+    width: 400px;
+    height: 275px;
+    margin: 0 auto;
+    top: calc(40% - 130px);
+    background-color: #fff;
+    border-top: solid 5px #00c0dd;
+    box-shadow: 0 2px 4px rgba(32, 35, 37, 0.8);
+    border-radius: 2px; }
+    body.aface.login > div.aface.login-window > span.aface.title {
+      position: absolute;
+      width: 100%;
+      top: -70px;
+      color: #fff;
+      font-size: 40px;
+      font-family: '黑体';
+      text-align: center;
+      text-shadow: 8px 8px 8px rgba(32, 35, 37, 0.6);
+      cursor: default; }
+    body.aface.login > div.aface.login-window > span.aface.triangle {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      top: -10px;
+      left: calc(50% - 10px);
+      background-color: #00c0dd;
+      transform: rotate(45deg);
+      z-index: -1; }
+    body.aface.login > div.aface.login-window > div.aface.line {
       margin: 0 auto;
-      display: inline-block; }
-      body.aface.login > div.aface.login.footer ul.aface.list > li {
+      margin-top: 30px;
+      width: calc(100% - 60px);
+      height: 50px;
+      border-radius: 2px; }
+      body.aface.login > div.aface.login-window > div.aface.line > i.fa {
         float: left;
-        margin-left: 10px;
-        height: 30px;
-        line-height: 30px;
-        font-size: 12px;
-        color: #aaa; }
-        body.aface.login > div.aface.login.footer ul.aface.list > li:first-child {
-          margin: 0; }
-        body.aface.login > div.aface.login.footer ul.aface.list > li > a.aface {
-          color: #aaa; }
-          body.aface.login > div.aface.login.footer ul.aface.list > li > a.aface:hover {
-            color: #333; }
-      body.aface.login > div.aface.login.footer ul.aface.list:after {
-        content: ' ';
+        font-size: 24px;
         display: block;
-        height: 0;
-        width: 0;
-        clear: both;
-        visibility: hidden; }
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        background-color: #ccc;
+        color: #fff;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px; }
+      body.aface.login > div.aface.login-window > div.aface.line > input {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: none;
+        text-decoration: none;
+        float: left;
+        width: calc(100% - 70px);
+        height: 50px;
+        padding: 0 10px;
+        font-size: 15px;
+        font-family: 'Consolas', '黑体';
+        background-color: #F2F2F2;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px; }
+      body.aface.login > div.aface.login-window > div.aface.line > a.aface.button {
+        border-radius: 2px;
+        display: block;
+        float: left;
+        width: 47%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+        font-family: '黑体';
+        transition: background-color 300ms; }
+        body.aface.login > div.aface.login-window > div.aface.line > a.aface.button.submit {
+          background-color: #F7A35C;
+          border-bottom: solid 3px #f69544; }
+          body.aface.login > div.aface.login-window > div.aface.line > a.aface.button.submit:hover {
+            background-color: #f8b174; }
+          body.aface.login > div.aface.login-window > div.aface.line > a.aface.button.submit:active {
+            background-color: #F7A35C; }
+        body.aface.login > div.aface.login-window > div.aface.line > a.aface.button.register {
+          background-color: #7CB5EC;
+          border-bottom: solid 3px #66a8e9; }
+          body.aface.login > div.aface.login-window > div.aface.line > a.aface.button.register:hover {
+            background-color: #92c2ef; }
+          body.aface.login > div.aface.login-window > div.aface.line > a.aface.button.register:active {
+            background-color: #7CB5EC; }
+    body.aface.login > div.aface.login-window > a.aface.forget-password {
+      position: absolute;
+      bottom: -20px;
+      right: 0;
+      font-size: 14px;
+      font-family: '黑体';
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(32, 35, 37, 0.6); }
+      body.aface.login > div.aface.login-window > a.aface.forget-password:hover {
+        color: #00c0dd; }
+  body.aface.login > div.aface.copyright {
+    position: absolute;
+    width: 200px;
+    bottom: 5px;
+    left: calc(50% - 100px);
+    text-align: center;
+    color: #7f8a92;
+    font-size: 13px; }
 
 div.aface.tabs > ul.aface.tab-indices {
   list-style-type: none; }

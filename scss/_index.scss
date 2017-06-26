@@ -1,24 +1,18 @@
-﻿$menu-height: 60px;
+﻿$top-menu-height: 60px;
 $drop-menu-item-height: 40px;
+$drop-menu-icon-height: 80px;
 $menu-shadow: 0 2px 1px rgba($color-steel, 0.3);
-
-$sidebar-width: 220px;
-$sidebar-collapsed-width: $menu-height;
-$sidebar-item-height: 40px;
-$sidebar-item-height-sm: 35px;
-$sidebar-toggle-height: 30px;
-
-$location-height: $sidebar-toggle-height;
 
 body.aface.index {
     background-color: #D2D8DE;
+
     nav.aface.top-menu {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         font-size: 0;
-        height: $menu-height;
+        height: $top-menu-height;
         background-color: $color-steel;
         box-shadow: $menu-shadow;
 
@@ -26,9 +20,9 @@ body.aface.index {
             @include zero;
             display: block;
             float: left;
-            width: $menu-height;
-            height: $menu-height;
-            line-height: $menu-height;
+            width: $top-menu-height;
+            height: $top-menu-height;
+            line-height: $top-menu-height;
         }
 
         &>ul.aface.menu {
@@ -36,16 +30,16 @@ body.aface.index {
                 list-style-type: none;
                 position: relative;
                 float: left;
-                height: $menu-height;
-                line-height: $menu-height;
+                height: $top-menu-height;
+                line-height: $top-menu-height;
                 font-size: 14px;
 
                 &>a.aface.title {
                     color: $color-f;
                     text-decoration: none;
                     display: block;
-                    height: $menu-height;
-                    line-height: $menu-height;
+                    height: $top-menu-height;
+                    line-height: $top-menu-height;
                     padding: 0 15px;
                     transition: color $transition-speed;
                 }
@@ -73,9 +67,9 @@ body.aface.index {
                     &>a.aface.menu-icon {
                         display: block;
                         float: left;
-                        width: 100px;
-                        height: 100px;
-                        line-height: 100px;
+                        width: $drop-menu-icon-height;
+                        height: $drop-menu-icon-height;
+                        line-height: $drop-menu-icon-height;
                         text-align: center;
                         color: $color-f;
                         transition: background-color $transition-speed;
@@ -83,10 +77,10 @@ body.aface.index {
                         &>i.fa, &>img {
                             display: block;
                             float: left;
-                            width: 100px;
-                            height: 100px;
-                            line-height: 100px;
-                            font-size: 50px;
+                            width: $drop-menu-icon-height;
+                            height: $drop-menu-icon-height;
+                            line-height: $drop-menu-icon-height;
+                            font-size: $drop-menu-icon-height / 2;
                         }
 
                         &:hover {
@@ -108,8 +102,8 @@ body.aface.index {
 
             &.brand {
                 float: left;
-                height: $menu-height;
-                line-height: $menu-height;
+                height: $top-menu-height;
+                line-height: $top-menu-height;
                 font-size: 30px;
                 font-family: '黑体';
                 text-shadow: 2px 2px rgba($color-steel-abyss, 0.8);
