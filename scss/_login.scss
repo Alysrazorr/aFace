@@ -1,6 +1,8 @@
 ﻿$login-window-height: 275px;
 $login-window-width: 400px;
 
+$radius: 3px;
+
 body.aface.login {
     background-color: $color-steel;
     background: -webkit-gradient(linear, 0 0, 50% 70%, from($color-steel), to($color-steel-abyss));
@@ -15,7 +17,7 @@ body.aface.login {
 
         border-top: solid 5px $color-light-blue;
         box-shadow: 0 2px 4px rgba($color-steel-abyss, 0.8);
-        border-radius: 2px;
+        border-radius: $radius;
 
         &>span.aface.title {
             position: absolute;
@@ -46,7 +48,7 @@ body.aface.login {
             margin-top: 30px;
             width: calc(100% - 60px);
             height: 50px;
-            border-radius: 2px;
+            border-radius: $radius;
 
             &>i.fa {
                 float: left;
@@ -58,8 +60,8 @@ body.aface.login {
                 text-align: center;
                 background-color: $color-c;
                 color: $color-f;
-                border-top-left-radius: 2px;
-                border-bottom-left-radius: 2px;
+                border-top-left-radius: $radius;
+                border-bottom-left-radius: $radius;
             }
             &>input {
                 @include zero;
@@ -70,14 +72,14 @@ body.aface.login {
                 font-size: 15px;
                 font-family: 'Consolas', '黑体';
                 background-color: #F2F2F2;
-                border-top-right-radius: 2px;
-                border-bottom-right-radius: 2px;
+                border-top-right-radius: $radius;
+                border-bottom-right-radius: $radius;
             }
             &>a.aface.button {
-                border-radius: 2px;
+                border-radius: $radius;
                 display: block;
                 float: left;
-                width: 47%;
+                width: 100%;
                 height: 50px;
                 line-height: 50px;
                 text-align: center;
@@ -95,18 +97,6 @@ body.aface.login {
                     }
                     &:active {
                         background-color: $color-hc-orange;
-                    }
-                }
-
-                &.register {
-                    background-color: $color-hc-blue;
-                    border-bottom: solid 3px darken($color-hc-blue, 5%);
-
-                    &:hover {
-                        background-color: lighten($color-hc-blue, 5%);
-                    }
-                    &:active {
-                        background-color: $color-hc-blue;
                     }
                 }
             }

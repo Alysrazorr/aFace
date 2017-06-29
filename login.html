@@ -25,8 +25,7 @@
                 <input type="password" placeholder="密码" />
             </div>
             <div class="aface line">
-                <a class="aface button register" href="javascript:;">注册新用户</a>
-                <a class="aface button submit" href="javascript:;" style="margin-left: 6%;">登录平台</a>
+                <a class="aface button submit" href="javascript:;" onclick="login()">登&nbsp;录</a>
             </div>
             <a class="aface forget-password" href="javascript:;">忘记密码？</a>
         </div>
@@ -34,7 +33,10 @@
     </body>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="js/aface.base.js"></script>
+	<script src="js/aface.modal.js"></script>
 	<script type="text/javascript">
-        
+        function login() {
+            Aface.topLoader.show();
+        }
 	</script>
 </html>
