@@ -183,6 +183,7 @@ body.aface.login {
     margin: 0 auto;
     top: calc(40% - 130px);
     background-color: #fff;
+    padding-top: 20px;
     border-top: solid 5px #00c0dd;
     box-shadow: 0 2px 4px rgba(32, 35, 37, 0.8);
     border-radius: 3px; }
@@ -208,7 +209,7 @@ body.aface.login {
       z-index: -1; }
     body.aface.login > div.aface.login-window > div.aface.line {
       margin: 0 auto;
-      margin-top: 30px;
+      margin-top: 20px;
       width: calc(100% - 60px);
       height: 50px;
       border-radius: 3px; }

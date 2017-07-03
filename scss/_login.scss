@@ -14,6 +14,7 @@ body.aface.login {
         margin: 0 auto;
         top: calc(40% - 130px);
         background-color: $color-f;
+        padding-top: 20px;
 
         border-top: solid 5px $color-light-blue;
         box-shadow: 0 2px 4px rgba($color-steel-abyss, 0.8);
@@ -45,7 +46,7 @@ body.aface.login {
 
         &>div.aface.line {
             margin: 0 auto;
-            margin-top: 30px;
+            margin-top: 20px;
             width: calc(100% - 60px);
             height: 50px;
             border-radius: $radius;
