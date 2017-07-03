@@ -15,6 +15,7 @@
             this.loader.fadeOut(200);
         }
     });
+    
     var Aface = window.Aface || {};
     Aface.topLoader = new Loader();
     Aface.topLoader.init($(top.window.document.body));

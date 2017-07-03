@@ -91,7 +91,7 @@ body.aface.index {
     font-size: 0;
     height: 60px;
     background-color: #373d41;
-    box-shadow: 0 2px 1px rgba(55, 61, 65, 0.3); }
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3); }
     body.aface.index nav.aface.top-menu > img.aface.icon {
       margin: 0;
       padding: 0;
@@ -122,7 +122,7 @@ body.aface.index {
         position: absolute;
         display: none;
         background-color: #373d41;
-        box-shadow: 0 2px 1px rgba(55, 61, 65, 0.3); }
+        box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3); }
         body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-item {
           display: block;
           padding: 0 10px;
@@ -234,8 +234,8 @@ body.aface.login {
         width: calc(100% - 70px);
         height: 50px;
         padding: 0 10px;
-        font-size: 15px;
-        font-family: 'Consolas', '黑体';
+        font-size: 14px;
+        font-family: 'Consolas';
         background-color: #F2F2F2;
         border-top-right-radius: 3px;
         border-bottom-right-radius: 3px; }
@@ -248,8 +248,8 @@ body.aface.login {
         line-height: 50px;
         text-align: center;
         color: #fff;
-        font-size: 18px;
-        font-family: '黑体';
+        font-size: 20px;
+        font-weight: 400;
         transition: background-color 300ms; }
         body.aface.login > div.aface.login-window > div.aface.line > a.aface.button.submit {
           background-color: #F7A35C;
@@ -317,5 +317,69 @@ div.aface.loader-mask {
     background: linear-gradient(#F7A35C, #F7A35C) 0 50%, linear-gradient(#F7A35C, #F7A35C) 0.625em 50%, linear-gradient(#F7A35C, #F7A35C) 1.25em 50%, linear-gradient(#F7A35C, #F7A35C) 1.875em 50%, linear-gradient(#00c0dd, #00c0dd) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em; } }
+div.aface.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20000;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow-x: hidden;
+  overflow-y: auto; }
+  div.aface.modal-mask > div.aface.modal-window {
+    box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.6);
+    margin: auto auto;
+    z-index: 20001;
+    background-color: #fff; }
+    div.aface.modal-mask > div.aface.modal-window > div.aface.modal-title {
+      height: 40px;
+      line-height: 40px;
+      padding: 3px;
+      color: #fff;
+      background-color: #373d41; }
+      div.aface.modal-mask > div.aface.modal-window > div.aface.modal-title > span.aface.title {
+        display: block;
+        margin-left: 7px;
+        height: 34px;
+        line-height: 34px;
+        float: left; }
+      div.aface.modal-mask > div.aface.modal-window > div.aface.modal-title > i.fa {
+        display: block;
+        width: 40px;
+        height: 34px;
+        line-height: 34px;
+        float: right;
+        text-align: center;
+        cursor: pointer; }
+    div.aface.modal-mask > div.aface.modal-window > div.aface.modal-body {
+      height: calc(100% - 40px);
+      overflow: hidden; }
+
+div.aface.full-window-mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999999;
+  text-align: center; }
+  div.aface.full-window-mask.little-white {
+    background: rgba(255, 255, 255, 0.3); }
+  div.aface.full-window-mask.little-black {
+    background: rgba(0, 0, 0, 0.3); }
+
+div.aface.pop-message {
+  display: inline-block;
+  margin: 5%;
+  color: #fff;
+  font-size: 14px;
+  max-width: 22em;
+  text-align: left;
+  padding: 0.5em;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+  background-color: #6aa3d5;
+  color: #fff; }
 
 /*# sourceMappingURL=aface.css.map */

@@ -5,6 +5,11 @@
         <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/aface.css" />
         <title></title>
+        <style>
+            html, body {
+                height: 100%;
+            }
+        </style>
     </head>
     <body class="aface index">
         <nav class="aface top-menu">
@@ -55,6 +60,9 @@
                 </li>
             </ul>
         </nav>
+        <div class="aface full-window-mask">
+            <div class="aface pop-message">新增成功！新增成功！新增成功！新增成功！新增成功！</div>
+        </div>
     </body>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="js/aface.base.js"></script>
@@ -92,6 +100,10 @@
                     }, _transitionSpeed);
                 }
             });
+        });
+
+        $(function() {
+            $('div.aface.full-window-mask').fadeOut(1000);
         });
 	</script>
 </html>

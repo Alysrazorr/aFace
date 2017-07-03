@@ -57,186 +57,20 @@ div.aface {
 	}
 }
 
-$loader-size: 50px;
-$loader-core-size: 34px;	
-$loader-leaf-height: 40px;
-$loader-leaf-width: 8px;
-
-div.aface.loader-mask {
+div.aface.full-window-mask {
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background-color: rgba($color-0, 0.6);
-    z-index: 99999999;
+    z-index: 999999999;
+    text-align: center;
+
+    &.little-white {
+        background: rgba(255,255,255, 0.3);
+    }
     
-    &>div.aface.loader-container {
-        margin: auto;
-        width: $loader-size;
-        height: $loader-size;
-        background-color: $color-steel-abyss;
-        border-radius: 3px;
-
-        &>div.aface.loader {
-            position: relative;
-            width: $loader-size;
-            height: $loader-size;
-            -moz-animation: loader-rotate 1s infinite steps(1, start);
-            -webkit-animation: loader-rotate 1s infinite steps(1, start);
-            animation: loader-rotate 1s infinite steps(1, start);
-
-            &>span.aface {
-                position: absolute;
-
-                &.loader-core {
-                    z-index: 9999;
-                    width: $loader-core-size;
-                    height: $loader-core-size;
-                    display: block;
-                    top: ($loader-size - $loader-core-size) / 2;
-                    left: ($loader-size - $loader-core-size) / 2;
-                    border-radius: 9999px;
-                    background-color: $color-steel-abyss;
-                }
-                &.loader-leaf {
-                    @include border-box;
-                    z-index: 8888;
-                    width: $loader-leaf-width;
-                    height: $loader-leaf-height;
-                    top: ($loader-size - $loader-leaf-height) / 2;
-                    left: ($loader-size - $loader-leaf-width) / 2;
-                    border-top: solid $loader-leaf-height / 2 rgba($color-f, 0.6);
-                    border-bottom: solid $loader-leaf-height / 2 rgba($color-f, 0.1);
-
-                    &:nth-child(2) {
-                        @include rotate(36deg);
-                        border-top-color: rgba($color-f, 0.7);
-                        border-bottom-color: rgba($color-f, 0.2);
-                    }
-                    &:nth-child(3) {
-                        @include rotate(72deg);
-                        border-top-color: rgba($color-f, 0.8);
-                        border-bottom-color: rgba($color-f, 0.3);
-                    }
-                    &:nth-child(4) {
-                        @include rotate(108deg);
-                        border-top-color: rgba($color-f, 0.9);
-                        border-bottom-color: rgba($color-f, 0.4);
-                    }
-                    &:nth-child(5) {
-                        @include rotate(144deg);
-                        border-top-color: rgba($color-f, 1.0);
-                        border-bottom-color: rgba($color-f, 0.5);
-                    }
-                }
-            }
-        }
-    }
-}
-
-@-moz-keyframes loader-rotate {
-    0%{
-        -moz-transform: rotate(0deg);
-    }
-    10% {
-        -moz-transform: rotate(36deg);
-    }
-    20% {
-        -moz-transform: rotate(72deg);
-    }
-    30% {
-        -moz-transform: rotate(108deg);
-    }
-    40% {
-        -moz-transform: rotate(144deg);
-    }
-    50% {
-        -moz-transform: rotate(180deg);
-    }
-    60% {
-        -moz-transform: rotate(216deg);
-    }
-    70% {
-        -moz-transform: rotate(252deg);
-    }
-    80% {
-        -moz-transform: rotate(288deg);
-    }
-    90% {
-        -moz-transform: rotate(324deg);
-    }
-    100%{
-        -moz-transform: rotate(360deg);
-    }
-}
-@-webkit-keyframes loader-rotate {
-    0%{
-        -webkit-transform: rotate(0deg);
-    }
-    10% {
-        -webkit-transform: rotate(36deg);
-    }
-    20% {
-        -webkit-transform: rotate(72deg);
-    }
-    30% {
-        -webkit-transform: rotate(108deg);
-    }
-    40% {
-        -webkit-transform: rotate(144deg);
-    }
-    50% {
-        -webkit-transform: rotate(180deg);
-    }
-    60% {
-        -webkit-transform: rotate(216deg);
-    }
-    70% {
-        -webkit-transform: rotate(252deg);
-    }
-    80% {
-        -webkit-transform: rotate(288deg);
-    }
-    90% {
-        -webkit-transform: rotate(324deg);
-    }
-    100%{
-        -webkit-transform: rotate(360deg);
-    }
-}
-@keyframes loader-rotate {
-    0%{
-        transform: rotate(0deg);
-    }
-    10% {
-        transform: rotate(36deg);
-    }
-    20% {
-        transform: rotate(72deg);
-    }
-    30% {
-        transform: rotate(108deg);
-    }
-    40% {
-        transform: rotate(144deg);
-    }
-    50% {
-        transform: rotate(180deg);
-    }
-    60% {
-        transform: rotate(216deg);
-    }
-    70% {
-        transform: rotate(252deg);
-    }
-    80% {
-        transform: rotate(288deg);
-    }
-    90% {
-        transform: rotate(324deg);
-    }
-    100%{
-        transform: rotate(360deg);
+    &.little-black {
+        background: rgba(0,0,0, 0.3);
     }
 }

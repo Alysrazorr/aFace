@@ -1,7 +1,6 @@
 ﻿$top-menu-height: 60px;
 $drop-menu-item-height: 40px;
 $drop-menu-icon-height: 80px;
-$menu-shadow: 0 2px 1px rgba($color-steel, 0.3);
 
 body.aface.index {
     background-color: #D2D8DE;
@@ -14,7 +13,7 @@ body.aface.index {
         font-size: 0;
         height: $top-menu-height;
         background-color: $color-steel;
-        box-shadow: $menu-shadow;
+        @include box-shadow;
 
         &>img.aface.icon {
             @include zero;
@@ -48,7 +47,7 @@ body.aface.index {
                     position: absolute;
                     display: none;
                     background-color: $color-steel;
-                    box-shadow: $menu-shadow;
+                    @include box-shadow;
 
                     &>a.aface.menu-item {
                         display: block;
