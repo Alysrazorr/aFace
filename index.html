@@ -60,8 +60,11 @@
                 </li>
             </ul>
         </nav>
-        <div class="aface full-window-mask">
-            <div class="aface pop-message">新增成功！新增成功！新增成功！新增成功！新增成功！</div>
+        <div class="aface full-window-mask little-black">
+            <div class="aface pop-message">
+                <div class="aface pop-message-content">新增成功</div>
+                <a class="aface pop-message-times" href="javascript:;">X</a>
+            </div>
         </div>
     </body>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -103,7 +106,8 @@
         });
 
         $(function() {
-            $('div.aface.full-window-mask').fadeOut(1000);
+            // $('div.aface.full-window-mask').fadeOut(1000);
+            $('div.aface.pop-message').animate({ 'margin' : '6%'}, 300);
         });
 	</script>
 </html>

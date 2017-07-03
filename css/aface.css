@@ -372,15 +372,30 @@ div.aface.full-window-mask {
     background: rgba(0, 0, 0, 0.3); }
 
 div.aface.pop-message {
+  position: relative;
   display: inline-block;
   margin: 5%;
   color: #fff;
   font-size: 14px;
   max-width: 22em;
   text-align: left;
-  padding: 0.5em;
+  padding: 5px;
+  padding-right: 30px;
   box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
-  background-color: #6aa3d5;
+  background-color: #f4c37d;
   color: #fff; }
+  div.aface.pop-message > a.pop-message-times {
+    background-color: #f0ad4e; }
+  div.aface.pop-message > a.pop-message-times {
+    color: #fff; }
+  div.aface.pop-message > a.aface.pop-message-times {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    text-align: center;
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 5px; }
 
 /*# sourceMappingURL=aface.css.map */
