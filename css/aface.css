@@ -365,7 +365,8 @@ div.aface.full-window-mask {
   left: 0;
   right: 0;
   z-index: 999999999;
-  text-align: center; }
+  text-align: center;
+  display: none; }
   div.aface.full-window-mask.little-white {
     background: rgba(255, 255, 255, 0.3); }
   div.aface.full-window-mask.little-black {
@@ -374,9 +375,9 @@ div.aface.full-window-mask {
 div.aface.pop-message {
   position: relative;
   display: inline-block;
-  margin: 5%;
   color: #fff;
   font-size: 14px;
+  margin: 5%;
   width: 500px;
   height: 50px;
   line-height: 50px;

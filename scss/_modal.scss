@@ -65,6 +65,7 @@ div.aface.full-window-mask {
     right: 0;
     z-index: 999999999;
     text-align: center;
+    display: none;
 
     &.little-white {
         background: rgba(255,255,255, 0.3);

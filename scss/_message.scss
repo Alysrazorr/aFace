@@ -1,4 +1,5 @@
 ﻿$pop-message-height: 50px;
+$pop-message-width: 500px;
 
 @mixin pop-message-color($color) {
     background-color: $color;
@@ -13,13 +14,14 @@
 div.aface.pop-message {
     position: relative;
     display: inline-block;
-    margin: 5%;
     color: $color-f;
     font-size: 14px;
-    width: 500px;
+    margin: 5%;
+    width: $pop-message-width;
     height: $pop-message-height;
     line-height: $pop-message-height;
     text-align: left;
+
     @include pop-message-color($color-primary);
     @include box-shadow;
 
