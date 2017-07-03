@@ -91,7 +91,7 @@ body.aface.index {
     font-size: 0;
     height: 60px;
     background-color: #373d41;
-    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3); }
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.1); }
     body.aface.index nav.aface.top-menu > img.aface.icon {
       margin: 0;
       padding: 0;
@@ -122,7 +122,7 @@ body.aface.index {
         position: absolute;
         display: none;
         background-color: #373d41;
-        box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3); }
+        box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.1); }
         body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-item {
           display: block;
           padding: 0 10px;
@@ -377,40 +377,52 @@ div.aface.pop-message {
   margin: 5%;
   color: #fff;
   font-size: 14px;
-  max-width: 22em;
+  width: 500px;
+  height: 50px;
+  line-height: 50px;
   text-align: left;
-  padding: 5px;
-  padding-right: 30px;
-  font-weight: 900;
-  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
-  background-color: #6aa3d5;
-  color: #fff; }
-  div.aface.pop-message > a.pop-message-times {
-    background-color: #428bca; }
-  div.aface.pop-message > a.pop-message-times {
-    color: #fff; }
+  background-color: #428bca;
+  box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.1); }
+  div.aface.pop-message > div.aface.pop-message-icon {
+    background-color: #357ebd; }
+    div.aface.pop-message > div.aface.pop-message-icon > div.aface.pm-icon-mask {
+      background-color: #357ebd; }
   div.aface.pop-message.success {
-    background-color: #80c780;
-    color: #fff; }
-    div.aface.pop-message.success > a.pop-message-times {
-      background-color: #5cb85c; }
-    div.aface.pop-message.success > a.pop-message-times {
-      color: #fff; }
+    background-color: #5cb85c; }
+    div.aface.pop-message.success > div.aface.pop-message-icon {
+      background-color: #4cae4c; }
+      div.aface.pop-message.success > div.aface.pop-message-icon > div.aface.pm-icon-mask {
+        background-color: #4cae4c; }
   div.aface.pop-message.fatal {
-    background-color: #e27c79;
-    color: #fff; }
-    div.aface.pop-message.fatal > a.pop-message-times {
-      background-color: #d9534f; }
-    div.aface.pop-message.fatal > a.pop-message-times {
-      color: #fff; }
-  div.aface.pop-message > a.aface.pop-message-times {
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    line-height: 20px;
+    background-color: #d9534f; }
+    div.aface.pop-message.fatal > div.aface.pop-message-icon {
+      background-color: #d43f3a; }
+      div.aface.pop-message.fatal > div.aface.pop-message-icon > div.aface.pm-icon-mask {
+        background-color: #d43f3a; }
+  div.aface.pop-message.info {
+    background-color: #4e575d; }
+    div.aface.pop-message.info > div.aface.pop-message-icon {
+      background-color: #434a4f; }
+      div.aface.pop-message.info > div.aface.pop-message-icon > div.aface.pm-icon-mask {
+        background-color: #434a4f; }
+  div.aface.pop-message > div.aface.pop-message-icon {
+    position: relative;
+    float: left;
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
     text-align: center;
-    position: absolute;
-    top: calc(50% - 10px);
-    right: 5px; }
+    overflow: hidden; }
+    div.aface.pop-message > div.aface.pop-message-icon > i.fa {
+      display: block;
+      height: 50px;
+      line-height: 50px;
+      font-size: 20px; }
+  div.aface.pop-message > div.aface.pop-message-content {
+    float: left;
+    width: calc(100% - 80px);
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px; }
 
 /*# sourceMappingURL=aface.css.map */

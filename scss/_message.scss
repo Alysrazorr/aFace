@@ -1,36 +1,27 @@
-﻿@mixin pop-message-color($color) {
-    background-color: lighten($color, 10%);
-    &>a.pop-message-times {
-        background-color: $color;
-    }
-    @if (lightness($color) > 65%) {
-        color: darken($color, 20%);
-        
-        &>a.pop-message-times {
-            color: darken($color, 20%);
-        }
-    } @else {
-        color: $color-f;
-        
-        &>a.pop-message-times {
-            color: $color-f;
+﻿$pop-message-height: 50px;
+
+@mixin pop-message-color($color) {
+    background-color: $color;
+    &>div.aface.pop-message-icon {
+        background-color: darken($color, 5%);
+        &>div.aface.pm-icon-mask {
+            background-color: darken($color, 5%);
         }
     }
 }
+
 div.aface.pop-message {
     position: relative;
     display: inline-block;
     margin: 5%;
     color: $color-f;
     font-size: 14px;
-    max-width: 22em;
+    width: 500px;
+    height: $pop-message-height;
+    line-height: $pop-message-height;
     text-align: left;
-    padding: 5px;
-    padding-right: 30px;
-    font-weight: 900;
-
-    @include box-shadow;
     @include pop-message-color($color-primary);
+    @include box-shadow;
 
     &.success {
         @include pop-message-color($color-success);
@@ -38,15 +29,31 @@ div.aface.pop-message {
     &.fatal {
         @include pop-message-color($color-danger);
     }
+    &.info {
+        @include pop-message-color($color-steel-hover);
+    }
 
-    &>a.aface.pop-message-times {
-        display: inline-block;
-        height: 20px;
-        width: 20px;
-        line-height: 20px;
+    &>div.aface.pop-message-icon {
+        position: relative;
+        float: left;
+        width: 80px;
+        height: $pop-message-height;
+        line-height: $pop-message-height;
         text-align: center;
-        position: absolute;
-        top: calc(50% - 10px);
-        right: 5px;
+        overflow: hidden;
+        &>i.fa {
+            display: block;
+            height: $pop-message-height;
+            line-height: $pop-message-height;
+            font-size: 20px;
+        }
+    }
+
+    &>div.aface.pop-message-content {
+        float: left;
+        width: calc(100% - 80px);
+        height: $pop-message-height;
+        line-height: $pop-message-height;
+        padding: 0 10px;
     }
 }
