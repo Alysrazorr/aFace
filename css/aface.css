@@ -381,13 +381,28 @@ div.aface.pop-message {
   text-align: left;
   padding: 5px;
   padding-right: 30px;
+  font-weight: 900;
   box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
-  background-color: #f4c37d;
+  background-color: #6aa3d5;
   color: #fff; }
   div.aface.pop-message > a.pop-message-times {
-    background-color: #f0ad4e; }
+    background-color: #428bca; }
   div.aface.pop-message > a.pop-message-times {
     color: #fff; }
+  div.aface.pop-message.success {
+    background-color: #80c780;
+    color: #fff; }
+    div.aface.pop-message.success > a.pop-message-times {
+      background-color: #5cb85c; }
+    div.aface.pop-message.success > a.pop-message-times {
+      color: #fff; }
+  div.aface.pop-message.fatal {
+    background-color: #e27c79;
+    color: #fff; }
+    div.aface.pop-message.fatal > a.pop-message-times {
+      background-color: #d9534f; }
+    div.aface.pop-message.fatal > a.pop-message-times {
+      color: #fff; }
   div.aface.pop-message > a.aface.pop-message-times {
     display: inline-block;
     height: 20px;
@@ -396,6 +411,7 @@ div.aface.pop-message {
     text-align: center;
     position: absolute;
     top: calc(50% - 10px);
-    right: 5px; }
+    right: 5px;
+    border-radius: 9999px; }
 
 /*# sourceMappingURL=aface.css.map */

@@ -27,9 +27,17 @@ div.aface.pop-message {
     text-align: left;
     padding: 5px;
     padding-right: 30px;
+    font-weight: 900;
 
     @include box-shadow;
-    @include pop-message-color($color-warning);
+    @include pop-message-color($color-primary);
+
+    &.success {
+        @include pop-message-color($color-success);
+    }
+    &.fatal {
+        @include pop-message-color($color-danger);
+    }
 
     &>a.aface.pop-message-times {
         display: inline-block;
@@ -40,5 +48,6 @@ div.aface.pop-message {
         position: absolute;
         top: calc(50% - 10px);
         right: 5px;
+        border-radius: 9999px;
     }
 }
