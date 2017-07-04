@@ -1,52 +1,42 @@
-div.aface.loader-mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 999999999;
-    background-color: rgba($color-f, 0.2);
-
-    div.aface.loader {
-        position: absolute;
-        top: calc(50% - 1em);
-        left: calc(50% - 1.5em);
-        width: 3em;
-        height: 2em;
-        background: linear-gradient($color-hc-orange, $color-hc-orange) 0 50%,
-                    linear-gradient($color-hc-orange, $color-hc-orange) 0.625em 50%,
-                    linear-gradient($color-hc-orange, $color-hc-orange) 1.25em 50%,
-                    linear-gradient($color-hc-orange, $color-hc-orange) 1.875em 50%,
-                    linear-gradient($color-hc-orange, $color-hc-orange) 2.5em 50%;
-        background-repeat: no-repeat;
-        background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
-        animation: audioWave 1.5s linear infinite;
-    }
-}
+  div.aface.loader {
+      position: absolute;
+      top: calc(50% - 1em);
+      left: calc(50% - 1.5em);
+      width: 3em;
+      height: 2em;
+      background: linear-gradient($color-primary, $color-primary) 0 50%,
+                  linear-gradient($color-primary, $color-primary) 0.625em 50%,
+                  linear-gradient($color-primary, $color-primary) 1.25em 50%,
+                  linear-gradient($color-primary, $color-primary) 1.875em 50%,
+                  linear-gradient($color-primary, $color-primary) 2.5em 50%;
+      background-repeat: no-repeat;
+      background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
+      animation: audioWave 1.5s linear infinite;
+  }
 
 @keyframes audioWave {
   25% {
-    background: linear-gradient($color-light-blue, $color-light-blue) 0 50%, linear-gradient($color-hc-orange, $color-hc-orange) 0.625em 50%, linear-gradient($color-hc-orange, $color-hc-orange) 1.25em 50%, linear-gradient($color-hc-orange, $color-hc-orange) 1.875em 50%, linear-gradient($color-hc-orange, $color-hc-orange) 2.5em 50%;
+    background: linear-gradient($color-light-blue, $color-light-blue) 0 50%, linear-gradient($color-primary, $color-primary) 0.625em 50%, linear-gradient($color-primary, $color-primary) 1.25em 50%, linear-gradient($color-primary, $color-primary) 1.875em 50%, linear-gradient($color-primary, $color-primary) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
   }
   37.5% {
-    background: linear-gradient($color-hc-orange, $color-hc-orange) 0 50%, linear-gradient($color-light-blue, $color-light-blue) 0.625em 50%, linear-gradient($color-hc-orange, $color-hc-orange) 1.25em 50%, linear-gradient($color-hc-orange, $color-hc-orange) 1.875em 50%, linear-gradient($color-hc-orange, $color-hc-orange) 2.5em 50%;
+    background: linear-gradient($color-primary, $color-primary) 0 50%, linear-gradient($color-light-blue, $color-light-blue) 0.625em 50%, linear-gradient($color-primary, $color-primary) 1.25em 50%, linear-gradient($color-primary, $color-primary) 1.875em 50%, linear-gradient($color-primary, $color-primary) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
   }
   50% {
-    background: linear-gradient($color-hc-orange, $color-hc-orange) 0 50%, linear-gradient($color-hc-orange, $color-hc-orange) 0.625em 50%, linear-gradient($color-light-blue, $color-light-blue) 1.25em 50%, linear-gradient($color-hc-orange, $color-hc-orange) 1.875em 50%, linear-gradient($color-hc-orange, $color-hc-orange) 2.5em 50%;
+    background: linear-gradient($color-primary, $color-primary) 0 50%, linear-gradient($color-primary, $color-primary) 0.625em 50%, linear-gradient($color-light-blue, $color-light-blue) 1.25em 50%, linear-gradient($color-primary, $color-primary) 1.875em 50%, linear-gradient($color-primary, $color-primary) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em;
   }
   62.5% {
-    background: linear-gradient($color-hc-orange, $color-hc-orange) 0 50%, linear-gradient($color-hc-orange, $color-hc-orange) 0.625em 50%, linear-gradient($color-hc-orange, $color-hc-orange) 1.25em 50%, linear-gradient($color-light-blue, $color-light-blue) 1.875em 50%, linear-gradient($color-hc-orange, $color-hc-orange) 2.5em 50%;
+    background: linear-gradient($color-primary, $color-primary) 0 50%, linear-gradient($color-primary, $color-primary) 0.625em 50%, linear-gradient($color-primary, $color-primary) 1.25em 50%, linear-gradient($color-light-blue, $color-light-blue) 1.875em 50%, linear-gradient($color-primary, $color-primary) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em;
   }
   75% {
-    background: linear-gradient($color-hc-orange, $color-hc-orange) 0 50%, linear-gradient($color-hc-orange, $color-hc-orange) 0.625em 50%, linear-gradient($color-hc-orange, $color-hc-orange) 1.25em 50%, linear-gradient($color-hc-orange, $color-hc-orange) 1.875em 50%, linear-gradient($color-light-blue, $color-light-blue) 2.5em 50%;
+    background: linear-gradient($color-primary, $color-primary) 0 50%, linear-gradient($color-primary, $color-primary) 0.625em 50%, linear-gradient($color-primary, $color-primary) 1.25em 50%, linear-gradient($color-primary, $color-primary) 1.875em 50%, linear-gradient($color-light-blue, $color-light-blue) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em;
   }

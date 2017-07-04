@@ -37,3 +37,5 @@ UUID.generate = function() {
         return o;
     };
 })(jQuery);
+
+var Aface = window.Aface || {};
