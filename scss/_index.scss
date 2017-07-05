@@ -1,9 +1,11 @@
 ﻿$top-menu-height: 60px;
 $drop-menu-item-height: 40px;
+$drop-menu-item-height-small: 30px;
 $drop-menu-icon-height: 80px;
 
 body.aface.index {
     background-color: #D2D8DE;
+    overflow: hidden;
 
     nav.aface.top-menu {
         position: fixed;
@@ -13,6 +15,7 @@ body.aface.index {
         font-size: 0;
         height: $top-menu-height;
         background-color: $color-steel;
+        z-index: 9999;
         @include box-shadow;
 
         &>img.aface.icon {
@@ -51,7 +54,7 @@ body.aface.index {
 
                     &>a.aface.menu-item {
                         display: block;
-                        padding: 0 10px;
+                        padding: 0 15px;
                         font-size: 13px;
                         color: $color-f;
                         height: $drop-menu-item-height;
@@ -118,5 +121,60 @@ body.aface.index {
                 background-color: $color-light-blue;
             }
         }
-    }
+        div.drop-menu {
+            height: $top-menu-height;
+            line-height: $top-menu-height;
+
+            &:hover {
+                &>a.aface.title {
+                    color: $color-steel;
+                }
+                &>div.aface.content {
+                    display: block;
+                }
+                background-color: $color-f;
+            }
+
+            &>a.aface.title {
+                display: block;
+                height: $top-menu-height;
+                line-height: $top-menu-height;
+                font-size: 14px;
+                color: $color-f;
+                padding: 0 10px;
+            }
+            &>div.aface.content {
+                @include box-shadow;
+                background-color: $color-f;
+                padding: 4px 0;
+                display: none;
+                &>a.aface.menu-item {
+                    font-size: 13px;
+                    display: block;
+                    color: $color-steel;
+                    height: $drop-menu-item-height-small;
+                    line-height: $drop-menu-item-height-small;
+                    padding: 0 10px;
+
+                    &:hover {
+                        color: $color-f;
+                        background-color: $color-light-blue;
+                    }
+                }
+            }
+        }
+    } // end of nav.aface.top-menu
+
+    &>div.aface.root-frame-container {
+        position: absolute;
+        top: $top-menu-height;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        &>iframe.aface.root-frame {
+            @include zero;
+            height: 100%;
+            width: 100%;
+        }
+    } // end of div.aface.root-frame-container
 }
