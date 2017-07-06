@@ -6,6 +6,13 @@ div.aface.datatable-container {
     &>table.aface.datatable {
         border-spacing: 0;
         width: 100%;
+        i.fa.checkbox {
+            display: block;
+            height: $checkbox-dimension;
+            line-height: $checkbox-dimension;
+            width: $checkbox-dimension;
+            text-align: center;
+        }
         &>thead {
             &>tr {
                 &>th.aface.header {
@@ -14,7 +21,12 @@ div.aface.datatable-container {
                         width: $checkbox-dimension;
                         height: $checkbox-dimension;
                         line-height: $checkbox-dimension;
+                        padding: 0;
                     }
+                    text-align: left;
+                    box-sizing: content-box;
+                    padding-right: 10px;
+                    font-size: 15px;
                     border-bottom: solid 2px lighten($color-steel-thin, 25%);
                 }
             }
@@ -27,9 +39,52 @@ div.aface.datatable-container {
                         width: $checkbox-dimension;
                         height: $checkbox-dimension;
                         line-height: $checkbox-dimension;
+                        padding: 0;
                     }
-                    padding: 0 10px;
-                    border-bottom: solid 0.5px lighten($color-steel-thin, 30%);
+                    box-sizing: content-box;
+                    padding-right: 10px;
+                    border-bottom: solid 1px lighten($color-steel-thin, 30%);
+                    word-break: break-word;
+                    font-size: 13px;
+
+                    &.ellipsis {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+
+                &:last-child {
+                    &>td.aface.content {
+                        border-bottom: solid 2px lighten($color-steel-thin, 25%);
+                    }
+                }
+
+                &:nth-child(odd) {
+                    background-color: #F6F6FA;
+                }
+
+                &:hover {
+                    background-color: rgba(lighten($color-light-blue, 50%), 0.5);
+                }
+            }
+        }
+
+        &>tfoot {
+            &>tr {
+                &>td {
+                    @include zero;
+                    height: $datatable-line-height;
+                    &>button.aface.button {
+                        margin-left: 2px;
+                        float: left;
+                        width: 36px;
+                        height: 36px;
+                        line-height: 36px;
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                    }
                 }
             }
         }

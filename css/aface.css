@@ -467,20 +467,126 @@ div.aface.pop-message {
 div.aface.datatable-container > table.aface.datatable {
   border-spacing: 0;
   width: 100%; }
+  div.aface.datatable-container > table.aface.datatable i.fa.checkbox {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center; }
   div.aface.datatable-container > table.aface.datatable > thead > tr > th.aface.header {
+    text-align: left;
+    box-sizing: content-box;
+    padding-right: 10px;
+    font-size: 15px;
     border-bottom: solid 2px #a8b0b5; }
     div.aface.datatable-container > table.aface.datatable > thead > tr > th.aface.header.checkbox {
       text-align: center;
       width: 40px;
       height: 40px;
-      line-height: 40px; }
+      line-height: 40px;
+      padding: 0; }
   div.aface.datatable-container > table.aface.datatable > tbody > tr > td.aface.content {
-    padding: 0 10px;
-    border-bottom: solid 0.5px #b6bdc1; }
+    box-sizing: content-box;
+    padding-right: 10px;
+    border-bottom: solid 1px #b6bdc1;
+    word-break: break-word;
+    font-size: 13px; }
     div.aface.datatable-container > table.aface.datatable > tbody > tr > td.aface.content.checkbox {
       text-align: center;
       width: 40px;
       height: 40px;
-      line-height: 40px; }
+      line-height: 40px;
+      padding: 0; }
+    div.aface.datatable-container > table.aface.datatable > tbody > tr > td.aface.content.ellipsis {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+  div.aface.datatable-container > table.aface.datatable > tbody > tr:last-child > td.aface.content {
+    border-bottom: solid 2px #a8b0b5; }
+  div.aface.datatable-container > table.aface.datatable > tbody > tr:nth-child(odd) {
+    background-color: #F6F6FA; }
+  div.aface.datatable-container > table.aface.datatable > tbody > tr:hover {
+    background-color: rgba(221, 251, 255, 0.5); }
+  div.aface.datatable-container > table.aface.datatable > tfoot > tr > td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    text-decoration: none;
+    height: 40px; }
+    div.aface.datatable-container > table.aface.datatable > tfoot > tr > td > button.aface.button {
+      margin-left: 2px;
+      float: left;
+      width: 36px;
+      height: 36px;
+      line-height: 36px; }
+      div.aface.datatable-container > table.aface.datatable > tfoot > tr > td > button.aface.button:first-child {
+        margin-left: 0; }
+
+button.aface.button {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 12px;
+  background-color: #fff;
+  border: solid 1px #ddd; }
+  button.aface.button:hover, button.aface.button:active {
+    border-color: #bbb; }
+  button.aface.button.primary {
+    border-color: #428bca;
+    background-color: #428bca;
+    color: #fff; }
+    button.aface.button.primary:hover {
+      border-color: #5697d0;
+      background-color: #5697d0; }
+    button.aface.button.primary:active {
+      border-color: #357ebd;
+      background-color: #357ebd; }
+  button.aface.button.success {
+    border-color: #5cb85c;
+    background-color: #5cb85c;
+    color: #fff; }
+    button.aface.button.success:hover {
+      border-color: #6ec06e;
+      background-color: #6ec06e; }
+    button.aface.button.success:active {
+      border-color: #4cae4c;
+      background-color: #4cae4c; }
+  button.aface.button.info {
+    border-color: #5bc0de;
+    background-color: #5bc0de;
+    color: #fff; }
+    button.aface.button.info:hover {
+      border-color: #70c8e2;
+      background-color: #70c8e2; }
+    button.aface.button.info:active {
+      border-color: #46b8da;
+      background-color: #46b8da; }
+  button.aface.button.warning {
+    border-color: #f0ad4e;
+    background-color: #f0ad4e;
+    color: #fff; }
+    button.aface.button.warning:hover {
+      border-color: #f2b866;
+      background-color: #f2b866; }
+    button.aface.button.warning:active {
+      border-color: #eea236;
+      background-color: #eea236; }
+  button.aface.button.danger {
+    border-color: #d9534f;
+    background-color: #d9534f;
+    color: #fff; }
+    button.aface.button.danger:hover {
+      border-color: #de6764;
+      background-color: #de6764; }
+    button.aface.button.danger:active {
+      border-color: #d43f3a;
+      background-color: #d43f3a; }
+  button.aface.button.pressed {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    border: 0;
+    background-color: #ddd; }
 
 /*# sourceMappingURL=aface.css.map */
