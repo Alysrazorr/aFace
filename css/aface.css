@@ -464,35 +464,23 @@ div.aface.pop-message {
     line-height: 50px;
     padding: 0 20px; }
 
-div.aface.datatable-container > ul.aface.datatable-header-list {
-  height: 40px; }
-  div.aface.datatable-container > ul.aface.datatable-header-list > li.aface.datatable-header-container {
-    float: left;
-    list-style-type: none;
-    display: block;
-    height: 40px;
-    line-height: 40px;
-    border-bottom: solid 2px #9aa4aa; }
-    div.aface.datatable-container > ul.aface.datatable-header-list > li.aface.datatable-header-container.checkbox {
-      text-align: center; }
-div.aface.datatable-container > ul.aface.datatable-checkbox-list {
-  float: left;
-  width: 40px;
-  height: 100%; }
-  div.aface.datatable-container > ul.aface.datatable-checkbox-list > li.aface.datatable-checkbox-container {
-    list-style-type: none;
-    float: left;
-    display: block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    border-bottom: solid 0.5px #b6bdc1; }
 div.aface.datatable-container > table.aface.datatable {
-  border-spacing: 0; }
-  div.aface.datatable-container > table.aface.datatable > tbody > tr {
-    height: 40px; }
-    div.aface.datatable-container > table.aface.datatable > tbody > tr > td {
-      border-bottom: solid 0.5px #b6bdc1; }
+  border-spacing: 0;
+  width: 100%; }
+  div.aface.datatable-container > table.aface.datatable > thead > tr > th.aface.header {
+    border-bottom: solid 2px #a8b0b5; }
+    div.aface.datatable-container > table.aface.datatable > thead > tr > th.aface.header.checkbox {
+      text-align: center;
+      width: 40px;
+      height: 40px;
+      line-height: 40px; }
+  div.aface.datatable-container > table.aface.datatable > tbody > tr > td.aface.content {
+    padding: 0 10px;
+    border-bottom: solid 0.5px #b6bdc1; }
+    div.aface.datatable-container > table.aface.datatable > tbody > tr > td.aface.content.checkbox {
+      text-align: center;
+      width: 40px;
+      height: 40px;
+      line-height: 40px; }
 
 /*# sourceMappingURL=aface.css.map */

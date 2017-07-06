@@ -3,43 +3,32 @@ $datatable-header-height: $datatable-line-height;
 $checkbox-dimension: $datatable-line-height;
 
 div.aface.datatable-container {
-    &>ul.aface.datatable-header-list {
-        height: $datatable-header-height;
-        &>li.aface.datatable-header-container {
-            float: left;
-            list-style-type: none;
-            display: block;
-            height: $checkbox-dimension;
-            line-height: $checkbox-dimension;
-            border-bottom: solid 2px lighten($color-steel-thin, 20%);
-
-            &.checkbox {
-                text-align: center;
-            }
-        }
-    }
-    &>ul.aface.datatable-checkbox-list {
-        float: left;
-        width: $checkbox-dimension;
-        height: 100%;
-
-        &>li.aface.datatable-checkbox-container {
-            list-style-type: none;
-            float: left;
-            display: block;
-            width: $checkbox-dimension;
-            height: $checkbox-dimension;
-            line-height: $checkbox-dimension;
-            text-align: center;
-            border-bottom: solid 0.5px lighten($color-steel-thin, 30%);
-        }
-    }
     &>table.aface.datatable {
         border-spacing: 0;
+        width: 100%;
+        &>thead {
+            &>tr {
+                &>th.aface.header {
+                    &.checkbox {
+                        text-align: center;
+                        width: $checkbox-dimension;
+                        height: $checkbox-dimension;
+                        line-height: $checkbox-dimension;
+                    }
+                    border-bottom: solid 2px lighten($color-steel-thin, 25%);
+                }
+            }
+        }
         &>tbody {
             &>tr {
-                height: $datatable-line-height;
-                &>td {
+                &>td.aface.content {
+                    &.checkbox {
+                        text-align: center;
+                        width: $checkbox-dimension;
+                        height: $checkbox-dimension;
+                        line-height: $checkbox-dimension;
+                    }
+                    padding: 0 10px;
                     border-bottom: solid 0.5px lighten($color-steel-thin, 30%);
                 }
             }
