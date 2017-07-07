@@ -116,3 +116,31 @@
         Aface.topPopMessage.show(type, message);
     }
 })(jQuery);
+
+(function($) {
+    var List = Clazz.create({
+        dom : null,
+        json : {},
+        init : function() {
+
+        },
+        loadRemote : function() {
+
+        },
+        __defaults : {
+
+        }
+    });
+
+    $.fn.list = function(options) {
+        var thiz = $(this);
+        var obj = thiz.data('tar.popMessage');
+        if (!obj) {
+            obj = new PopMessage();
+            obj.dom = thiz;
+            obj.init(options);
+            thiz.data('tar.popMessage', obj);
+        }
+        return obj;
+    }
+})(jQuery);

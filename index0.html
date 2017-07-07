@@ -19,60 +19,65 @@
             <table class="aface datatable">
                 <colgroup>
                     <col style="width: 0%;"></col>
-                    <col style="width: 200px;"></col>
-                    <col style="width: 150px;"></col>
-                    <col style="width: 100%;"></col>
+                    <col style="width: 90%"></col>
+                    <col style="width: 10%"></col>
+                    <!--<col style="width: 100%;"></col>-->
                 </colgroup>
                 <thead>
                     <tr>
-                        <th class="aface header checkbox"><i class="fa fa-square-o checkbox"></i></th>
+                        <th class="aface header"><input type="checkbox" /></th>
                         <th class="aface header"><div style="width: 180px; max-width: 180px;">Header</div></th>
                         <th class="aface header"><div style="width: 180px; max-width: 180px;">Header</div></th>
-                        <th class="aface header"></th>
+                        <!--<th class="aface header"></th>-->
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="aface content checkbox"><i class="fa fa-square-o checkbox"></i></td>
+                        <td class="aface content"><input type="checkbox" /></td>
                         <td class="aface content ellipsis"style="width: 180px; max-width: 180px;">qweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqwe</td>
                         <td class="aface content ellipsis"style="width: 180px; max-width: 180px;">中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文</td>
-                        <td class="aface content"></td>
+                        <!--<td class="aface content"></td>-->
                     </tr>
                     <tr>
-                        <td class="aface content checkbox"><i class="fa fa-square-o checkbox"></i></td>
+                        <td class="aface content"><input type="checkbox" /></td>
                         <td class="aface content ellipsis"style="width: 180px; max-width: 180px;">qweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqwe</td>
                         <td class="aface content ellipsis"style="width: 180px; max-width: 180px;">中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文</td>
-                        <td class="aface content"></td>
+                        <!--<td class="aface content"></td>-->
                     </tr>
                     <tr>
-                        <td class="aface content checkbox"><i class="fa fa-square-o checkbox"></i></td>
+                        <td class="aface content"><input type="checkbox" /></td>
                         <td class="aface content ellipsis"style="width: 180px; max-width: 180px;">qweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqwe</td>
                         <td class="aface content ellipsis"style="width: 180px; max-width: 180px;">中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文</td>
-                        <td class="aface content"></td>
+                        <!--<td class="aface content"></td>-->
                     </tr>
                     <tr>
-                        <td class="aface content checkbox"><i class="fa fa-square-o checkbox"></i></td>
+                        <td class="aface content"><input type="checkbox" /></td>
                         <td class="aface content ellipsis"style="width: 180px; max-width: 180px;">qweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqwe</td>
                         <td class="aface content ellipsis"style="width: 180px; max-width: 180px;">中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文</td>
-                        <td class="aface content"></td>
+                        <!--<td class="aface content"></td>-->
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="4">
-                            <!--<button class="aface button primary"><i class="fa fa-step-backward"></i></button>
-                            <button class="aface button primary"><i class="fa fa-chevron-left"></i></button>
-                            <button class="aface button primary"><i class="fa fa-chevron-right"></i></button>
-                            <button class="aface button primary"><i class="fa fa-step-forward"></i></button>-->
-                            <button class="aface button primary"><i class="fa fa-angle-double-left"></i></button>
-                            <button class="aface button primary"><i class="fa fa-angle-left"></i></button>
-                            <button class="aface button pressed">1</button>
-                            <button class="aface button primary">2</button>
-                            <button class="aface button primary">3</button>
-                            <button class="aface button primary">4</button>
-                            <button class="aface button primary">5</button>
-                            <button class="aface button primary"><i class="fa fa-angle-right"></i></button>
-                            <button class="aface button primary"><i class="fa fa-angle-double-right"></i></button>
+                        <td colspan="3">
+                            <select class="aface pagination">
+                                <option>10</option>
+                                <option>20</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                            <span class="aface pagination">条&nbsp;/&nbsp;页，当前第&nbsp;1&nbsp;-&nbsp;20&nbsp;条，共&nbsp;1000&nbsp;条数据</span>
+                            <div class="aface pagination">
+                                <a class="aface pagination" href="javascript:;"><i class="fa fa-angle-double-left"></i></a>
+                                <a class="aface pagination" href="javascript:;"><i class="fa fa-angle-left"></i></a>
+                                <a class="aface pagination" href="javascript:;">1</a>
+                                <a class="aface pagination" href="javascript:;">2</a>
+                                <a class="aface pagination" href="javascript:;">3</a>
+                                <a class="aface pagination" href="javascript:;">4</a>
+                                <a class="aface pagination" href="javascript:;">5</a>
+                                <a class="aface pagination" href="javascript:;"><i class="fa fa-angle-right"></i></a>
+                                <a class="aface pagination" href="javascript:;"><i class="fa fa-angle-double-right"></i></a>
+                            </div>
                         </td>
                     </tr>
                 </tfoot>

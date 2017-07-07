@@ -1,51 +1,40 @@
 $datatable-line-height: 40px;
 $datatable-header-height: $datatable-line-height;
-$checkbox-dimension: $datatable-line-height;
+$datatable-border-color: lighten($color-steel-thin, 45%);
+$datatable-header-bg-color: lighten($color-steel-thin, 52.5%);
+$datatable-checkbox-height: 14px;
+$datatable-pagination-item-height: 32px;
 
 div.aface.datatable-container {
     &>table.aface.datatable {
-        border-spacing: 0;
+        background-color: $datatable-border-color;
+        border-spacing: 1px;
         width: 100%;
-        i.fa.checkbox {
+
+        input[type="checkbox"] {
             display: block;
-            height: $checkbox-dimension;
-            line-height: $checkbox-dimension;
-            width: $checkbox-dimension;
+            height: $datatable-checkbox-height;
+            line-height: $datatable-checkbox-height;
+            width: $datatable-checkbox-height;
             text-align: center;
         }
         &>thead {
             &>tr {
                 &>th.aface.header {
-                    &.checkbox {
-                        text-align: center;
-                        width: $checkbox-dimension;
-                        height: $checkbox-dimension;
-                        line-height: $checkbox-dimension;
-                        padding: 0;
-                    }
                     text-align: left;
-                    box-sizing: content-box;
-                    padding-right: 10px;
+                    padding: 10px;
                     font-size: 15px;
-                    border-bottom: solid 2px lighten($color-steel-thin, 25%);
+                    background-color: $datatable-header-bg-color;
                 }
             }
         }
         &>tbody {
             &>tr {
                 &>td.aface.content {
-                    &.checkbox {
-                        text-align: center;
-                        width: $checkbox-dimension;
-                        height: $checkbox-dimension;
-                        line-height: $checkbox-dimension;
-                        padding: 0;
-                    }
-                    box-sizing: content-box;
-                    padding-right: 10px;
-                    border-bottom: solid 1px lighten($color-steel-thin, 30%);
+                    padding: 10px;
                     word-break: break-word;
                     font-size: 13px;
+                    background-color: $color-f;
 
                     &.ellipsis {
                         white-space: nowrap;
@@ -54,18 +43,10 @@ div.aface.datatable-container {
                     }
                 }
 
-                &:last-child {
-                    &>td.aface.content {
-                        border-bottom: solid 2px lighten($color-steel-thin, 25%);
-                    }
-                }
-
-                &:nth-child(odd) {
-                    background-color: #F6F6FA;
-                }
-
                 &:hover {
-                    background-color: rgba(lighten($color-light-blue, 50%), 0.5);
+                    &>td {
+                        background-color: $datatable-header-bg-color !important;
+                    }
                 }
             }
         }
@@ -75,15 +56,49 @@ div.aface.datatable-container {
                 &>td {
                     @include zero;
                     height: $datatable-line-height;
-                    &>button.aface.button {
-                        margin-left: 2px;
-                        float: left;
-                        width: 36px;
-                        height: 36px;
-                        line-height: 36px;
-                        &:first-child {
-                            margin-left: 0;
+                    background-color: $color-f;
+                    &>div.aface.pagination {
+                        float: right;
+                        margin-right: 5px;
+                        &>a.aface.pagination {
+                            display: block;
+                            float: left;
+                            text-align: center;
+                            width: $datatable-pagination-item-height;
+                            height: $datatable-pagination-item-height;
+                            line-height: $datatable-pagination-item-height;
+                            font-size: 13px;
+                            color: $color-steel;
+
+                            &:hover, &.active {
+                                color: $color-f;
+                                background-color: $color-steel;
+                            }
+                            &>i.fa {
+                                font-size: 18px;
+                                width: $datatable-pagination-item-height;
+                                height: $datatable-pagination-item-height;
+                                line-height: $datatable-pagination-item-height;
+                                text-align: center;
+                            }
                         }
+                    }
+                    &>span.aface.pagination {
+                        display: block;
+                        float: left;
+                        height: $datatable-pagination-item-height;
+                        line-height: $datatable-pagination-item-height;
+                        margin-left: 5px;
+                        font-size: 12px;
+                    }
+                    &>select.aface.pagination {
+                        @include border-box;
+                        outline: none;
+                        margin-left: 5px;
+                        float: left;
+                        height: $datatable-pagination-item-height;
+                        line-height: $datatable-pagination-item-height;
+                        border: solid 1px $datatable-border-color;
                     }
                 }
             }
