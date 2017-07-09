@@ -91,8 +91,7 @@ body.aface.index {
     font-size: 0;
     height: 60px;
     background-color: #373d41;
-    z-index: 9999;
-    box-shadow: 0 2px 2px rgba(32, 35, 37, 0.4); }
+    z-index: 9999; }
     body.aface.index nav.aface.top-menu > img.aface.icon {
       margin: 0;
       padding: 0;
@@ -579,5 +578,8 @@ button.aface.button {
       background-color: #de6764; }
     button.aface.button.danger:active {
       background-color: #d43f3a; }
+
+div.aface.panel {
+  border: solid 1px #dfe2e4; }
 
 /*# sourceMappingURL=aface.css.map */

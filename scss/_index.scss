@@ -15,7 +15,6 @@ body.aface.index {
         height: $top-menu-height;
         background-color: $color-steel;
         z-index: 9999;
-        @include box-shadow;
 
         &>img.aface.icon {
             @include zero;
