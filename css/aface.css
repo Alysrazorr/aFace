@@ -502,10 +502,11 @@ div.aface.datatable-container > table.aface.datatable {
       div.aface.datatable-container > table.aface.datatable > tfoot > tr > td > div.aface.pagination > a.aface.pagination {
         display: block;
         float: left;
+        margin-left: 5px;
         text-align: center;
-        width: 32px;
-        height: 32px;
-        line-height: 32px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
         font-size: 13px;
         color: #373d41; }
         div.aface.datatable-container > table.aface.datatable > tfoot > tr > td > div.aface.pagination > a.aface.pagination:hover, div.aface.datatable-container > table.aface.datatable > tfoot > tr > td > div.aface.pagination > a.aface.pagination.active {
@@ -513,15 +514,15 @@ div.aface.datatable-container > table.aface.datatable {
           background-color: #373d41; }
         div.aface.datatable-container > table.aface.datatable > tfoot > tr > td > div.aface.pagination > a.aface.pagination > i.fa {
           font-size: 18px;
-          width: 32px;
-          height: 32px;
-          line-height: 32px;
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
           text-align: center; }
     div.aface.datatable-container > table.aface.datatable > tfoot > tr > td > span.aface.pagination {
       display: block;
       float: left;
-      height: 32px;
-      line-height: 32px;
+      height: 30px;
+      line-height: 30px;
       margin-left: 5px;
       font-size: 12px; }
     div.aface.datatable-container > table.aface.datatable > tfoot > tr > td > select.aface.pagination {
@@ -531,8 +532,8 @@ div.aface.datatable-container > table.aface.datatable {
       outline: none;
       margin-left: 5px;
       float: left;
-      height: 32px;
-      line-height: 32px;
+      height: 30px;
+      line-height: 30px;
       border: solid 1px #dfe2e4; }
 
 button.aface.button {

@@ -3,7 +3,7 @@ $datatable-header-height: $datatable-line-height;
 $datatable-border-color: lighten($color-steel-thin, 45%);
 $datatable-header-bg-color: lighten($color-steel-thin, 52.5%);
 $datatable-checkbox-height: 14px;
-$datatable-pagination-item-height: 32px;
+$datatable-pagination-item-height: 30px;
 
 div.aface.datatable-container {
     &>table.aface.datatable {
@@ -63,6 +63,7 @@ div.aface.datatable-container {
                         &>a.aface.pagination {
                             display: block;
                             float: left;
+                            margin-left: 5px;
                             text-align: center;
                             width: $datatable-pagination-item-height;
                             height: $datatable-pagination-item-height;
