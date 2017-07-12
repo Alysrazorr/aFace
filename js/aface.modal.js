@@ -66,7 +66,7 @@
         },
         show : function(type, message) {
             var thiz = this;
-            thiz.message.removeClass('info').removeClass('success').removeClass('failure');
+            thiz.message.removeClass('info').removeClass('success').removeClass('failed');
             var icon = $('<i class="fa"></i>');
             switch (type) {
                 case 'default':
@@ -80,9 +80,9 @@
                     icon.addClass('fa-check');
                     thiz.message.addClass('success');
                     break;
-                case 'failure':
+                case 'failed':
                     icon.addClass('fa-times');
-                    thiz.message.addClass('failure');
+                    thiz.message.addClass('failed');
                     break;
                 default: break;
             }

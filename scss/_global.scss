@@ -30,7 +30,6 @@ $color-hc-pink: #F15C80;
 $color-hc-yellow: #E4D354;
 $color-light-blue: rgb(0, 192, 221);
 
-
 $color-steel: rgb(55,61,65);
 $color-steel-thin: lighten($color-steel, 20%);
 $color-steel-hover: lighten($color-steel, 10%);
@@ -42,6 +41,8 @@ $font-yahei: 'Microsoft YaHei';
 $font-family: 'Microsoft YaHei', 'Times New Roman';
 
 $transition-speed: 300ms;
+
+$radius: 2px;
 
 @mixin base-cell($size) {
 	width: $size;
@@ -143,13 +144,6 @@ body {
 	@include zero;
 	@include border-box;
 	font-family: $font-family;
-	
-	&:after {
-		@include border-box;
-	}
-	&:before {
-		@include border-box;
-	}
 }
 
 .absolute {
@@ -162,8 +156,4 @@ body {
 
 .of-hidden {
     overflow: hidden;
-}
-
-i.fa {
-    font-size: 14px;
 }

@@ -15,12 +15,12 @@ div.aface.pop-message {
     position: relative;
     display: inline-block;
     color: $color-f;
-    font-size: 14px;
     margin: 5%;
     width: $pop-message-width;
     height: $pop-message-height;
     line-height: $pop-message-height;
     text-align: left;
+    border-radius: 2px;
 
     @include pop-message-color($color-primary);
     @include box-shadow;
@@ -28,7 +28,7 @@ div.aface.pop-message {
     &.success {
         @include pop-message-color($color-success);
     }
-    &.failure {
+    &.failed {
         @include pop-message-color($color-danger);
     }
     &.info {
@@ -42,6 +42,8 @@ div.aface.pop-message {
         height: $pop-message-height;
         line-height: $pop-message-height;
         text-align: center;
+        border-top-left-radius: $radius;
+        border-bottom-left-radius: $radius;
 
         &>i.fa {
             display: block;

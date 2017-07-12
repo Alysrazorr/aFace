@@ -1,13 +1,8 @@
 $button-height: 30px;
 $button-padding: 10px;
+
 @mixin button-style($color) {
     background-color: $color;
-    @if lightness($color) > 70 {
-        color: $color-3;
-    }
-    @else {
-        color: $color-f;
-    }
     &:hover {
         background-color: lighten($color, 5%);
     }
@@ -24,21 +19,18 @@ button.aface {
         padding: 0 $button-padding;
         cursor: pointer;
         font-size: 12px;
-        background-color: $color-f;
-        &.primary {
-            @include button-style($color-primary);
-        }
+		color: $color-f;
+        border-radius: $radius;
+		@include button-style($color-primary);
+		
         &.success {
             @include button-style($color-success);
         }
-        &.info {
-            @include button-style($color-info);
-        }
-        &.warning {
-            @include button-style($color-warning);
-        }
-        &.danger {
+        &.failed {
             @include button-style($color-danger);
+        }
+        &.info {
+            @include button-style($color-steel-hover);
         }
     }
 }
