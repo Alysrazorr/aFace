@@ -535,29 +535,25 @@ button.aface.button {
   color: #fff;
   font-size: 13px; }
   button.aface.button:hover {
-    background-color: #7eb0db;
-    box-shadow: 0 0 2px rgba(66, 139, 202, 0.6); }
+    background-color: #7eb0db; }
   button.aface.button:active {
     background-color: #2a6496; }
   button.aface.button.success {
     background-color: #5cb85c; }
     button.aface.button.success:hover {
-      background-color: #91cf91;
-      box-shadow: 0 0 2px rgba(92, 184, 92, 0.6); }
+      background-color: #91cf91; }
     button.aface.button.success:active {
       background-color: #3d8b3d; }
   button.aface.button.failed {
     background-color: #d9534f; }
     button.aface.button.failed:hover {
-      background-color: #e7908e;
-      box-shadow: 0 0 2px rgba(217, 83, 79, 0.6); }
+      background-color: #e7908e; }
     button.aface.button.failed:active {
       background-color: #b52b27; }
   button.aface.button.info {
     background-color: #4e575d; }
     button.aface.button.info:hover {
-      background-color: #717e86;
-      box-shadow: 0 0 2px rgba(78, 87, 93, 0.6); }
+      background-color: #717e86; }
     button.aface.button.info:active {
       background-color: #2b3033; }
 

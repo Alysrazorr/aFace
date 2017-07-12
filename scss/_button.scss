@@ -5,7 +5,6 @@ $button-padding: 10px;
     background-color: $color;
     &:hover {
         background-color: lighten($color, 15%);
-        box-shadow: 0 0 2px rgba($color, 0.6);
     }
     &:active {
         background-color: darken($color, 15%);
