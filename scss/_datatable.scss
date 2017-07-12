@@ -10,7 +10,6 @@ div.aface.datatable-container {
         background-color: $datatable-border-color;
         border-spacing: 1px;
         width: 100%;
-        border-radius: $radius;
 
         input[type="checkbox"] {
             display: block;
@@ -26,12 +25,6 @@ div.aface.datatable-container {
                     padding: 10px;
                     font-size: 15px;
                     background-color: $datatable-header-bg-color;
-                    &:first-child {
-                        border-top-left-radius: $radius;
-                    }
-                    &:last-child {
-                        border-top-right-radius: $radius;
-                    }
                 }
             }
         }
@@ -55,15 +48,6 @@ div.aface.datatable-container {
                         background-color: $datatable-header-bg-color !important;
                     }
                 }
-
-                &.aface.radius-bottom>td.aface.content {
-                    &:first-child {
-                        border-bottom-left-radius: $radius;
-                    }
-                    &:last-child {
-                        border-bottom-right-radius: $radius;
-                    }
-                }
             }
         }
 
@@ -73,12 +57,6 @@ div.aface.datatable-container {
                     @include zero;
                     height: $datatable-line-height;
                     background-color: $color-f;
-                    &:first-child {
-                        border-bottom-left-radius: $radius;
-                    }
-                    &:last-child {
-                        border-bottom-right-radius: $radius;
-                    }
                     &>div.aface.pagination {
                         float: right;
                         margin-right: 5px;

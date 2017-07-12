@@ -1,8 +1,6 @@
 ﻿$login-window-height: 275px;
 $login-window-width: 400px;
 
-$radius: 3px;
-
 body.aface.login {
     background-color: $color-steel;
     background: -webkit-gradient(linear, 0 0, 50% 70%, from($color-steel), to($color-steel-abyss));
@@ -18,7 +16,6 @@ body.aface.login {
 
         border-top: solid 5px $color-light-blue;
         box-shadow: 0 2px 4px rgba($color-steel-abyss, 0.8);
-        border-radius: $radius;
 
         &>span.aface.title {
             position: absolute;
@@ -49,7 +46,6 @@ body.aface.login {
             margin-top: 20px;
             width: calc(100% - 60px);
             height: 50px;
-            border-radius: $radius;
 
             &>i.fa {
                 float: left;
@@ -61,8 +57,6 @@ body.aface.login {
                 text-align: center;
                 background-color: $color-c;
                 color: $color-f;
-                border-top-left-radius: $radius;
-                border-bottom-left-radius: $radius;
             }
             &>input {
                 @include zero;
@@ -73,11 +67,8 @@ body.aface.login {
                 font-size: 14px;
                 font-family: 'Consolas';
                 background-color: #F2F2F2;
-                border-top-right-radius: $radius;
-                border-bottom-right-radius: $radius;
             }
             &>a.aface.button {
-                border-radius: $radius;
                 display: block;
                 float: left;
                 width: 100%;

@@ -4,24 +4,26 @@ $button-padding: 10px;
 @mixin button-style($color) {
     background-color: $color;
     &:hover {
-        background-color: lighten($color, 5%);
+        background-color: lighten($color, 15%);
+        box-shadow: 0 0 2px rgba($color, 0.6);
     }
     &:active {
-        background-color: darken($color, 5%);
+        background-color: darken($color, 15%);
     }
 }
 
 button.aface {
     &.button {
+        @include zero;
+        @include border-box;
+		@include button-style($color-primary);
         display: inline-block;
         height: $button-height;
         line-height: $button-height;
         padding: 0 $button-padding;
         cursor: pointer;
-        font-size: 12px;
 		color: $color-f;
-        border-radius: $radius;
-		@include button-style($color-primary);
+        font-size: 13px;
 		
         &.success {
             @include button-style($color-success);

@@ -219,8 +219,7 @@ body.aface.login {
     background-color: #fff;
     padding-top: 20px;
     border-top: solid 5px #00c0dd;
-    box-shadow: 0 2px 4px rgba(32, 35, 37, 0.8);
-    border-radius: 3px; }
+    box-shadow: 0 2px 4px rgba(32, 35, 37, 0.8); }
     body.aface.login > div.aface.login-window > span.aface.title {
       position: absolute;
       width: 100%;
@@ -245,8 +244,7 @@ body.aface.login {
       margin: 0 auto;
       margin-top: 20px;
       width: calc(100% - 60px);
-      height: 50px;
-      border-radius: 3px; }
+      height: 50px; }
       body.aface.login > div.aface.login-window > div.aface.line > i.fa {
         float: left;
         font-size: 24px;
@@ -256,9 +254,7 @@ body.aface.login {
         line-height: 50px;
         text-align: center;
         background-color: #ccc;
-        color: #fff;
-        border-top-left-radius: 3px;
-        border-bottom-left-radius: 3px; }
+        color: #fff; }
       body.aface.login > div.aface.login-window > div.aface.line > input {
         margin: 0;
         padding: 0;
@@ -271,11 +267,8 @@ body.aface.login {
         padding: 0 10px;
         font-size: 14px;
         font-family: 'Consolas';
-        background-color: #F2F2F2;
-        border-top-right-radius: 3px;
-        border-bottom-right-radius: 3px; }
+        background-color: #F2F2F2; }
       body.aface.login > div.aface.login-window > div.aface.line > a.aface.button {
-        border-radius: 3px;
         display: block;
         float: left;
         width: 100%;
@@ -407,7 +400,6 @@ div.aface.pop-message {
   height: 50px;
   line-height: 50px;
   text-align: left;
-  border-radius: 2px;
   background-color: #428bca;
   box-shadow: 0 2px 2px rgba(32, 35, 37, 0.4); }
   div.aface.pop-message > div.aface.pop-message-icon {
@@ -438,9 +430,7 @@ div.aface.pop-message {
     width: 80px;
     height: 50px;
     line-height: 50px;
-    text-align: center;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px; }
+    text-align: center; }
     div.aface.pop-message > div.aface.pop-message-icon > i.fa {
       display: block;
       height: 50px;
@@ -456,8 +446,7 @@ div.aface.pop-message {
 div.aface.datatable-container > table.aface.datatable {
   background-color: #dfe2e4;
   border-spacing: 1px;
-  width: 100%;
-  border-radius: 3px; }
+  width: 100%; }
   div.aface.datatable-container > table.aface.datatable input[type="checkbox"] {
     display: block;
     height: 14px;
@@ -469,10 +458,6 @@ div.aface.datatable-container > table.aface.datatable {
     padding: 10px;
     font-size: 15px;
     background-color: #f4f5f6; }
-    div.aface.datatable-container > table.aface.datatable > thead > tr > th.aface.header:first-child {
-      border-top-left-radius: 3px; }
-    div.aface.datatable-container > table.aface.datatable > thead > tr > th.aface.header:last-child {
-      border-top-right-radius: 3px; }
   div.aface.datatable-container > table.aface.datatable > tbody > tr > td.aface.content {
     padding: 10px;
     word-break: break-word;
@@ -484,10 +469,6 @@ div.aface.datatable-container > table.aface.datatable {
       text-overflow: ellipsis; }
   div.aface.datatable-container > table.aface.datatable > tbody > tr:hover > td {
     background-color: #f4f5f6 !important; }
-  div.aface.datatable-container > table.aface.datatable > tbody > tr.aface.radius-bottom > td.aface.content:first-child {
-    border-bottom-left-radius: 3px; }
-  div.aface.datatable-container > table.aface.datatable > tbody > tr.aface.radius-bottom > td.aface.content:last-child {
-    border-bottom-right-radius: 3px; }
   div.aface.datatable-container > table.aface.datatable > tfoot > tr > td {
     margin: 0;
     padding: 0;
@@ -496,10 +477,6 @@ div.aface.datatable-container > table.aface.datatable {
     text-decoration: none;
     height: 40px;
     background-color: #fff; }
-    div.aface.datatable-container > table.aface.datatable > tfoot > tr > td:first-child {
-      border-bottom-left-radius: 3px; }
-    div.aface.datatable-container > table.aface.datatable > tfoot > tr > td:last-child {
-      border-bottom-right-radius: 3px; }
     div.aface.datatable-container > table.aface.datatable > tfoot > tr > td > div.aface.pagination {
       float: right;
       margin-right: 5px; }
@@ -541,37 +518,48 @@ div.aface.datatable-container > table.aface.datatable {
       border: solid 1px #dfe2e4; }
 
 button.aface.button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #428bca;
   display: inline-block;
   height: 30px;
   line-height: 30px;
   padding: 0 10px;
   cursor: pointer;
-  font-size: 12px;
   color: #fff;
-  border-radius: 3px;
-  background-color: #428bca; }
+  font-size: 13px; }
   button.aface.button:hover {
-    background-color: #5697d0; }
+    background-color: #7eb0db;
+    box-shadow: 0 0 2px rgba(66, 139, 202, 0.6); }
   button.aface.button:active {
-    background-color: #357ebd; }
+    background-color: #2a6496; }
   button.aface.button.success {
     background-color: #5cb85c; }
     button.aface.button.success:hover {
-      background-color: #6ec06e; }
+      background-color: #91cf91;
+      box-shadow: 0 0 2px rgba(92, 184, 92, 0.6); }
     button.aface.button.success:active {
-      background-color: #4cae4c; }
+      background-color: #3d8b3d; }
   button.aface.button.failed {
     background-color: #d9534f; }
     button.aface.button.failed:hover {
-      background-color: #de6764; }
+      background-color: #e7908e;
+      box-shadow: 0 0 2px rgba(217, 83, 79, 0.6); }
     button.aface.button.failed:active {
-      background-color: #d43f3a; }
+      background-color: #b52b27; }
   button.aface.button.info {
     background-color: #4e575d; }
     button.aface.button.info:hover {
-      background-color: #5a646a; }
+      background-color: #717e86;
+      box-shadow: 0 0 2px rgba(78, 87, 93, 0.6); }
     button.aface.button.info:active {
-      background-color: #434a4f; }
+      background-color: #2b3033; }
 
 div.aface.panel {
   border: solid 1px #dfe2e4; }
