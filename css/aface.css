@@ -560,4 +560,19 @@ button.aface.button {
 div.aface.panel {
   border: solid 1px #dfe2e4; }
 
+input.aface.textbox {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 5px !important;
+  border: solid 1px #dfe2e4; }
+  input.aface.textbox.success {
+    border: solid 1px #5cb85c; }
+  input.aface.textbox.failed {
+    border: solid 1px #d9534f; }
+  input.aface.textbox.info {
+    border: solid 1px #5bc0de; }
+
 /*# sourceMappingURL=aface.css.map */

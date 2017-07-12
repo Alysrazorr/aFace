@@ -1,0 +1,20 @@
+$input-height: 30px;
+$input-border-color: lighten($color-steel-thin, 45%);
+
+input.aface.textbox {
+    @include border-box;
+    height: $input-height;
+    line-height: $input-height;
+    padding: 0 5px !important;
+    border: solid 1px $input-border-color;
+    
+    &.success {
+        border: solid 1px $color-success;
+    }
+    &.failed {
+        border: solid 1px $color-danger;
+    }
+    &.info {
+        border: solid 1px $color-info;
+    }
+}
