@@ -1,12 +1,19 @@
 $input-height: 30px;
 $input-border-color: lighten($color-steel-thin, 45%);
 
+@mixin input-style($color) {
+    border: solid 1px $color;
+    &:hover, &:active, &:focus {
+        border: solid 1px darken($color, 20%);
+    }
+}
+
 input.aface.textbox {
     @include border-box;
+    @include input-style($color-border);
     height: $input-height;
     line-height: $input-height;
     padding: 0 5px !important;
-    border: solid 1px $input-border-color;
     
     &.success {
         border: solid 1px $color-success;

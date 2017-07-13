@@ -1,7 +1,7 @@
 $datatable-line-height: 40px;
 $datatable-header-height: $datatable-line-height;
-$datatable-border-color: lighten($color-steel-thin, 45%);
-$datatable-header-bg-color: lighten($color-steel-thin, 52.5%);
+$datatable-border-color: $color-border;
+$datatable-header-bg-color: lighten($color-border, 7.5%);
 $datatable-checkbox-height: 14px;
 $datatable-pagination-item-height: 30px;
 
@@ -22,8 +22,8 @@ div.aface.datatable-container {
             &>tr {
                 &>th.aface.header {
                     text-align: left;
-                    padding: 10px;
                     font-size: 15px;
+                    padding: 10px;
                     background-color: $datatable-header-bg-color;
                 }
             }
@@ -31,9 +31,9 @@ div.aface.datatable-container {
         &>tbody {
             &>tr {
                 &>td.aface.content {
-                    padding: 10px;
                     word-break: break-word;
                     font-size: 13px;
+                    padding: 10px;
                     background-color: $color-f;
 
                     &.ellipsis {
@@ -42,7 +42,6 @@ div.aface.datatable-container {
                         text-overflow: ellipsis;
                     }
                 }
-
                 &:hover {
                     &>td {
                         background-color: $datatable-header-bg-color !important;

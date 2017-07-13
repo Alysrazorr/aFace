@@ -36,6 +36,8 @@ $color-steel-hover: lighten($color-steel, 10%);
 $color-steel-active: darken($color-steel, 5%);
 $color-steel-abyss: darken($color-steel, 10%);
 
+$color-border: lighten($color-steel-thin, 45%);
+
 $font-size: 13px;
 $font-yahei: 'Microsoft YaHei';
 $font-family: 'Microsoft YaHei', 'Times New Roman';

@@ -455,13 +455,13 @@ div.aface.datatable-container > table.aface.datatable {
     text-align: center; }
   div.aface.datatable-container > table.aface.datatable > thead > tr > th.aface.header {
     text-align: left;
-    padding: 10px;
     font-size: 15px;
+    padding: 10px;
     background-color: #f4f5f6; }
   div.aface.datatable-container > table.aface.datatable > tbody > tr > td.aface.content {
-    padding: 10px;
     word-break: break-word;
     font-size: 13px;
+    padding: 10px;
     background-color: #fff; }
     div.aface.datatable-container > table.aface.datatable > tbody > tr > td.aface.content.ellipsis {
       white-space: nowrap;
@@ -564,10 +564,12 @@ input.aface.textbox {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  border: solid 1px #dfe2e4;
   height: 30px;
   line-height: 30px;
-  padding: 0 5px !important;
-  border: solid 1px #dfe2e4; }
+  padding: 0 5px !important; }
+  input.aface.textbox:hover, input.aface.textbox:active, input.aface.textbox:focus {
+    border: solid 1px #a8b0b5; }
   input.aface.textbox.success {
     border: solid 1px #5cb85c; }
   input.aface.textbox.failed {
