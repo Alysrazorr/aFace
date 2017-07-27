@@ -213,17 +213,19 @@ body.aface.desktop {
   text-align: center; }
   body.aface.desktop > div.aface.sidebar {
     display: table;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 40px;
     width: 80px;
-    height: 100%; }
+    height: 100%;
+    z-index: 10000; }
     body.aface.desktop > div.aface.sidebar > div {
       display: table-cell;
       vertical-align: middle; }
       body.aface.desktop > div.aface.sidebar > div > div {
         margin: 0 auto; }
-        body.aface.desktop > div.aface.sidebar > div > div > div.aface.nav-button {
+        body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button {
+          position: relative;
           border-radius: 9999px;
           width: 80px;
           height: 80px;
@@ -234,7 +236,7 @@ body.aface.desktop {
           cursor: pointer;
           margin: 20px auto;
           transition: border-color 300ms; }
-          body.aface.desktop > div.aface.sidebar > div > div > div.aface.nav-button > i.fa {
+          body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button > i.fa {
             display: block;
             background-color: #fff;
             border-radius: 9999px;
@@ -243,13 +245,85 @@ body.aface.desktop {
             line-height: 64px;
             text-align: center;
             font-size: 30px;
-            color: #777;
+            color: #333;
             transition: color 300ms, background-color 300ms; }
-          body.aface.desktop > div.aface.sidebar > div > div > div.aface.nav-button:hover, body.aface.desktop > div.aface.sidebar > div > div > div.aface.nav-button.active {
+          body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button > div.aface.pop-menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-left: calc(100% + 20px);
+            opacity: 0.1;
+            visibility: hidden;
+            transform: scale(0.9);
+            transform-origin: top left;
+            transition: transform 300ms, opacity 300ms; }
+            body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button > div.aface.pop-menu > div {
+              box-shadow: 0 2px 2px rgba(32, 35, 37, 0.4);
+              border-radius: 5px;
+              padding: 5px 0;
+              background: #fff;
+              margin-bottom: 5px; }
+              body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button > div.aface.pop-menu > div > span.aface.pop-menu-header {
+                display: block;
+                text-align: left;
+                padding-left: 12px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 22px; }
+              body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button > div.aface.pop-menu > div > span.aface.pop-menu-divider {
+                display: block;
+                height: 1px;
+                line-height: 1px;
+                background: #ddd; }
+              body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button > div.aface.pop-menu > div > a.aface.pop-menu-button {
+                text-align: left;
+                display: block;
+                width: 220px;
+                height: 40px;
+                line-height: 40px;
+                padding-right: 20px;
+                transition: color 300ms, background-color 300ms; }
+                body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button > div.aface.pop-menu > div > a.aface.pop-menu-button > i.fa {
+                  display: inline-block;
+                  width: 40px;
+                  height: 40px;
+                  line-height: 40px;
+                  text-align: center; }
+                body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button > div.aface.pop-menu > div > a.aface.pop-menu-button:hover, body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button > div.aface.pop-menu > div > a.aface.pop-menu-button.active {
+                  color: #fff;
+                  background-color: #f9bc00; }
+          body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button:hover, body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button.active {
             border-color: #f9bc00; }
-            body.aface.desktop > div.aface.sidebar > div > div > div.aface.nav-button:hover > i.fa, body.aface.desktop > div.aface.sidebar > div > div > div.aface.nav-button.active > i.fa {
+            body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button:hover > i.fa, body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button.active > i.fa {
               background-color: #f9bc00;
               color: #fff; }
+            body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button:hover > div.aface.pop-menu, body.aface.desktop > div.aface.sidebar > div > div > div.aface.sidebar-button.active > div.aface.pop-menu {
+              opacity: 1;
+              visibility: visible;
+              transform: scale(1); }
+  body.aface.desktop > div.aface.work-blocks {
+    z-index: 5000;
+    text-align: left;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 160px;
+    bottom: 0;
+    font-size: 0;
+    overflow: auto; }
+    body.aface.desktop > div.aface.work-blocks > div.aface.work-block {
+      display: inline-block;
+      width: 50%;
+      height: 50%; }
+      body.aface.desktop > div.aface.work-blocks > div.aface.work-block > div {
+        margin-top: 40px;
+        margin-right: 40px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 2px rgba(32, 35, 37, 0.4);
+        height: calc(100% - 40px); }
+        body.aface.desktop > div.aface.work-blocks > div.aface.work-block > div:hover, body.aface.desktop > div.aface.work-blocks > div.aface.work-block > div.active {
+          box-shadow: 0 0 6px #E4D354; }
 
 body.aface.login {
   background-color: #373d41;

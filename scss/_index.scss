@@ -184,17 +184,19 @@ body.aface.desktop {
 
     &>div.aface.sidebar {
         display: table;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 40px;
         width: 80px;
         height: 100%;
+        z-index: 10000;
         &>div {
             display: table-cell;
             vertical-align: middle;
             &>div {
                 margin: 0 auto;
-                &>div.aface.nav-button {
+                &>div.aface.sidebar-button {
+                    position: relative;
                     border-radius: 9999px;
                     width: 80px;
                     height: 80px;
@@ -215,8 +217,65 @@ body.aface.desktop {
                         line-height: 64px;
                         text-align: center;
                         font-size: 30px;
-                        color: $color-7;
+                        color: $color-3;
                         transition: color $transition-speed, background-color $transition-speed;
+                    }
+
+                    &>div.aface.pop-menu {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        padding-left: calc(100% + 20px);
+                        opacity: 0.1;
+                        visibility: hidden;
+                        transform: scale(0.9);
+                        transform-origin: top left;
+                        transition: transform $transition-speed, opacity $transition-speed;
+
+                        &>div {
+                            @include box-shadow;
+                            border-radius: 5px;
+                            padding: 5px 0;
+                            background: $color-f;
+                            margin-bottom: 5px;
+
+                            &>span.aface.pop-menu-header {
+                                display: block;
+                                text-align: left;
+                                padding-left: 12px;
+                                height: 50px;
+                                line-height: 50px;
+                                font-size: 22px;
+                            }
+                            &>span.aface.pop-menu-divider {
+                                display: block;
+                                height: 1px;
+                                line-height: 1px;
+                                background: $color-d;
+                            }
+                            &>a.aface.pop-menu-button {
+                                text-align: left;
+                                display: block;
+                                width: 220px;
+                                height: 40px;
+                                line-height: 40px;
+                                padding-right: 20px;
+                                transition: color $transition-speed, background-color $transition-speed;
+
+                                &>i.fa {
+                                    display: inline-block;
+                                    width: 40px;
+                                    height: 40px;
+                                    line-height: 40px;
+                                    text-align: center;
+                                }
+
+                                &:hover,&.active {
+                                    color: $color-f;
+                                    background-color: $color-hc-yellow2;
+                                }
+                            }
+                        }
                     }
 
                     &:hover,&.active {
@@ -225,7 +284,44 @@ body.aface.desktop {
                             background-color: $color-hc-yellow2;
                             color: $color-f;
                         }
+                        &>div.aface.pop-menu {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: scale(1);
+                        }
                     }
+                }
+            }
+        }
+    }
+
+    &>div.aface.work-blocks {
+        z-index: 5000;
+        text-align: left;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 160px;
+        bottom: 0;
+        // background-color: $color-hc-yellow;
+        font-size: 0;
+        overflow: auto;
+
+        &>div.aface.work-block {
+            display: inline-block;
+            width: 50%;
+            height: 50%;
+
+            &>div {
+                margin-top: 40px;
+                margin-right: 40px;
+                background-color: $color-f;
+                border-radius: 5px;
+                @include box-shadow;
+                height: calc(100% - 40px);
+
+                &:hover, &.active {
+                    box-shadow: 0 0 6px $color-hc-yellow;
                 }
             }
         }
