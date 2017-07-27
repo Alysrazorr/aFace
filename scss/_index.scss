@@ -306,23 +306,28 @@ body.aface.desktop {
         // background-color: $color-hc-yellow;
         font-size: 0;
         overflow: auto;
+        padding-bottom: 50px;
 
         &>div.aface.work-block {
-            display: inline-block;
-            width: 50%;
-            height: 50%;
+            float: left;
+            width: 30%;
+            height: 45%;
+            overflow: hidden;
 
-            &>div {
-                margin-top: 40px;
-                margin-right: 40px;
-                background-color: $color-f;
-                border-radius: 5px;
-                @include box-shadow;
-                height: calc(100% - 40px);
+            margin-top: 50px;
+            margin-left: 2.5%;
+            background-color: $color-f;
+            border-radius: 5px;
+            @include box-shadow;
 
-                &:hover, &.active {
-                    box-shadow: 0 0 6px $color-hc-yellow;
-                }
+            &>div.aface.block-header {
+                height: 50px;
+                width: 100%;
+                background-color: $color-e;
+            }
+
+            &:hover, &.active {
+                box-shadow: 0 0 6px $color-hc-yellow;
             }
         }
     }

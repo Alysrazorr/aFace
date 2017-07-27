@@ -310,20 +310,24 @@ body.aface.desktop {
     left: 160px;
     bottom: 0;
     font-size: 0;
-    overflow: auto; }
+    overflow: auto;
+    padding-bottom: 50px; }
     body.aface.desktop > div.aface.work-blocks > div.aface.work-block {
-      display: inline-block;
-      width: 50%;
-      height: 50%; }
-      body.aface.desktop > div.aface.work-blocks > div.aface.work-block > div {
-        margin-top: 40px;
-        margin-right: 40px;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 2px 2px rgba(32, 35, 37, 0.4);
-        height: calc(100% - 40px); }
-        body.aface.desktop > div.aface.work-blocks > div.aface.work-block > div:hover, body.aface.desktop > div.aface.work-blocks > div.aface.work-block > div.active {
-          box-shadow: 0 0 6px #E4D354; }
+      float: left;
+      width: 30%;
+      height: 45%;
+      overflow: hidden;
+      margin-top: 50px;
+      margin-left: 2.5%;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 2px rgba(32, 35, 37, 0.4); }
+      body.aface.desktop > div.aface.work-blocks > div.aface.work-block > div.aface.block-header {
+        height: 50px;
+        width: 100%;
+        background-color: #eee; }
+      body.aface.desktop > div.aface.work-blocks > div.aface.work-block:hover, body.aface.desktop > div.aface.work-blocks > div.aface.work-block.active {
+        box-shadow: 0 0 6px #E4D354; }
 
 body.aface.login {
   background-color: #373d41;
