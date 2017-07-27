@@ -207,6 +207,50 @@ body.aface.index {
       height: 100%;
       width: 100%; }
 
+body.aface.desktop {
+  height: 100%;
+  line-height: 100%;
+  text-align: center; }
+  body.aface.desktop > div.aface.sidebar {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    width: 80px;
+    height: 100%; }
+    body.aface.desktop > div.aface.sidebar > div {
+      display: table-cell;
+      vertical-align: middle; }
+      body.aface.desktop > div.aface.sidebar > div > div {
+        margin: 0 auto; }
+        body.aface.desktop > div.aface.sidebar > div > div > div.aface.nav-button {
+          border-radius: 9999px;
+          width: 80px;
+          height: 80px;
+          line-height: 80px;
+          background-color: transparent;
+          padding: 6px;
+          border: solid 2px #fff;
+          cursor: pointer;
+          margin: 20px auto;
+          transition: border-color 300ms; }
+          body.aface.desktop > div.aface.sidebar > div > div > div.aface.nav-button > i.fa {
+            display: block;
+            background-color: #fff;
+            border-radius: 9999px;
+            width: 64px;
+            height: 64px;
+            line-height: 64px;
+            text-align: center;
+            font-size: 30px;
+            color: #777;
+            transition: color 300ms, background-color 300ms; }
+          body.aface.desktop > div.aface.sidebar > div > div > div.aface.nav-button:hover, body.aface.desktop > div.aface.sidebar > div > div > div.aface.nav-button.active {
+            border-color: #f9bc00; }
+            body.aface.desktop > div.aface.sidebar > div > div > div.aface.nav-button:hover > i.fa, body.aface.desktop > div.aface.sidebar > div > div > div.aface.nav-button.active > i.fa {
+              background-color: #f9bc00;
+              color: #fff; }
+
 body.aface.login {
   background-color: #373d41;
   background: -webkit-gradient(linear, 0 0, 50% 70%, from(#373d41), to(#202325)); }

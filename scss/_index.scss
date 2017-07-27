@@ -176,3 +176,58 @@ body.aface.index {
         }
     } // end of div.aface.root-frame-container
 }
+
+body.aface.desktop {
+    height: 100%;
+    line-height: 100%;
+    text-align: center;
+
+    &>div.aface.sidebar {
+        display: table;
+        position: absolute;
+        top: 0;
+        left: 40px;
+        width: 80px;
+        height: 100%;
+        &>div {
+            display: table-cell;
+            vertical-align: middle;
+            &>div {
+                margin: 0 auto;
+                &>div.aface.nav-button {
+                    border-radius: 9999px;
+                    width: 80px;
+                    height: 80px;
+                    line-height: 80px;
+                    background-color: transparent;
+                    padding: 6px;
+                    border: solid 2px $color-f;
+                    cursor: pointer;
+                    margin: 20px auto;
+                    transition: border-color $transition-speed;
+
+                    &>i.fa {
+                        display: block;
+                        background-color: $color-f;
+                        border-radius: 9999px;
+                        width: 64px;
+                        height: 64px;
+                        line-height: 64px;
+                        text-align: center;
+                        font-size: 30px;
+                        color: $color-7;
+                        transition: color $transition-speed, background-color $transition-speed;
+                    }
+
+                    &:hover,&.active {
+                        border-color: $color-hc-yellow2;
+                        &>i.fa {
+                            background-color: $color-hc-yellow2;
+                            color: $color-f;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
