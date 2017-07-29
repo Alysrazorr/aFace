@@ -1,5 +1,5 @@
-﻿$top-menu-height: 60px;
-$drop-menu-item-height: 40px;
+﻿$top-menu-height: 50px;
+$drop-menu-item-height: 35px;
 $drop-menu-item-height-small: 30px;
 $drop-menu-icon-height: 80px;
 
@@ -42,6 +42,10 @@ body.aface.index {
                     line-height: $top-menu-height;
                     padding: 0 15px;
                     transition: color $transition-speed;
+
+                    &>i.fa {
+                        font-size: 16px;
+                    }
                 }
 
                 &>div.aface.content {
@@ -58,6 +62,10 @@ body.aface.index {
                         height: $drop-menu-item-height;
                         line-height: $drop-menu-item-height;
                         transition: background-color $transition-speed;
+
+                        &>i.fa {
+                            font-size: 14px;
+                        }
 
                         &:hover {
                             background-color: $color-light-blue;
@@ -118,7 +126,56 @@ body.aface.index {
                 height: 4px;
                 background-color: $color-light-blue;
             }
+
+            // &.searchbox {
+            //     height: $top-menu-height - 20px;
+            //     line-height: $top-menu-height - 20px;
+            //     display: block;
+            //     float: left;
+                
+            //     background-color: $color-steel-abyss;
+            //     width: 200px;
+            //     margin-top: 10px;
+            //     border-radius: 4px;
+
+            //     overflow: hidden;
+
+            //     &:hover,&:focus,&.active {
+            //         &>input {
+            //             color: $color-info;
+            //         }
+            //         &>i.fa.fa-search {
+            //             color: $color-info;
+            //         }
+            //     }
+
+            //     &>input {
+            //         @include zero;
+            //         width: calc(100% - 62px);
+            //         height: 40px;
+            //         line-height: 40px;
+            //         background-color: transparent;
+            //         padding: 0 11px;
+            //         color: $color-steel-hover;
+            //         float: left;
+            //         display: block;
+            //         transition: color $transition-speed;
+            //     }
+
+            //     &>i.fa.fa-search {
+            //         display: block;
+            //         float: left;
+            //         width: 40px;
+            //         height: 40px;
+            //         line-height: 40px;
+            //         text-align: center;
+            //         font-size: 20px;
+            //         color: $color-steel-hover;
+            //         transition: color $transition-speed;
+            //     }
+            // }
         }
+
         div.drop-menu {
             height: $top-menu-height;
             line-height: $top-menu-height;
@@ -175,160 +232,4 @@ body.aface.index {
             width: 100%;
         }
     } // end of div.aface.root-frame-container
-}
-
-body.aface.desktop {
-    height: 100%;
-    line-height: 100%;
-    text-align: center;
-
-    &>div.aface.sidebar {
-        display: table;
-        position: fixed;
-        top: 0;
-        left: 40px;
-        width: 80px;
-        height: 100%;
-        z-index: 10000;
-        &>div {
-            display: table-cell;
-            vertical-align: middle;
-            &>div {
-                margin: 0 auto;
-                &>div.aface.sidebar-button {
-                    position: relative;
-                    border-radius: 9999px;
-                    width: 80px;
-                    height: 80px;
-                    line-height: 80px;
-                    background-color: transparent;
-                    padding: 6px;
-                    border: solid 2px $color-f;
-                    cursor: pointer;
-                    margin: 20px auto;
-                    transition: border-color $transition-speed;
-
-                    &>i.fa {
-                        display: block;
-                        background-color: $color-f;
-                        border-radius: 9999px;
-                        width: 64px;
-                        height: 64px;
-                        line-height: 64px;
-                        text-align: center;
-                        font-size: 30px;
-                        color: $color-3;
-                        transition: color $transition-speed, background-color $transition-speed;
-                    }
-
-                    &>div.aface.pop-menu {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        padding-left: calc(100% + 20px);
-                        opacity: 0.1;
-                        visibility: hidden;
-                        transform: scale(0.9);
-                        transform-origin: top left;
-                        transition: transform $transition-speed, opacity $transition-speed;
-
-                        &>div {
-                            @include box-shadow;
-                            border-radius: 5px;
-                            padding: 5px 0;
-                            background: $color-f;
-                            margin-bottom: 5px;
-
-                            &>span.aface.pop-menu-header {
-                                display: block;
-                                text-align: left;
-                                padding-left: 12px;
-                                height: 50px;
-                                line-height: 50px;
-                                font-size: 22px;
-                            }
-                            &>span.aface.pop-menu-divider {
-                                display: block;
-                                height: 1px;
-                                line-height: 1px;
-                                background: $color-d;
-                            }
-                            &>a.aface.pop-menu-button {
-                                text-align: left;
-                                display: block;
-                                width: 220px;
-                                height: 40px;
-                                line-height: 40px;
-                                padding-right: 20px;
-                                transition: color $transition-speed, background-color $transition-speed;
-
-                                &>i.fa {
-                                    display: inline-block;
-                                    width: 40px;
-                                    height: 40px;
-                                    line-height: 40px;
-                                    text-align: center;
-                                }
-
-                                &:hover,&.active {
-                                    color: $color-f;
-                                    background-color: $color-hc-yellow2;
-                                }
-                            }
-                        }
-                    }
-
-                    &:hover,&.active {
-                        border-color: $color-hc-yellow2;
-                        &>i.fa {
-                            background-color: $color-hc-yellow2;
-                            color: $color-f;
-                        }
-                        &>div.aface.pop-menu {
-                            opacity: 1;
-                            visibility: visible;
-                            transform: scale(1);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    &>div.aface.work-blocks {
-        z-index: 5000;
-        text-align: left;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 160px;
-        bottom: 0;
-        // background-color: $color-hc-yellow;
-        font-size: 0;
-        overflow: auto;
-        padding-bottom: 50px;
-
-        &>div.aface.work-block {
-            float: left;
-            width: 30%;
-            height: 45%;
-            overflow: hidden;
-
-            margin-top: 50px;
-            margin-left: 2.5%;
-            background-color: $color-f;
-            border-radius: 5px;
-            @include box-shadow;
-
-            &>div.aface.block-header {
-                height: 50px;
-                width: 100%;
-                background-color: $color-e;
-            }
-
-            &:hover, &.active {
-                box-shadow: 0 0 6px $color-hc-yellow;
-            }
-        }
-    }
 }

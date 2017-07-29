@@ -1,0 +1,59 @@
+$form-obj-height: 30px;
+$form-obj-radius: 0;
+$input-height: $form-obj-height;
+
+@mixin input-style($color) {
+    border: solid 1px $color;
+    &:hover, &:active, &:focus {
+        border: solid 1px $color-info;
+    }
+}
+
+input.aface.textbox {
+    @include border-box;
+    @include input-style($color-border);
+    height: $input-height;
+    line-height: $input-height;
+    padding: 0 5px !important;
+    border-radius: $form-obj-radius;
+    font-size: 12px;
+}
+
+$button-height: $form-obj-height;
+$button-padding: 10px;
+
+@mixin button-style($color) {
+    border-color: $color;
+    color: $color;
+    &:hover, &:active, &:focus {
+        color: $color-f;
+        border: solid 1px $color;
+        background-color: $color;
+    }
+}
+
+button.aface.button {
+    display: inline-block;
+
+    height: $button-height;
+    line-height: $button-height - 2px;
+
+    border: solid 1px $color-border;
+    border-radius: $form-obj-radius;
+    background-color: $color-f;
+    color: $color-3;
+
+    padding: 0 $button-padding;
+    cursor: pointer;
+    font-size: 13px;
+    
+    &:hover, &:active, &:focus {
+        color: $color-f;
+        border: solid 1px $color-info;
+        background-color: $color-info;
+    }
+
+    &.success {
+        @include button-style($color-success);
+    }
+}

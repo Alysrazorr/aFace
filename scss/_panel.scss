@@ -1,4 +1,6 @@
 ﻿$panel-border-color: lighten($color-steel-thin, 45%);
 div.aface.panel {
-    border: solid 1px $panel-border-color;
+    background-color: $color-f;
+    padding: 5px;
+    @include box-shadow;
 }
