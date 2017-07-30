@@ -77,7 +77,7 @@ body.aface.index {
     left: 0;
     right: 0;
     font-size: 0;
-    height: 50px;
+    height: 60px;
     background-color: #373d41;
     z-index: 9999; }
     body.aface.index nav.aface.top-menu > img.aface.icon {
@@ -88,22 +88,22 @@ body.aface.index {
       text-decoration: none;
       display: block;
       float: left;
-      width: 50px;
-      height: 50px;
-      line-height: 50px; }
+      width: 60px;
+      height: 60px;
+      line-height: 60px; }
     body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item {
       list-style-type: none;
       position: relative;
       float: left;
-      height: 50px;
-      line-height: 50px;
+      height: 60px;
+      line-height: 60px;
       font-size: 14px; }
       body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > a.aface.title {
         color: #fff;
         text-decoration: none;
         display: block;
-        height: 50px;
-        line-height: 50px;
+        height: 60px;
+        line-height: 60px;
         padding: 0 15px;
         transition: color 300ms; }
         body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > a.aface.title > i.fa {
@@ -118,8 +118,8 @@ body.aface.index {
           padding: 0 15px;
           font-size: 13px;
           color: #fff;
-          height: 35px;
-          line-height: 35px;
+          height: 40px;
+          line-height: 40px;
           transition: background-color 300ms; }
           body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-item > i.fa {
             font-size: 14px; }
@@ -151,8 +151,8 @@ body.aface.index {
       display: block; }
       body.aface.index nav.aface.top-menu > span.aface.brand {
         float: left;
-        height: 50px;
-        line-height: 50px;
+        height: 60px;
+        line-height: 60px;
         font-size: 30px;
         font-family: '黑体';
         text-shadow: 2px 2px rgba(32, 35, 37, 0.8);
@@ -165,8 +165,8 @@ body.aface.index {
         height: 4px;
         background-color: #00c0dd; }
     body.aface.index nav.aface.top-menu div.drop-menu {
-      height: 50px;
-      line-height: 50px; }
+      height: 60px;
+      line-height: 60px; }
       body.aface.index nav.aface.top-menu div.drop-menu:hover {
         background-color: #fff; }
         body.aface.index nav.aface.top-menu div.drop-menu:hover > a.aface.title {
@@ -175,8 +175,8 @@ body.aface.index {
           display: block; }
       body.aface.index nav.aface.top-menu div.drop-menu > a.aface.title {
         display: block;
-        height: 50px;
-        line-height: 50px;
+        height: 60px;
+        line-height: 60px;
         font-size: 14px;
         color: #fff;
         padding: 0 10px; }
@@ -197,7 +197,7 @@ body.aface.index {
             background-color: #00c0dd; }
   body.aface.index > div.aface.root-frame-container {
     position: absolute;
-    top: 50px;
+    top: 60px;
     left: 0;
     right: 0;
     bottom: 0; }
@@ -447,7 +447,7 @@ div.aface.pop-message {
     padding: 0 20px; }
 
 div.aface.datatable-container > table.aface.datatable {
-  background-color: #dfe2e4;
+  background-color: #D4D6D8;
   border-spacing: 1px;
   width: 100%; }
   div.aface.datatable-container > table.aface.datatable input[type="checkbox"] {
@@ -460,7 +460,7 @@ div.aface.datatable-container > table.aface.datatable {
     text-align: left;
     font-size: 15px;
     padding: 10px;
-    background-color: #f4f5f6; }
+    background-color: #eff0f0; }
   div.aface.datatable-container > table.aface.datatable > tbody > tr > td.aface.content {
     word-break: break-word;
     font-size: 13px;
@@ -471,7 +471,7 @@ div.aface.datatable-container > table.aface.datatable {
       overflow: hidden;
       text-overflow: ellipsis; }
   div.aface.datatable-container > table.aface.datatable > tbody > tr:hover > td {
-    background-color: #f4f5f6 !important; }
+    background-color: #eff0f0 !important; }
   div.aface.datatable-container > table.aface.datatable > tfoot > tr > td {
     margin: 0;
     padding: 0;
@@ -518,7 +518,7 @@ div.aface.datatable-container > table.aface.datatable {
       float: left;
       height: 30px;
       line-height: 30px;
-      border: solid 1px #dfe2e4; }
+      border: solid 1px #D4D6D8; }
 
 table.aface.form {
   width: 100%;
@@ -605,23 +605,53 @@ iframe.aface.inner-frame {
   padding: 0; }
 
 input.aface.textbox {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: solid 1px #dfe2e4;
+  background-color: #fff;
   height: 30px;
   line-height: 30px;
   padding: 0 5px !important;
-  border-radius: 0;
-  font-size: 12px; }
-  input.aface.textbox:hover, input.aface.textbox:active, input.aface.textbox:focus {
-    border: solid 1px #5bc0de; }
+  font-size: 12px;
+  border: solid 1px #D4D6D8; }
+  input.aface.textbox:hover, input.aface.textbox:focus, input.aface.textbox.active {
+    border-color: #5bc0de; }
+
+span.aface.searchbox {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  text-decoration: none;
+  font-size: 0;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  border: solid 1px #D4D6D8; }
+  span.aface.searchbox > i.fa.fa-search {
+    float: left;
+    font-size: 14px;
+    text-align: center;
+    color: #D4D6D8;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border: 0; }
+  span.aface.searchbox > input.aface.textbox {
+    float: left;
+    width: calc(100% - 28px);
+    height: 28px;
+    line-height: 28px;
+    border: 0; }
+  span.aface.searchbox:hover, span.aface.searchbox:focus, span.aface.searchbox.active {
+    border-color: #5bc0de; }
+    span.aface.searchbox:hover > i.fa.fa-search, span.aface.searchbox:focus > i.fa.fa-search, span.aface.searchbox.active > i.fa.fa-search {
+      color: #5bc0de; }
+
+input::-webkit-input-placeholder {
+  color: #C4C6C8; }
 
 button.aface.button {
   display: inline-block;
   height: 30px;
   line-height: 28px;
-  border: solid 1px #dfe2e4;
   border-radius: 0;
   background-color: #fff;
   color: #333;
@@ -639,5 +669,8 @@ button.aface.button {
       color: #fff;
       border: solid 1px #5cb85c;
       background-color: #5cb85c; }
+
+div.aface.toolbar > * {
+  float: left; }
 
 /*# sourceMappingURL=aface.css.map */

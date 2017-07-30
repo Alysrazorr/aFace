@@ -13,6 +13,13 @@
         body {
             padding: 5px !important;
         }
+        div.aface.toolbar {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            height: 30px;
+        }
         div.aface.datatable-container {
             position: absolute;
             top: 40px;
@@ -24,10 +31,14 @@
 
 <body class="aface">
     <div class="aface toolbar">
+        <span class="aface searchbox" style="width: 200px;">
+            <input type="text" class="aface textbox" placeholder="关键字" />
+            <i class="fa fa-search"></i>
+        </span>
         <input type="text" class="aface textbox" placeholder="关键字" />
-	    <button class="aface button"><i class="fa fa-search" style="font-size: 15px;"></i>&nbsp;搜索</button>
-	    <button class="aface button">搜索</button>
-	    <button class="aface button success pull-right"><i class="fa fa-cogs" style="font-size: 15px;"></i>&nbsp;测试</button>
+	    <button class="aface button info pull-right">测试</button>
+	    <button class="aface button danger pull-right">测试</button>
+	    <button class="aface button primary pull-right">测试</button>
     </div>
     <div class="aface datatable-container">
         <table class="aface datatable">

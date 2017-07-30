@@ -1,7 +1,7 @@
 $datatable-line-height: 40px;
 $datatable-header-height: $datatable-line-height;
 $datatable-border-color: $color-border;
-$datatable-header-bg-color: lighten($datatable-border-color, 7.5%);
+$datatable-header-bg-color: $color-bg;
 $datatable-checkbox-height: 14px;
 $datatable-pagination-item-height: 30px;
 

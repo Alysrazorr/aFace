@@ -1,22 +1,57 @@
 $form-obj-height: 30px;
+$form-obj-inner-height: 28px;
 $form-obj-radius: 0;
 $input-height: $form-obj-height;
 
-@mixin input-style($color) {
-    border: solid 1px $color;
-    &:hover, &:active, &:focus {
-        border: solid 1px $color-info;
-    }
-}
-
 input.aface.textbox {
-    @include border-box;
-    @include input-style($color-border);
+    background-color: $color-f;
     height: $input-height;
     line-height: $input-height;
     padding: 0 5px !important;
-    border-radius: $form-obj-radius;
     font-size: 12px;
+    border: solid 1px $color-border;
+    &:hover,&:focus,&.active {
+        border-color: $color-info;
+    }
+}
+
+span.aface.searchbox {
+    @include zero;
+    font-size: 0;
+    display: inline-block;
+    height: $input-height;
+    line-height: $input-height;
+    border: solid 1px $color-border;
+
+    &>i.fa.fa-search {
+        float: left;
+        font-size: 14px;
+        text-align: center;
+        color: $color-border;
+        width: $form-obj-inner-height;
+        height: $form-obj-inner-height;
+        line-height: $form-obj-inner-height;
+        border: 0;
+    }
+
+    &>input.aface.textbox {
+        float: left;
+        width: calc(100% - 28px);
+        height: $form-obj-inner-height;
+        line-height: $form-obj-inner-height;
+        border: 0;
+    }
+
+    &:hover,&:focus,&.active {
+        border-color: $color-info;
+        &>i.fa.fa-search {
+            color: $color-info;
+        }
+    }
+}
+
+input::-webkit-input-placeholder {
+    color: #C4C6C8;
 }
 
 $button-height: $form-obj-height;
@@ -38,7 +73,6 @@ button.aface.button {
     height: $button-height;
     line-height: $button-height - 2px;
 
-    border: solid 1px $color-border;
     border-radius: $form-obj-radius;
     background-color: $color-f;
     color: $color-3;
@@ -55,5 +89,11 @@ button.aface.button {
 
     &.success {
         @include button-style($color-success);
+    }
+}
+
+div.aface.toolbar {
+    &>* {
+        float: left;
     }
 }

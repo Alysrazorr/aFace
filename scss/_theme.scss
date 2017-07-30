@@ -1,5 +1,6 @@
 $color-theme: $color-info;
-$color-border: lighten($color-steel-thin, 45%);
+$color-border: #D4D6D8;
+$color-bg: lighten($color-border, 10%);
 
 
 $height-low: 32px;
