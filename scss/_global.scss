@@ -18,18 +18,9 @@ $color-f: #fff;
 $color-primary: #428bca;
 $color-success: #5cb85c;
 $color-warning: #f0ad4e;
-$color-info: #5bc0de;
+// $color-info: #5bc0de;
+// $color-info: rgb(59,141,189);
 $color-danger: #d9534f;
-
-$color-hc-blue: #7CB5EC;
-$color-hc-gray: #434348;
-$color-hc-green: #90ED7D;
-$color-hc-orange: #F7A35C;
-$color-hc-purple: #8085E9;
-$color-hc-pink: #F15C80;
-$color-hc-yellow: #E4D354;
-$color-hc-yellow2: rgb(249, 188, 0);
-$color-light-blue: rgb(0, 192, 221);
 
 $color-steel: rgb(55,61,65);
 $color-steel-thin: lighten($color-steel, 20%);
@@ -41,12 +32,6 @@ $font-size: 13px;
 $font-family: 'Microsoft YaHei', 'Times New Roman';
 
 $transition-speed: 300ms;
-
-@mixin base-cell($size) {
-	width: $size;
-	height: $size;
-	line-height: $size;
-}
 
 @mixin border-box {
     -webkit-box-sizing: border-box;
@@ -61,7 +46,7 @@ $transition-speed: 300ms;
 }
 
 @mixin box-shadow {
-    box-shadow: 0 2px 2px rgba($color-steel-abyss, 0.4);
+    box-shadow: 0 1px 1px rgba($color-steel-abyss, 0.4);
 }
 
 @mixin zero {

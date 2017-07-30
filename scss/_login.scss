@@ -14,7 +14,7 @@ body.aface.login {
         background-color: $color-f;
         padding-top: 20px;
 
-        border-top: solid 5px $color-light-blue;
+        border-top: solid 5px $color-theme;
         box-shadow: 0 2px 4px rgba($color-steel-abyss, 0.8);
 
         &>span.aface.title {
@@ -36,7 +36,7 @@ body.aface.login {
             height: 20px;
             top: -10px;
             left: calc(50% - 10px);
-            background-color: $color-light-blue;
+            background-color: $color-theme;
             transform: rotate(45deg);
             z-index: -1;
         }
@@ -82,14 +82,14 @@ body.aface.login {
                 transition: background-color $transition-speed;
 
                 &.submit {
-                    background-color: $color-hc-orange;
-                    border-bottom: solid 3px darken($color-hc-orange, 5%);
+                    background-color: $color-danger;
+                    border-bottom: solid 3px darken($color-danger, 5%);
 
                     &:hover {
-                        background-color: lighten($color-hc-orange, 5%);
+                        background-color: lighten($color-danger, 5%);
                     }
                     &:active {
-                        background-color: $color-hc-orange;
+                        background-color: $color-danger;
                     }
                 }
             }
@@ -105,7 +105,7 @@ body.aface.login {
             text-shadow: 0 2px 4px rgba($color-steel-abyss, 0.6);
 
             &:hover {
-                color: $color-light-blue;
+                color: $color-theme;
             }
         }
     }

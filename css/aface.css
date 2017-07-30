@@ -72,14 +72,16 @@ html, body {
 body.aface.index {
   overflow: hidden; }
   body.aface.index nav.aface.top-menu {
+    box-shadow: 0 1px 1px rgba(32, 35, 37, 0.4);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     font-size: 0;
-    height: 60px;
+    height: 50px;
     background-color: #373d41;
-    z-index: 9999; }
+    z-index: 9999;
+    background: -webkit-gradient(linear, 70% 10%, 50% 60%, from(#373d41), to(#202325)); }
     body.aface.index nav.aface.top-menu > img.aface.icon {
       margin: 0;
       padding: 0;
@@ -88,85 +90,24 @@ body.aface.index {
       text-decoration: none;
       display: block;
       float: left;
-      width: 60px;
-      height: 60px;
-      line-height: 60px; }
-    body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item {
-      list-style-type: none;
-      position: relative;
-      float: left;
-      height: 60px;
-      line-height: 60px;
-      font-size: 14px; }
-      body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > a.aface.title {
-        color: #fff;
-        text-decoration: none;
-        display: block;
-        height: 60px;
-        line-height: 60px;
-        padding: 0 15px;
-        transition: color 300ms; }
-        body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > a.aface.title > i.fa {
-          font-size: 16px; }
-      body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content {
-        position: absolute;
-        display: none;
-        background-color: #373d41;
-        box-shadow: 0 2px 2px rgba(32, 35, 37, 0.4); }
-        body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-item {
-          display: block;
-          padding: 0 15px;
-          font-size: 13px;
-          color: #fff;
-          height: 40px;
-          line-height: 40px;
-          transition: background-color 300ms; }
-          body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-item > i.fa {
-            font-size: 14px; }
-          body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-item:hover {
-            background-color: #00c0dd; }
-        body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon {
-          display: block;
-          float: left;
-          width: 80px;
-          height: 80px;
-          line-height: 80px;
-          text-align: center;
-          color: #fff;
-          transition: background-color 300ms; }
-          body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon > i.fa, body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon > img {
-            display: block;
-            float: left;
-            width: 80px;
-            height: 80px;
-            line-height: 80px;
-            font-size: 40px; }
-          body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item > div.aface.content > a.aface.menu-icon:hover {
-            background-color: #00c0dd; }
-      body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item:hover > a.aface.title {
-        color: #00c0dd; }
-      body.aface.index nav.aface.top-menu > ul.aface.menu > li.menu-item:hover > div.aface.content {
-        display: block; }
+      width: 50px;
+      height: 50px;
+      line-height: 50px; }
     body.aface.index nav.aface.top-menu > span.aface {
       display: block; }
       body.aface.index nav.aface.top-menu > span.aface.brand {
         float: left;
-        height: 60px;
-        line-height: 60px;
+        height: 50px;
+        line-height: 50px;
         font-size: 30px;
         font-family: '黑体';
         text-shadow: 2px 2px rgba(32, 35, 37, 0.8);
         padding: 0 10px;
         color: #fff;
         cursor: default; }
-      body.aface.index nav.aface.top-menu > span.aface.underline {
-        position: absolute;
-        bottom: 0;
-        height: 4px;
-        background-color: #00c0dd; }
     body.aface.index nav.aface.top-menu div.drop-menu {
-      height: 60px;
-      line-height: 60px; }
+      height: 50px;
+      line-height: 50px; }
       body.aface.index nav.aface.top-menu div.drop-menu:hover {
         background-color: #fff; }
         body.aface.index nav.aface.top-menu div.drop-menu:hover > a.aface.title {
@@ -175,13 +116,13 @@ body.aface.index {
           display: block; }
       body.aface.index nav.aface.top-menu div.drop-menu > a.aface.title {
         display: block;
-        height: 60px;
-        line-height: 60px;
+        height: 50px;
+        line-height: 50px;
         font-size: 14px;
         color: #fff;
         padding: 0 10px; }
       body.aface.index nav.aface.top-menu div.drop-menu > div.aface.content {
-        box-shadow: 0 2px 2px rgba(32, 35, 37, 0.4);
+        box-shadow: 0 1px 1px rgba(32, 35, 37, 0.4);
         background-color: #fff;
         padding: 4px 0;
         display: none; }
@@ -194,10 +135,10 @@ body.aface.index {
           padding: 0 10px; }
           body.aface.index nav.aface.top-menu div.drop-menu > div.aface.content > a.aface.menu-item:hover {
             color: #fff;
-            background-color: #00c0dd; }
+            background-color: #00bfbd; }
   body.aface.index > div.aface.root-frame-container {
     position: absolute;
-    top: 60px;
+    top: 50px;
     left: 0;
     right: 0;
     bottom: 0; }
@@ -221,7 +162,7 @@ body.aface.login {
     top: calc(40% - 130px);
     background-color: #fff;
     padding-top: 20px;
-    border-top: solid 5px #00c0dd;
+    border-top: solid 5px #00bfbd;
     box-shadow: 0 2px 4px rgba(32, 35, 37, 0.8); }
     body.aface.login > div.aface.login-window > span.aface.title {
       position: absolute;
@@ -240,7 +181,7 @@ body.aface.login {
       height: 20px;
       top: -10px;
       left: calc(50% - 10px);
-      background-color: #00c0dd;
+      background-color: #00bfbd;
       transform: rotate(45deg);
       z-index: -1; }
     body.aface.login > div.aface.login-window > div.aface.line {
@@ -283,12 +224,12 @@ body.aface.login {
         font-weight: 400;
         transition: background-color 300ms; }
         body.aface.login > div.aface.login-window > div.aface.line > a.aface.button.submit {
-          background-color: #F7A35C;
-          border-bottom: solid 3px #f69544; }
+          background-color: #d9534f;
+          border-bottom: solid 3px #d43f3a; }
           body.aface.login > div.aface.login-window > div.aface.line > a.aface.button.submit:hover {
-            background-color: #f8b174; }
+            background-color: #de6764; }
           body.aface.login > div.aface.login-window > div.aface.line > a.aface.button.submit:active {
-            background-color: #F7A35C; }
+            background-color: #d9534f; }
     body.aface.login > div.aface.login-window > a.aface.forget-password {
       position: absolute;
       bottom: -20px;
@@ -298,7 +239,7 @@ body.aface.login {
       color: #fff;
       text-shadow: 0 2px 4px rgba(32, 35, 37, 0.6); }
       body.aface.login > div.aface.login-window > a.aface.forget-password:hover {
-        color: #00c0dd; }
+        color: #00bfbd; }
   body.aface.login > div.aface.copyright {
     position: absolute;
     width: 200px;
@@ -321,23 +262,23 @@ div.aface.loader {
 
 @keyframes audioWave {
   25% {
-    background: linear-gradient(#00c0dd, #00c0dd) 0 50%, linear-gradient(#428bca, #428bca) 0.625em 50%, linear-gradient(#428bca, #428bca) 1.25em 50%, linear-gradient(#428bca, #428bca) 1.875em 50%, linear-gradient(#428bca, #428bca) 2.5em 50%;
+    background: linear-gradient(#00bfbd, #00bfbd) 0 50%, linear-gradient(#428bca, #428bca) 0.625em 50%, linear-gradient(#428bca, #428bca) 1.25em 50%, linear-gradient(#428bca, #428bca) 1.875em 50%, linear-gradient(#428bca, #428bca) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em; }
   37.5% {
-    background: linear-gradient(#428bca, #428bca) 0 50%, linear-gradient(#00c0dd, #00c0dd) 0.625em 50%, linear-gradient(#428bca, #428bca) 1.25em 50%, linear-gradient(#428bca, #428bca) 1.875em 50%, linear-gradient(#428bca, #428bca) 2.5em 50%;
+    background: linear-gradient(#428bca, #428bca) 0 50%, linear-gradient(#00bfbd, #00bfbd) 0.625em 50%, linear-gradient(#428bca, #428bca) 1.25em 50%, linear-gradient(#428bca, #428bca) 1.875em 50%, linear-gradient(#428bca, #428bca) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em; }
   50% {
-    background: linear-gradient(#428bca, #428bca) 0 50%, linear-gradient(#428bca, #428bca) 0.625em 50%, linear-gradient(#00c0dd, #00c0dd) 1.25em 50%, linear-gradient(#428bca, #428bca) 1.875em 50%, linear-gradient(#428bca, #428bca) 2.5em 50%;
+    background: linear-gradient(#428bca, #428bca) 0 50%, linear-gradient(#428bca, #428bca) 0.625em 50%, linear-gradient(#00bfbd, #00bfbd) 1.25em 50%, linear-gradient(#428bca, #428bca) 1.875em 50%, linear-gradient(#428bca, #428bca) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em; }
   62.5% {
-    background: linear-gradient(#428bca, #428bca) 0 50%, linear-gradient(#428bca, #428bca) 0.625em 50%, linear-gradient(#428bca, #428bca) 1.25em 50%, linear-gradient(#00c0dd, #00c0dd) 1.875em 50%, linear-gradient(#428bca, #428bca) 2.5em 50%;
+    background: linear-gradient(#428bca, #428bca) 0 50%, linear-gradient(#428bca, #428bca) 0.625em 50%, linear-gradient(#428bca, #428bca) 1.25em 50%, linear-gradient(#00bfbd, #00bfbd) 1.875em 50%, linear-gradient(#428bca, #428bca) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em; }
   75% {
-    background: linear-gradient(#428bca, #428bca) 0 50%, linear-gradient(#428bca, #428bca) 0.625em 50%, linear-gradient(#428bca, #428bca) 1.25em 50%, linear-gradient(#428bca, #428bca) 1.875em 50%, linear-gradient(#00c0dd, #00c0dd) 2.5em 50%;
+    background: linear-gradient(#428bca, #428bca) 0 50%, linear-gradient(#428bca, #428bca) 0.625em 50%, linear-gradient(#428bca, #428bca) 1.25em 50%, linear-gradient(#428bca, #428bca) 1.875em 50%, linear-gradient(#00bfbd, #00bfbd) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em; } }
 div.aface.modal-mask {
@@ -404,7 +345,7 @@ div.aface.pop-message {
   line-height: 50px;
   text-align: left;
   background-color: #428bca;
-  box-shadow: 0 2px 2px rgba(32, 35, 37, 0.4); }
+  box-shadow: 0 1px 1px rgba(32, 35, 37, 0.4); }
   div.aface.pop-message > div.aface.pop-message-icon {
     background-color: #357ebd; }
     div.aface.pop-message > div.aface.pop-message-icon > div.aface.pm-icon-mask {
@@ -612,7 +553,7 @@ input.aface.textbox {
   font-size: 12px;
   border: solid 1px #D4D6D8; }
   input.aface.textbox:hover, input.aface.textbox:focus, input.aface.textbox.active {
-    border-color: #5bc0de; }
+    border-color: #00bfbd; }
 
 span.aface.searchbox {
   margin: 0;
@@ -641,9 +582,9 @@ span.aface.searchbox {
     line-height: 28px;
     border: 0; }
   span.aface.searchbox:hover, span.aface.searchbox:focus, span.aface.searchbox.active {
-    border-color: #5bc0de; }
+    border-color: #00bfbd; }
     span.aface.searchbox:hover > i.fa.fa-search, span.aface.searchbox:focus > i.fa.fa-search, span.aface.searchbox.active > i.fa.fa-search {
-      color: #5bc0de; }
+      color: #00bfbd; }
 
 input::-webkit-input-placeholder {
   color: #C4C6C8; }
@@ -660,8 +601,8 @@ button.aface.button {
   font-size: 13px; }
   button.aface.button:hover, button.aface.button:active, button.aface.button:focus {
     color: #fff;
-    border: solid 1px #5bc0de;
-    background-color: #5bc0de; }
+    border: solid 1px #00bfbd;
+    background-color: #00bfbd; }
   button.aface.button.success {
     border-color: #5cb85c;
     color: #5cb85c; }
@@ -671,6 +612,9 @@ button.aface.button {
       background-color: #5cb85c; }
 
 div.aface.toolbar > * {
-  float: left; }
+  float: left;
+  margin-left: 5px; }
+  div.aface.toolbar > *:first-child {
+    margin-left: 0; }
 
 /*# sourceMappingURL=aface.css.map */

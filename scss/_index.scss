@@ -1,5 +1,5 @@
-﻿$top-menu-height: 60px;
-$drop-menu-item-height: 40px;
+﻿$top-menu-height: 50px;
+$drop-menu-item-height: 35px;
 $drop-menu-item-height-small: 30px;
 $drop-menu-icon-height: 80px;
 
@@ -7,6 +7,7 @@ body.aface.index {
     overflow: hidden;
 
     nav.aface.top-menu {
+        @include box-shadow;
         position: fixed;
         top: 0;
         left: 0;
@@ -15,6 +16,7 @@ body.aface.index {
         height: $top-menu-height;
         background-color: $color-steel;
         z-index: 9999;
+        background: -webkit-gradient(linear, 70% 10%, 50% 60%, from($color-steel), to($color-steel-abyss));
 
         &>img.aface.icon {
             @include zero;
@@ -24,86 +26,6 @@ body.aface.index {
             height: $top-menu-height;
             line-height: $top-menu-height;
         }
-
-        &>ul.aface.menu {
-            &>li.menu-item {
-                list-style-type: none;
-                position: relative;
-                float: left;
-                height: $top-menu-height;
-                line-height: $top-menu-height;
-                font-size: 14px;
-
-                &>a.aface.title {
-                    color: $color-f;
-                    text-decoration: none;
-                    display: block;
-                    height: $top-menu-height;
-                    line-height: $top-menu-height;
-                    padding: 0 15px;
-                    transition: color $transition-speed;
-
-                    &>i.fa {
-                        font-size: 16px;
-                    }
-                }
-
-                &>div.aface.content {
-                    position: absolute;
-                    display: none;
-                    background-color: $color-steel;
-                    @include box-shadow;
-
-                    &>a.aface.menu-item {
-                        display: block;
-                        padding: 0 15px;
-                        font-size: 13px;
-                        color: $color-f;
-                        height: $drop-menu-item-height;
-                        line-height: $drop-menu-item-height;
-                        transition: background-color $transition-speed;
-
-                        &>i.fa {
-                            font-size: 14px;
-                        }
-
-                        &:hover {
-                            background-color: $color-light-blue;
-                        }
-                    }
-
-                    &>a.aface.menu-icon {
-                        display: block;
-                        float: left;
-                        width: $drop-menu-icon-height;
-                        height: $drop-menu-icon-height;
-                        line-height: $drop-menu-icon-height;
-                        text-align: center;
-                        color: $color-f;
-                        transition: background-color $transition-speed;
-
-                        &>i.fa, &>img {
-                            display: block;
-                            float: left;
-                            width: $drop-menu-icon-height;
-                            height: $drop-menu-icon-height;
-                            line-height: $drop-menu-icon-height;
-                            font-size: $drop-menu-icon-height / 2;
-                        }
-
-                        &:hover {
-                            background-color: $color-light-blue;
-                        }
-                    }
-                }
-
-                &:hover {
-                    &>a.aface.title { color: $color-light-blue; }
-                    &>div.aface.content { display: block; }
-                }
-            }
-        }
-            
 
         &>span.aface {
             display: block;
@@ -119,61 +41,6 @@ body.aface.index {
                 color: $color-f;
                 cursor: default;
             }
-
-            &.underline {
-                position: absolute;
-                bottom: 0;
-                height: 4px;
-                background-color: $color-light-blue;
-            }
-
-            // &.searchbox {
-            //     height: $top-menu-height - 20px;
-            //     line-height: $top-menu-height - 20px;
-            //     display: block;
-            //     float: left;
-                
-            //     background-color: $color-steel-abyss;
-            //     width: 200px;
-            //     margin-top: 10px;
-            //     border-radius: 4px;
-
-            //     overflow: hidden;
-
-            //     &:hover,&:focus,&.active {
-            //         &>input {
-            //             color: $color-info;
-            //         }
-            //         &>i.fa.fa-search {
-            //             color: $color-info;
-            //         }
-            //     }
-
-            //     &>input {
-            //         @include zero;
-            //         width: calc(100% - 62px);
-            //         height: 40px;
-            //         line-height: 40px;
-            //         background-color: transparent;
-            //         padding: 0 11px;
-            //         color: $color-steel-hover;
-            //         float: left;
-            //         display: block;
-            //         transition: color $transition-speed;
-            //     }
-
-            //     &>i.fa.fa-search {
-            //         display: block;
-            //         float: left;
-            //         width: 40px;
-            //         height: 40px;
-            //         line-height: 40px;
-            //         text-align: center;
-            //         font-size: 20px;
-            //         color: $color-steel-hover;
-            //         transition: color $transition-speed;
-            //     }
-            // }
         }
 
         div.drop-menu {
@@ -198,6 +65,7 @@ body.aface.index {
                 color: $color-f;
                 padding: 0 10px;
             }
+
             &>div.aface.content {
                 @include box-shadow;
                 background-color: $color-f;
@@ -213,7 +81,7 @@ body.aface.index {
 
                     &:hover {
                         color: $color-f;
-                        background-color: $color-light-blue;
+                        background-color: $color-theme;
                     }
                 }
             }

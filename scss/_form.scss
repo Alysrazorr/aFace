@@ -11,7 +11,7 @@ input.aface.textbox {
     font-size: 12px;
     border: solid 1px $color-border;
     &:hover,&:focus,&.active {
-        border-color: $color-info;
+        border-color: $color-theme;
     }
 }
 
@@ -43,9 +43,9 @@ span.aface.searchbox {
     }
 
     &:hover,&:focus,&.active {
-        border-color: $color-info;
+        border-color: $color-theme;
         &>i.fa.fa-search {
-            color: $color-info;
+            color: $color-theme;
         }
     }
 }
@@ -83,8 +83,8 @@ button.aface.button {
     
     &:hover, &:active, &:focus {
         color: $color-f;
-        border: solid 1px $color-info;
-        background-color: $color-info;
+        border: solid 1px $color-theme;
+        background-color: $color-theme;
     }
 
     &.success {
@@ -95,5 +95,9 @@ button.aface.button {
 div.aface.toolbar {
     &>* {
         float: left;
+        margin-left: 5px;
+        &:first-child {
+            margin-left: 0;
+        }
     }
 }

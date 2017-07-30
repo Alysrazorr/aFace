@@ -1,9 +1,11 @@
-$color-theme: $color-info;
+// $color-theme: $color-info;
+$color-theme: rgb(0,191,189);
+// $color-theme: rgb(199,59,0);
+
 $color-border: #D4D6D8;
 $color-bg: lighten($color-border, 10%);
 
-
-$height-low: 32px;
+$height-low: 30px;
 $height-middle: 40px;
-$height-height: 48px;
-$height-extra: 56px;
+$height-height: 50px;
+$height-extra: 60px;

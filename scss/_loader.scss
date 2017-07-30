@@ -16,27 +16,27 @@
 
 @keyframes audioWave {
   25% {
-    background: linear-gradient($color-light-blue, $color-light-blue) 0 50%, linear-gradient($color-primary, $color-primary) 0.625em 50%, linear-gradient($color-primary, $color-primary) 1.25em 50%, linear-gradient($color-primary, $color-primary) 1.875em 50%, linear-gradient($color-primary, $color-primary) 2.5em 50%;
+    background: linear-gradient($color-theme, $color-theme) 0 50%, linear-gradient($color-primary, $color-primary) 0.625em 50%, linear-gradient($color-primary, $color-primary) 1.25em 50%, linear-gradient($color-primary, $color-primary) 1.875em 50%, linear-gradient($color-primary, $color-primary) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
   }
   37.5% {
-    background: linear-gradient($color-primary, $color-primary) 0 50%, linear-gradient($color-light-blue, $color-light-blue) 0.625em 50%, linear-gradient($color-primary, $color-primary) 1.25em 50%, linear-gradient($color-primary, $color-primary) 1.875em 50%, linear-gradient($color-primary, $color-primary) 2.5em 50%;
+    background: linear-gradient($color-primary, $color-primary) 0 50%, linear-gradient($color-theme, $color-theme) 0.625em 50%, linear-gradient($color-primary, $color-primary) 1.25em 50%, linear-gradient($color-primary, $color-primary) 1.875em 50%, linear-gradient($color-primary, $color-primary) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
   }
   50% {
-    background: linear-gradient($color-primary, $color-primary) 0 50%, linear-gradient($color-primary, $color-primary) 0.625em 50%, linear-gradient($color-light-blue, $color-light-blue) 1.25em 50%, linear-gradient($color-primary, $color-primary) 1.875em 50%, linear-gradient($color-primary, $color-primary) 2.5em 50%;
+    background: linear-gradient($color-primary, $color-primary) 0 50%, linear-gradient($color-primary, $color-primary) 0.625em 50%, linear-gradient($color-theme, $color-theme) 1.25em 50%, linear-gradient($color-primary, $color-primary) 1.875em 50%, linear-gradient($color-primary, $color-primary) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em;
   }
   62.5% {
-    background: linear-gradient($color-primary, $color-primary) 0 50%, linear-gradient($color-primary, $color-primary) 0.625em 50%, linear-gradient($color-primary, $color-primary) 1.25em 50%, linear-gradient($color-light-blue, $color-light-blue) 1.875em 50%, linear-gradient($color-primary, $color-primary) 2.5em 50%;
+    background: linear-gradient($color-primary, $color-primary) 0 50%, linear-gradient($color-primary, $color-primary) 0.625em 50%, linear-gradient($color-primary, $color-primary) 1.25em 50%, linear-gradient($color-theme, $color-theme) 1.875em 50%, linear-gradient($color-primary, $color-primary) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em;
   }
   75% {
-    background: linear-gradient($color-primary, $color-primary) 0 50%, linear-gradient($color-primary, $color-primary) 0.625em 50%, linear-gradient($color-primary, $color-primary) 1.25em 50%, linear-gradient($color-primary, $color-primary) 1.875em 50%, linear-gradient($color-light-blue, $color-light-blue) 2.5em 50%;
+    background: linear-gradient($color-primary, $color-primary) 0 50%, linear-gradient($color-primary, $color-primary) 0.625em 50%, linear-gradient($color-primary, $color-primary) 1.25em 50%, linear-gradient($color-primary, $color-primary) 1.875em 50%, linear-gradient($color-theme, $color-theme) 2.5em 50%;
     background-repeat: no-repeat;
     background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em;
   }
