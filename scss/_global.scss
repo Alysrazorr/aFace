@@ -19,19 +19,27 @@ $color-primary: #428bca;
 $color-success: #5cb85c;
 $color-warning: #f0ad4e;
 // $color-info: #5bc0de;
-// $color-info: rgb(59,141,189);
+$color-info: rgb(91, 212, 222);
 $color-danger: #d9534f;
 
-$color-steel: rgb(55,61,65);
-$color-steel-thin: lighten($color-steel, 20%);
-$color-steel-hover: lighten($color-steel, 10%);
+$color-hc-blue: #7CB5EC;
+$color-hc-gray: #434348;
+$color-hc-green: #90ED7D;
+$color-hc-orange: #F7A35C;
+$color-hc-purple: #8085E9;
+$color-hc-pink: #F15C80;
+$color-hc-yellow: #E4D354;
+
+$color-steel: rgb(59,69,79);
+$color-steel-thin: lighten($color-steel, 35%);
+$color-steel-hover: lighten($color-steel, 5%);
 $color-steel-active: darken($color-steel, 5%);
 $color-steel-abyss: darken($color-steel, 10%);
 
-$font-size: 13px;
+$font-size: 12px;
 $font-family: 'Microsoft YaHei', 'Times New Roman';
 
-$transition-speed: 300ms;
+$transition-speed: 200ms;
 
 @mixin border-box {
     -webkit-box-sizing: border-box;
@@ -46,7 +54,19 @@ $transition-speed: 300ms;
 }
 
 @mixin box-shadow {
-    box-shadow: 0 1px 1px rgba($color-steel-abyss, 0.4);
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+.box-shadow {
+    @include box-shadow;
+}
+
+@mixin card-shadow {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-shadow {
+    @include card-shadow;
 }
 
 @mixin zero {
@@ -120,12 +140,32 @@ $transition-speed: 300ms;
 html, body {
 	font-family: $font-family;
     color: $color-3;
+    background-color: $color-f;
 }
 
 *.aface {
 	@include zero;
 	@include border-box;
 	font-family: $font-family;
+	
+	&:after {
+		@include border-box;
+	}
+	&:before {
+		@include border-box;
+	}
+}
+
+i.fa {
+    font-size: 14px;
+	
+	&.block {
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		line-height: 16px;
+		text-align: center;
+	}
 }
 
 .absolute {
@@ -138,4 +178,32 @@ html, body {
 
 .of-hidden {
     overflow: hidden;
+}
+
+ul {
+	&.aface {
+		&.list {
+			list-style-type: none;
+			&.horizontal {
+				&>li.aface {
+					float: left;
+				}
+			}
+		}
+	}
+}
+
+a {
+    color: $color-info;
+    text-decoration: none;
+    &:hover {
+        color: $color-steel;
+    }
+}
+
+.none-select {
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
 }

@@ -1,0 +1,280 @@
+$button-height: 30px;
+$button-padding: 10px;
+@mixin button-style($color) {
+    &:hover,&.active {
+        color: $color-f;
+        border-color: lighten($color, 5%);
+        background-color: lighten($color, 5%);
+    }
+}
+
+button.aface {
+    &.button {
+        box-shadow: 0 0 6px rgba(0,0,0,0.1);
+        display: inline-block;
+        height: $button-height;
+        line-height: $button-height - 2;
+        padding: 0 $button-padding;
+        cursor: pointer;
+        font-size: 12px;
+        color: $color-3;
+        background-color: $color-f;
+        border: solid 1px $color-d;
+        &:hover, &:active {
+            border-color: $color-info;
+        }
+        &.primary {
+            @include button-style($color-primary);
+        }
+        &.success {
+            @include button-style($color-success);
+        }
+        &.info {
+            @include button-style($color-info);
+        }
+        &.warning {
+            @include button-style($color-warning);
+        }
+        &.danger {
+            @include button-style($color-danger);
+        }
+        &.disabled {
+            cursor: default;
+            color: $color-9;
+            background-color: $color-e;
+            border: solid 1px $color-d;
+            &>i.fa {
+                color: $color-9;
+            }
+        }
+    }
+}
+
+$input-height: $button-height;
+$input-padding: 8px;
+input.aface {
+    width: 200px;
+    display: inline-block;
+    height: $input-height;
+    line-height: $input-height - 2;
+    padding: 0 $input-padding;
+    font-size: 12px;
+    background-color: $color-f;
+    border: solid 1px $color-d;
+    &.textbox {
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1) inset;
+        &:hover, &:active {
+            border-color: $color-info;
+        }
+    }
+}
+
+span.aface.facade {
+    &.datalist {
+        @include border-box;
+        position: relative;
+        display: inline-block;
+        font-size: 0;
+        background-color: $color-f;
+        border: solid 1px $color-d;
+        height: $input-height;
+        line-height: $input-height;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+        &:hover,
+        &.active {
+            border-color: $color-b;
+            &>i.fa {
+                color: $color-b;
+            }
+            &>ul.aface.facade.datalist.list {
+                border-color: $color-b;
+            }
+        }
+        &>* {
+            float: left;
+        }
+        &>i.fa {
+            cursor: pointer;
+            color: $color-d;
+            border: 0;
+            box-shadow: none;
+            height: $input-height - 2 !important;
+            line-height: $input-height - 2 !important;
+            width: 20px;
+            font-size: 18px;
+            text-align: center;
+            background-color: transparent;
+            transition: transform $transition-speed;
+            &.rotate {
+                @include rotate(-180deg);
+            }
+        }
+        &>ul.aface.facade.datalist.list {
+            border: solid 1px $color-d;
+            background-color: $color-f;
+            z-index: 40000;
+            position: absolute;
+            top: $input-height + 2;
+            left: -1px;
+            display: block;
+            padding: 3px 0;
+            max-height: 300px;
+            overflow: auto;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            &>li.aface.list-item {
+                @include clearfix;
+                cursor: pointer;
+                display: block;
+                line-height: 25px;
+                color: $color-3;
+                font-size: 12px;
+                padding: 0 $input-padding;
+                &:hover {
+                    background-color: $color-steel;
+                    color: $color-f;
+                }
+            }
+        }
+        &>input.aface.textbox {
+            background-color: transparent;
+            border: 0;
+            box-shadow: none;
+            height: $input-height - 2;
+            line-height: $input-height - 2;
+        }
+    }
+    &.fileupload {
+        @include border-box;
+        position: relative;
+        display: inline-block;
+        font-size: 0;
+        background-color: $color-f;
+        border: solid 1px $color-d;
+        height: $input-height;
+        line-height: $input-height;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+        overflow: hidden;
+        &:hover,
+        &:active {
+            border-color: $color-b;
+            &>i.fa {
+                color: $color-b;
+            }
+            &>ul.aface.facade.datalist.list {
+                border-color: $color-b;
+            }
+        }
+        &>input.aface.textbox {
+            background-color: transparent;
+            border: 0;
+            width: 100%;
+            box-shadow: none;
+            height: $input-height - 2;
+            line-height: $input-height - 2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            &[type="file"] {
+                z-index: 2;
+                width: 1000%;
+                left: -100%;
+            }
+            &[type="text"] {
+                z-index: 1;
+            }
+        }
+    }
+}
+
+@mixin tooltip-style($color) {
+    color: $color;
+    border-color: $color;
+    box-shadow: 0 1px 3px rgba($color, 0.8);
+    &:after {
+        border-color: $color;
+    }
+}
+
+div.aface.tooltip {
+    z-index: 999999;
+    position: absolute;
+    border: solid 1px $color-d;
+    height: 30px;
+    background-color: $color-f;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    display: none;
+    &.primary {
+        @include tooltip-style($color-primary);
+    }
+    &.success {
+        @include tooltip-style($color-success);
+    }
+    &.info {
+        @include tooltip-style($color-info);
+    }
+    &.warning {
+        @include tooltip-style($color-warning);
+    }
+    &.danger {
+        @include tooltip-style($color-danger);
+    }
+    &:after {
+        z-index: 29999;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 6px;
+        background-color: $color-f;
+        border: solid 1px $color-d;
+        content: ' ';
+        transform: rotate(45deg);
+    }
+    &.top-arrow {
+        &:after {
+            top: -3px;
+        }
+    }
+    &.bottom-arrow {
+        &:after {
+            bottom: -3px;
+        }
+    }
+    &.left-arrow {
+        &:after {
+            left: calc(100% - 17px);
+            bottom: 4px;
+        }
+    }
+    &.right-arrow {
+        &:after {
+            left: -3px;
+            bottom: 4px;
+        }
+    }
+    &>span.aface.tooltip-content {
+        position: relative;
+        display: block;
+        background-color: $color-f;
+        z-index: 39999;
+        height: 28px;
+        line-height: 28px;
+        font-size: 12px;
+        padding: 0 10px;
+        white-space: nowrap;
+    }
+}
+
+span.aface.blockquote {
+    display: block;
+    height: $button-height;
+    line-height: $button-height;
+    border-left: solid 5px $color-steel;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+.panel-shadow {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}

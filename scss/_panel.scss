@@ -1,6 +1,75 @@
-﻿$panel-border-color: lighten($color-steel-thin, 45%);
-div.aface.panel {
+﻿div.aface.panel {
+    border: solid 1px $color-d;
     background-color: $color-f;
-    padding: 5px;
+}
+
+$pop-message-height: 50px;
+$pop-message-width: 500px;
+
+@mixin pop-message-color($color) {
+    background-color: $color;
+    &>div.aface.pop-message-icon {
+        background-color: darken($color, 5%);
+        &>div.aface.pm-icon-mask {
+            background-color: darken($color, 5%);
+        }
+    }
+}
+
+div.aface.pop-message {
+    position: relative;
+    display: inline-block;
+    color: $color-f;
+    margin: 5%;
+    width: $pop-message-width;
+    height: $pop-message-height;
+    line-height: $pop-message-height;
+    text-align: left;
+
+    @include pop-message-color($color-primary);
     @include box-shadow;
+
+    &.success {
+        @include pop-message-color($color-success);
+    }
+    &.failed {
+        @include pop-message-color($color-danger);
+    }
+    &.info {
+        @include pop-message-color($color-steel-hover);
+    }
+
+    &>div.aface.pop-message-icon {
+        position: relative;
+        float: left;
+        width: 80px;
+        height: $pop-message-height;
+        line-height: $pop-message-height;
+        text-align: center;
+
+        &>i.fa {
+            display: block;
+            height: $pop-message-height;
+            line-height: $pop-message-height;
+            font-size: 20px;
+        }
+    }
+
+    &>div.aface.pop-message-content {
+        float: left;
+        width: calc(100% - 80px);
+        height: $pop-message-height;
+        line-height: $pop-message-height;
+        padding: 0 20px;
+    }
+}
+
+div.aface.card {
+    display: inline-block;
+    border: solid 1px transparent;
+
+    &:hover,&.active {
+        background-color: $color-f;
+        border: solid 1px $color-info;
+    }
 }

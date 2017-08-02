@@ -10,6 +10,7 @@
         <style type="text/css">
             body {
                 padding: 5px !important;
+                background-color: #F4F6F8;
             }
         </style>
     </head>
@@ -33,7 +34,7 @@
             </div>
         </div>
         
-        <span class="aface blockquote" style="margin-top: 5px;">HTML´úÂë</span>
+        <span class="aface blockquote" style="margin-top: 5px;">HTMLä»£ç </span>
         <pre class="brush:xml">
             <div class="aface tabs" id="tabs">
                 <ul class="aface tab-indices">
@@ -49,43 +50,43 @@
             </div>
         </pre>
         
-        <span class="aface blockquote" style="margin-top: 5px;">JavaScript´úÂë</span>
+        <span class="aface blockquote" style="margin-top: 5px;">JavaScriptä»£ç </span>
         <pre class="brush:javascript">
-            // Ä¬ÈÏÖµ
+            // é»˜è®¤å€¼
             defaultOptions : {
                 selectedTabIndex : 0,
                 onSelectedTabChange : null
             }
             
-            // ³õÊ¼»¯
+            // åˆå§‹åŒ–
             $('#tabs').tabs({
-                // ³õÊ¼»¯Ê±Ä¬ÈÏÑ¡ÖĞTabµÄË÷Òı
+                // åˆå§‹åŒ–æ—¶é»˜è®¤é€‰ä¸­Tabçš„ç´¢å¼•
                 selectedTabIndex : 0,
                 /**
-                 * Ñ¡ÖĞTab·¢Éú±ä»¯Ê±´¥·¢µÄÊÂ¼ş
+                 * é€‰ä¸­Tabå‘ç”Ÿå˜åŒ–æ—¶è§¦å‘çš„äº‹ä»¶
                  * 
-                 * @param index: Ñ¡ÖĞµÄTabµÄË÷Òı
-                 * @param event: Êó±êµ¥»÷ÊÂ¼ş
+                 * @param index: é€‰ä¸­çš„Tabçš„ç´¢å¼•
+                 * @param event: é¼ æ ‡å•å‡»äº‹ä»¶
                  */
                 onSelectedTabChange : function(index, event) {
                     console.log('selectedTabIndex: ' + index);
                 }
             });
             
-            // »ñÈ¡Ö¸¶¨dom¶ÔÏóÉÏ°ó¶¨µÄjs¶ÔÏó
+            // è·å–æŒ‡å®šdomå¯¹è±¡ä¸Šç»‘å®šçš„jså¯¹è±¡
             var tabs = $('#tabs').target('tabs');
             
             /**
-             * »ñÈ¡µ±Ç°Ñ¡ÖĞµÄTabµÄË÷Òı
+             * è·å–å½“å‰é€‰ä¸­çš„Tabçš„ç´¢å¼•
              * 
-             * @return: 0 Ë÷Òı
+             * @return: 0 ç´¢å¼•
              */
             tabs.getSelectedTabIndex();
             
             /**
-             * °´Ë÷ÒıÑ¡ÖĞTab
+             * æŒ‰ç´¢å¼•é€‰ä¸­Tab
              * 
-             * @param idx: 0 ÒªÑ¡ÖĞµÄTabµÄË÷Òı
+             * @param idx: 0 è¦é€‰ä¸­çš„Tabçš„ç´¢å¼•
              */
             tabs.selectByIndex(1);
         </pre>

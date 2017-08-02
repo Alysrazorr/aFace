@@ -1,49 +1,54 @@
-$tabs-height: 30px;
+$tabs-height: 40px;
 $tab-index-font-color: $color-steel;
 $tab-index-bg-color: lighten($color-steel-thin, 15%);
 $tab-index-hover-bg-color: $color-steel-hover;
 
-div.aface {
-    &.tabs {
-        &>ul.aface.tab-indices {
-			list-style-type: none;
-			
-            &>li.aface.tab-index {
-                float: left;
-				cursor: pointer;
-				
-				padding: 0 10px;
-                text-align: center;
-                
-                margin-left: 5px;
-                &:first-child { margin-left: 0; }
-				
-                height: $tabs-height;
-                line-height: $tabs-height;
-				
-				color: $tab-index-font-color;
-                background-color: $tab-index-bg-color;
-				
-                font-size: 13px;
-				
-                &.active, &:hover {
-					color: $color-f;
-                    background-color: $tab-index-hover-bg-color;
-                }
-            }
-            @include clearfix;
-        }
+div.aface.tabs {
+    background-color: $color-f;
+    border: solid 1px $color-d;
+    // box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    padding: 5px;
+
+    &>ul.aface.tab-indices {
+        list-style-type: none;
+        height: $tabs-height;
+        font-weight: 900;
+        border-bottom: solid 2px $color-d;
         
-        &>div.aface.tab-contents {
-            margin-top: 5px;
+        &>li.aface.tab-index {
+            float: left;
+            cursor: pointer;
             
-            &>div.tab-content {
-                display: none;
-                width: 100%;
-                height: 100%;
-				&.active {
-					display: block;
-				}
+            padding: 0 20px;
+            text-align: center;
+            
+            margin-left: 5px;
+            &:first-child { margin-left: 0; }
+            
+            height: $tabs-height;
+            line-height: $tabs-height;
+            
+            color: $tab-index-font-color;
+            
+            font-size: 13px;
+            
+            &.active, &:hover {
+                color: $color-info;
+                border-bottom: solid 2px $color-info;
+            }
+        }
+        @include clearfix;
+    }
+    
+    &>div.aface.tab-contents {
+        margin-top: 5px;
+        
+        &>div.tab-content {
+            display: none;
+            width: 100%;
+            height: 100%;
+            &.active {
+                display: block;
             }
         }
     }

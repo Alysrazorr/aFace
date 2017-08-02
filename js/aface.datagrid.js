@@ -2,9 +2,9 @@
     var Datagrid = Clazz.create({
         dom : null,
         data : null,
-        pagination : null,
-        options : null,
-        params : null,
+        pagination : {},
+        options : {},
+        params : {},
         gridTblWidth : null,
         gridTblHeight : null,
         sortFields : {},
@@ -20,7 +20,6 @@
             if (!thiz.options.url) {
                 return;
             }
-            thiz.loader.show();
             $.ajax({
                 url : thiz.options.url,
                 type : 'post',
@@ -35,10 +34,9 @@
                         thiz.pagination = httpResult.pagination;
                         thiz.renderData();
                         thiz.dom.find('#__checkAll').prop('checked', false);
-                        typeof thiz.options.onAfterLoad === 'function' ? thiz.options.onAfterLoad(thiz.data) : false;
                     }
-                    thiz.loader.hide();
-                }
+                },
+                error : function() {}
             });
         },
         loadLocal : function(data) {
@@ -78,50 +76,29 @@
         },
         getSelectedRows : function() {
             var thiz = this;
-            var selectedRows = new Array();
-            thiz.dom.find('input[id^="row_"]').each(function(idx, elem) {
-                if ($(elem).prop('checked')) {
-                    var id = $(elem).attr('id');
-                    var idx = id.split('_')[2];
-                    selectedRows.push(thiz.data[idx]);
-                }
+            var selectedRows = [];
+            thiz.dom.find('input[id^="row_"]').each(function(idx, row) {
+                $(row).prop('checked') ? selectedRows.push(thiz.data[$(row).attr('id').split('_')[2]]) : false;
             });
             return selectedRows;
         },
         getSelectedRowIds : function() {
             var thiz = this;
-            var ids = new Array();
-            $.each(thiz.getSelectedRows(), function(idx, elem) {
-                ids.push(elem[thiz.options.idField]);
+            var selectedRowIds = [];
+            $.each(thiz.getSelectedRows(), function(idx, row) {
+                selectedRowIds.push(row[thiz.options.idField]);
             });
-            return ids;
-        },
-        selectByIds : function(ids) {
-            var thiz = this;
-            $.each(ids, function(idx, id) {
-                thiz.dom.find('input[id^="row_' + id + '"]').prop('checked', true);
-            });
-        },
-        deleteSelectedRows : function() {
-            var thiz = this;
-            $.each(thiz.getSelectedRowIds(), function(idx, id) {
-                console.log(id);
-                $('input[id^=row_' + id + ']').parent().parent().remove();
-            });
+            return selectedRowIds;
         },
         render : function() {
             var thiz = this;
             thiz.dom.empty();
             thiz.dom.addClass('aface').addClass('datagrid');
-            thiz.dom.loader({
-                transparentMask : true
-            });
-            thiz.loader = thiz.dom.target('loader');
             
             thiz.renderHeader();
             thiz.renderGrid();
             thiz.renderPagination();
-            thiz.loadData(thiz.options.params, thiz.options.onAfterLoad);
+            thiz.loadData(thiz.options.params);
         },
         renderHeader : function() {
             var thiz = this;
@@ -129,23 +106,20 @@
             var theadHeader = divHeader.find('table.dataheader').find('thead');
             var tr = $('<tr></tr>');
             if (thiz.options.hasCheckbox) {
-                tr.append('<th class="aface cb"><input type="checkbox" id="__checkAll" /></th>');
-                tr.find('input#__checkAll').on('click', function(e) {
-                    if ($(this).prop('checked')) {
-                        thiz.dom.find('input[id^="row_"]').prop('checked', true);
-                    } else {
-                        thiz.dom.find('input[id^="row_"]').prop('checked', false);
-                    }
+                var cb = $('<input type="checkbox" id="__checkAll" />').on('click', function(e) {
+                    $(this).prop('checked') ? thiz.dom.find('input[id^="row_"]').prop('checked', true) : thiz.dom.find('input[id^="row_"]').prop('checked', false);
                 });
-            }
-            if (thiz.options.hasSerialNumber) {
-                tr.append('<th class="aface sn"><i class="fa fa-hashtag"></i></th>');
+                var th = $('<th class="aface cb"></th>');
+                tr.append(th.append(cb));
             }
             for (var i = 0; i < thiz.options.columns.length; i++) {
-                var th = $('<th class="aface" style="width: ' + thiz.options.columns[i].width + ';" title="' + thiz.options.columns[i].title
-                          + '"' + (thiz.options.columns[i]['sort'] ? (' data-sort=' + thiz.options.columns[i]['sort']) : '') + '>' + thiz.options.columns[i].title + '</th>');
+                var th = $('<th class="aface"></th>')
+                         .attr('title', thiz.options.columns[i].title)
+                         .css({ 'width' : thiz.options.columns[i].width })
+                         .html(thiz.options.columns[i].title);
                 if (thiz.options.columns[i]['sort']) {
                     th.css({ 'cursor' : 'pointer' });
+                    th.data('sort', thiz.options.columns[i]['sort']);
                 }
                 th.on('click', function(e) {
                     th = $(this);
@@ -169,6 +143,7 @@
                 });
                 tr.append(th);
             }
+            // 插入两个超宽列，使得左侧列顶格排列
             tr.append('<th class="aface" style="width: 10000px;"></th>');
             tr.append('<th class="aface" style="width: 10000px;"></th>');
             theadHeader.append(tr);
@@ -176,35 +151,39 @@
         },
         renderGrid : function() {
             var thiz = this;
-            var height = thiz.options.hasPagination ? thiz.dom.height() - 80 : thiz.dom.height() - 40;
-            var width = thiz.dom.width();
-            var gridTblWidth = 0;
+            var height = thiz.options.hasPagination ? thiz.dom.height() - 80 : thiz.dom.height() - 40; // 表格高度
+            var width = thiz.dom.width(); // 表格宽度
+            var gridTblWidth = 0; // 总列宽
+
+            // 联动滚动表头
             var divHeader = thiz.dom.find('#__divHeader');
             var divGrid = $(thiz.__template.grid).css({ height : height + 'px' }).on('scroll', function(e) {
                 divHeader.scrollLeft($(this).scrollLeft());
             });
+
             var theadHeader = divGrid.find('table.datagrid').find('thead');
             var tr = $('<tr></tr>');
+
+            // 添加单选框，计算总列宽
             if (thiz.options.hasCheckbox) {
                 tr.append('<th class="aface cb"></th>');
                 gridTblWidth += 40;
             }
-            if (thiz.options.hasSerialNumber) {
-                tr.append('<th class="aface sn"></th>');
-                gridTblWidth += 35;
-            }
+            // 添加列，计算总列宽
             for (var i = 0; i < thiz.options.columns.length; i++) {
-                tr.append('<th class="aface" style="width: ' + thiz.options.columns[i].width + ';"></th>');
+                tr.append($('<th class="aface"></th>').css({ 'width' : thiz.options.columns[i].width }));
                 gridTblWidth += parseInt(thiz.options.columns[i].width);
             }
-            if (gridTblWidth <= width) {
-                tr.append('<th class="aface" id="__blankHeader" style="width: 10000px;"></th>');
-                divGrid.css({ 'overflow-x': 'hidden' });
+            // 根据总列宽，计算显示效果
+            if (gridTblWidth <= width) { // 列宽不够填满整个表格区域
+                tr.append('<th class="aface" id="__blankHeader" style="width: 10000px;"></th>'); // 添加超宽列，使左侧列顶格
+                divGrid.css({ 'overflow-x': 'hidden' }); // 隐藏滚动条
             } else {
-                tr.append('<th class="aface" id="__blankHeader" style="width: 35px;"></th>');
+                tr.append('<th class="aface" id="__blankHeader" style="width: 35px;"></th>'); // 添加尾列，留出空余
             }
+
             $(window).on('resize.datagrid', function(e) {
-                var height = thiz.options.hasPagination ? thiz.dom.height() - 80 : thiz.dom.height() - 40;
+                var height = (thiz.options.hasPagination && thiz.data.length !== 0) ? thiz.dom.height() - 80 : thiz.dom.height() - 40;
                 var width = thiz.dom.width();
                 divGrid.css({ height: height + 'px' });
                 if (gridTblWidth <= width) {
@@ -216,176 +195,127 @@
                     divGrid.find('#__blankHeader').css('width', '35px');
                 }
             });
+
             theadHeader.append(tr);
             thiz.gridTblWidth = gridTblWidth;
             thiz.dom.find('#__divHeader').after(divGrid);
         },
         renderData : function() {
             var thiz = this;
-            if (!thiz.data) {
-                return;
-            }
-            var height = thiz.dom.outerHeight();
-            var width = thiz.dom.outerWidth();
+            var height = thiz.dom.height();
+            var width = thiz.dom.width();
             var gridTblHeight = 0;
-            var snBegin = thiz.pagination.pageSize * (thiz.pagination.currPage - 1);
             
             var divGrid = thiz.dom.find('#__divGrid');
             var divHeader = thiz.dom.find('#__divHeader');
+            var divPagination = thiz.dom.find('#__divPagination');
             var tbodyGrid = divGrid.find('table.datagrid').find('tbody').empty();
-            var num = {
-                num : parseInt(thiz.pagination.currPage * thiz.pagination.pageSize),
-                times : 1
-            };
-            num = slj(num);
-            divHeader.find('.aface.sn').css('width', (num.times * 10 + 30) + 'px');
-            divGrid.find('.aface.sn').css('width', (num.times * 10 + 30) + 'px');
-            for (var i = 0; i < thiz.data.length; i++) {
-                var row = thiz.data[i];
-                tr = $('<tr></tr>');
-                if (thiz.options.hasCheckbox) {
-                    var iptCb = $('<input type="checkbox" id="row_' + row[thiz.options.idField] + '_' + i + '" />').on('click', function(e) {
-                        if (!$(this).prop('checked')) {
-                            thiz.dom.find('#__checkAll').prop('checked', false);
-                        }
-                    });
-                    tr.append($('<td class="aface cb"></td>').append(iptCb));
-                }
-                if (thiz.options.hasSerialNumber) {
-                    tr.append('<td class="aface sn">' + (i + 1 + snBegin) + '</td>');
-                }
+            
+            // 无返回数据
+            if (!thiz.data || thiz.data.length === 0) {
+            	divGrid.css({ 'height' : height - 40 });
+            	divGrid.append('<div class="noDataHint">' + thiz.options.noDataHint + '</div>');
+            	divPagination.addClass('hidden');
+                return;
+            }
+
+            var tbodyGrid = divGrid.find('table.datagrid').find('tbody').empty();
+        	divGrid.css({ 'height' : height - 80 });
+            divGrid.find('div.noDataHint').remove();
+        	divPagination.removeClass('hidden');
+        	
+            $(thiz.data).each(function(rowIndex, rowData) {
                 gridTblHeight += 35;
-                for (var j = 0; j < thiz.options.columns.length; j++) {
+            	tr = $('<tr></tr>');
+                if (thiz.options.hasCheckbox) {
+                    var cb = $('<input type="checkbox" />').attr('id', 'row_' + rowData[thiz.options.idField]).on('click', function(e) {
+                        !$(this).prop('checked') ? thiz.dom.find('#__checkAll').prop('checked', false) : false;
+                    });
+                    tr.append($('<td class="aface cb"></td>').append(cb));
+                }
+                $(thiz.options.columns).each(function(col, column) {
+                    var td = $('<td class="aface"></td>');
                     var text = '';
-                    var text0 = '';
-                    if (typeof thiz.options.columns[j].formatter == 'function') {
-                        text = !thiz.options.columns[j].formatter(i, row) ? '' : thiz.options.columns[j].formatter(i, row);
-                        tr.append('<td class="aface ' + (thiz.options.columns[j].autowrap ? 'autowrap' : 'nowrap') + (thiz.options.columns[j].nopadding ? ' nopadding' : '') + '">' + text + '</td>');
-                        continue;
+                    if (typeof column.formatter === 'function') {
+                        text = !column.formatter(rowIndex, rowData) ? '' : column.formatter(rowIndex, rowData);
+                        tr.append(td.html(text));
+                        return true;
                     }
-                    text = (null === row[thiz.options.columns[j].field] || typeof row[thiz.options.columns[j].field] === 'undefined') ?
-                            '' : row[thiz.options.columns[j].field];
-                    if (thiz.options.columns[j].field === 'p_state') {
+                    text = (null === rowData[column.field] || typeof rowData[column.field] === 'undefined') ? '' : rowData[column.field];
+                    if (column.field === thiz.options.stateField) {
                         switch (text) {
                             case '未启用':
-                                text0 = '<span style="padding: 4px; border-radius: 2px; background-color: #dddddd; color: #555555;">' + text + '</span>';break;
+                            	text = '<span style="padding: 4px; border-radius: 2px; background-color: #dddddd; color: #555555;">' + text + '</span>'; break;
                             case '已启用':
-                                text0 = '<span style="padding: 4px; border-radius: 2px; background-color: #5cb85c; color: #ffffff;">' + text + '</span>';break;
+                            	text = '<span style="padding: 4px; border-radius: 2px; background-color: #5cb85c; color: #ffffff;">' + text + '</span>'; break;
                             case '已停用':
-                                text0 = '<span style="padding: 4px; border-radius: 2px; background-color: #f2b866; color: #ffffff;">' + text + '</span>';break;
+                            	text = '<span style="padding: 4px; border-radius: 2px; background-color: #f2b866; color: #ffffff;">' + text + '</span>'; break;
+                            default: break;
                         }
-                    } else {
-                        text0 = text;
                     }
-                    tr.append('<td class="aface ' + (thiz.options.columns[j].autowrap ? 'autowrap' : 'nowrap') + (thiz.options.columns[j].nopadding ? ' nopadding' : '')
-                            + '" title="' + text + '">' + text0 + '</td>');
-                }
+                    tr.append(td.html(text));
+                });
                 tr.append('<td class="aface"></td>');
-                tr.data('rowIndex', i);
-                tr.data('rowData', row);
+                tr.data('rowIndex', rowIndex);
+                tr.data('rowData', rowData);
                 if (typeof thiz.options.onClickRow === 'function') {
                     tr.on('click', function(e) {
                         thiz.options.onClickRow($(this).data('rowIndex'), $(this).data('rowData'), e);
                     });
                 }
                 tbodyGrid.append(tr);
-                if (i === thiz.data.length - 1 && (gridTblHeight - 1) >= divGrid.height() && thiz.gridTblWidth <= divGrid.width()) {
-                    tr.find('td').css('border-bottom-width', '0');
-                }
-                if (i === thiz.data.length - 1 && thiz.options.noLastBottomBorder && thiz.data.length == thiz.options.pagination.pageSize) {
-                    tr.find('td').css('border-bottom-width', '0');
-                }
-            }
-            
-            var divPagination = thiz.dom.find('#__divPagination');
-            divPagination.find('button[id^=__btn]').each(function(idx, btn) {
-                $(btn).parent().removeClass('hidden');
             });
-            divPagination.find('#__iptCurrPage').val(thiz.pagination.currPage);
-            divPagination.find('#__spCurrPage').html(thiz.pagination.currPage);
-            divPagination.find('#__spTotalPages').html(thiz.pagination.totalPages);
-            divPagination.find('#__spTotalResults').html(thiz.pagination.totalResults);
-            divPagination.find('#__spBegin').html(snBegin + 1);
-            divPagination.find('#__spEnd').html((thiz.pagination.pageSize * thiz.pagination.currPage) > thiz.pagination.totalResults ? thiz.pagination.totalResults : (thiz.pagination.pageSize * thiz.pagination.currPage));
             
-            var btnFirstPage = divPagination.find('#__btnFirstPage');
-            var btnPreviousPage = divPagination.find('#__btnPreviousPage');
-            var btnNextPage = divPagination.find('#__btnNextPage');
-            var btnLastPage = divPagination.find('#__btnLastPage');
-            
-            if (thiz.pagination.currPage == 1) {
-                btnFirstPage.parent().addClass('hidden');
-                btnPreviousPage.parent().addClass('hidden');
-            }
-            if (thiz.pagination.currPage == thiz.pagination.totalPages) {
-                btnNextPage.parent().addClass('hidden');
-                btnLastPage.parent().addClass('hidden');
-            }
-            if (typeof thiz.options.afterLoad === 'function') {
-                thiz.options.afterLoad();
-            }
+            var fromIndex = divPagination.find('b.from');
+        	var toIndex = divPagination.find('b.to');
+        	var totalResults = divPagination.find('b.totalResults');
+        	var currPage = divPagination.find('b.currPage');
+        	var totalPages = divPagination.find('b.totalPages');
+        	
+        	fromIndex.html((thiz.pagination.currPage - 1) * thiz.pagination.pageSize + 1);
+        	toIndex.html(thiz.pagination.currPage * thiz.pagination.pageSize < thiz.pagination.totalResults ? thiz.pagination.currPage * thiz.pagination.pageSize : thiz.pagination.totalResults);
+        	totalResults.html(thiz.pagination.totalResults);
+        	currPage.html(thiz.pagination.currPage);
+        	totalPages.html(thiz.pagination.totalPages);
+        	
+        	var pages = divPagination.find('div.aface.pagination');
+        	pages.find('a.aface.pagination').not('.first,.prev,.next,.last').remove();
+        	
+        	var first = pages.find('a.aface.pagination.first').data('toPage', 1);
+        	var prev = pages.find('a.aface.pagination.prev').data('toPage', thiz.pagination.currPage > 2 ? thiz.pagination.currPage - 1 : 1);
+        	var next = pages.find('a.aface.pagination.next').data('toPage', thiz.pagination.currPage < thiz.pagination.totalPages ? thiz.pagination.currPage + 1 : thiz.pagination.totalPages);
+        	var last = pages.find('a.aface.pagination.last').data('toPage', thiz.pagination.totalPages);
+        	
+        	var pageArr = [ thiz.pagination.currPage - 2, thiz.pagination.currPage - 1, thiz.pagination.currPage, thiz.pagination.currPage + 1, thiz.pagination.currPage + 2 ];
+        	$(pageArr).each(function(idx, page) {
+        		if (page > 0 && page <= thiz.pagination.totalPages) {
+        			var pageLink = $(thiz.__template.page).html(page).on('click', function(e) {
+        				thiz.loadData({ currPage : page });
+        			});
+        			if (page == thiz.pagination.currPage) {
+        				pageLink.addClass('active');
+        			}
+        			next.before(pageLink);
+        		}
+        	});
         },
         renderPagination : function() {
-            var thiz = this;
-            if (!thiz.options.hasPagination) {
-                return false;
-            }
-            var snBegin = thiz.pagination.pageSize * (thiz.pagination.currPage - 1);
-            var divPagination = $(thiz.__template.pagination);
-            divPagination.find('#__iptCurrPage').val(thiz.pagination.currPage);
-            divPagination.find('#__spCurrPage').html(thiz.pagination.currPage);
-            divPagination.find('#__spTotalPages').html(thiz.pagination.totalPages);
-            divPagination.find('#__spTotalResults').html(thiz.pagination.totalResults);
-            divPagination.find('#__spBegin').html(snBegin + 1);
-            divPagination.find('#__spEnd').html(thiz.pagination.pageSize * thiz.pagination.currPage);
-            
-            var btnFirstPage = divPagination.find('#__btnFirstPage');
-            btnFirstPage.on('click', function(e) {
-                thiz.loadData({
-                    currPage : 1,
-                    pageSize : thiz.pagination.pageSize
-                });
-            });
-            var btnPreviousPage = divPagination.find('#__btnPreviousPage');
-            btnPreviousPage.on('click', function(e) {
-                thiz.loadData({
-                    currPage : parseInt(thiz.pagination.currPage) - 1,
-                    pageSize : thiz.pagination.pageSize
-                });
-            });
-            var btnNextPage = divPagination.find('#__btnNextPage');
-            btnNextPage.on('click', function(e) {
-                thiz.loadData({
-                    currPage : parseInt(thiz.pagination.currPage) + 1,
-                    pageSize : thiz.pagination.pageSize
-                });
-            });
-            var btnLastPage = divPagination.find('#__btnLastPage');
-            btnLastPage.on('click', function(e) {
-                thiz.loadData({
-                    currPage : thiz.pagination.totalPages,
-                    pageSize : thiz.pagination.pageSize
-                });
-            });
-            var iptCurrPage = divPagination.find('#__iptCurrPage');
-            iptCurrPage.on({
-                'keydown' : function(e) {
-                    if ((e.keyCode > 47 && e.keyCode < 58) || (e.keyCode > 95 && e.keyCode < 106) || e.keyCode === 8 || e.keyCode === 46 || e.keyCode === 13) {
-                        if (e.keyCode === 13) {
-                            if (iptCurrPage.val().trim() == '') {
-                                iptCurrPage.val(1);
-                            }
-                            thiz.loadData({
-                                currPage : parseInt(iptCurrPage.val()) > thiz.pagination.totalPages ? thiz.pagination.totalPages : parseInt(iptCurrPage.val()),
-                                pageSize : thiz.pagination.pageSize
-                            });
-                        }
-                    } else {
-                        e.preventDefault();
-                    }
-                }
-            });
-            thiz.dom.append(divPagination);
+        	var thiz = this;
+        	
+        	var divPagination = $(thiz.__template.pagination);
+        	
+        	var pageSizeList = divPagination.find('select.aface.pagination').on('change', function(e) {
+        		thiz.loadData({ currPage : 1, pageSize : $(this).val() });
+        	});
+        	$(thiz.options.pageSizeList).each(function(idx, pageSize) {
+        		pageSizeList.append($('<option></option>').attr('value', pageSize).html(pageSize));
+        	});
+        	
+        	var pages = $(thiz.__template.pages);
+        	pages.find('a.aface.pagination').on('click', function(e) {
+        		thiz.loadData({ currPage : $(this).data('toPage') });
+        	});
+        	thiz.dom.append(divPagination.append(pages));
         },
         __template : {
             header : '<div class="aface datagrid-header" id="__divHeader">'
@@ -403,57 +333,45 @@
                  +     '</table>'
                  + '</div>',
             pagination : '<div class="aface datagrid-pagination" id="__divPagination">'
-                       +     '<ul class="aface list horizontal pull-left">'
-                       +         '<li class="aface list-item"><button class="aface button" id="__btnFirstPage"><i class="fa fa-angle-double-left"></i></button></li>'
-                       +         '<li class="aface list-item"><button class="aface button" id="__btnPreviousPage"><i class="fa fa-angle-left"></i></button></li>'
-                       +         '<li class="aface list-item"><input class="aface textbox" type="text" id="__iptCurrPage" />&nbsp;/&nbsp;<span id="__spTotalPages"></span>&nbsp;</li>'
-                       +         '<li class="aface list-item"><button class="aface button" id="__btnNextPage"><i class="fa fa-angle-right"></i></button></li>'
-                       +         '<li class="aface list-item"><button class="aface button" id="__btnLastPage"><i class="fa fa-angle-double-right"></i></button></li>'
-                       +         '<li class="aface list-item">当前第&nbsp;<span id="__spBegin"></span>&nbsp;至&nbsp;<span id="__spEnd"></span>&nbsp;条，共&nbsp;<span id="__spTotalResults"></span>&nbsp;条数据&nbsp;</li>'
-                       +     '</ul>'
-                       + '</div>'
+            		   +     '<select class="aface pagination"></select>'
+            		   +     '<span class="aface pagination">条&nbsp;/&nbsp;页，当前第&nbsp;<b class="from"></b>&nbsp;-&nbsp;<b class="to"></b>&nbsp;条，共&nbsp;<b class="totalResults"></b>&nbsp;条，当前第&nbsp;<b class="currPage"></b>&nbsp;页，共&nbsp;<b class="totalPages"></b>&nbsp;页</span>'
+            	       + '</div>',
+            pages : '<div class="aface pagination">'
+			          + '<a class="aface pagination first" href="javascript:;"><i class="fa fa-angle-double-left"></i></a>'
+			    	  + '<a class="aface pagination prev" href="javascript:;"><i class="fa fa-angle-left"></i></a>'
+			    	  + '<a class="aface pagination next" href="javascript:;"><i class="fa fa-angle-right"></i></a>'
+			    	  + '<a class="aface pagination last" href="javascript:;"><i class="fa fa-angle-double-right"></i></a>'
+			      + '</div>',
+    	    page : '<a class="aface pagination" href="javascript:;"></a>'
         },
         __defaults : {
             url : null,
             columns : [],
             params : {},
             hasCheckbox : false,
-            hasSerialNumber : false,
             hasPagination: true,
-            hasStateField : true,
             idField : 'p_id',
-            pageSizeList : [ 20, 50, 100 ],
+            stateField : 'p_state',
+            pageSizeList : [ 10, 20, 50, 100, 1000 ],
             pagination : {
                 currPage : 1,
                 pageSize : 20
             },
             onClickRow : null,
-            afterLoad : null
+            afterLoad : null,
+            noDataHint : '无数据'
         }
     });
     
     $.fn.datagrid = function(options) {
-        return this.each(function(idx, elem) {
-            var thiz = $(this);
-            var datagrid = thiz.data('tar.datagrid');
-            if (!datagrid) {
-                datagrid = new Datagrid();
-                datagrid.dom = thiz;
-                datagrid.init(options);
-                thiz.data('tar.datagrid', datagrid);
-            }
-        });
+        var thiz = $(this);
+        var datagrid = thiz.data('tar.datagrid');
+        if (!datagrid) {
+            datagrid = new Datagrid();
+            datagrid.dom = thiz;
+            datagrid.init(options);
+            thiz.data('tar.datagrid', datagrid);
+        }
+        return datagrid;
     };
-    
-    function slj(num) {
-        var y = num.num / 100;
-        if (y > 1) {
-            num.times = num.times + 1;
-        }
-        if (y > 100) {
-            num.num = y;
-            return slj(num);
-        }
-        return num;
-    }
 })(jQuery);

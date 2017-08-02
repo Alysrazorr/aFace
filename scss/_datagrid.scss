@@ -1,0 +1,195 @@
+﻿$datagrid-border: solid 1px $color-d;
+$datagrid-header-bg-color: $color-e;
+$datagrid-grid-row-hover-color: #F7F7F7;
+$datagrid-grid-row-height: 35px;
+$datagrid-header-height: 40px;
+$datagrid-pagination-height: 40px;
+$datagrid-pagination-item-height: 30px;
+
+div.aface.datagrid {
+    overflow: visible;
+    border: $datagrid-border;
+
+    table.aface {
+        width: 100%;
+        table-layout: fixed;
+        border-spacing: 0;
+    }
+
+    &>div.aface {
+        &.datagrid-header {
+            overflow: hidden;
+
+            &>table.aface.dataheader {
+                &>thead>tr>th {
+                    @include nowrap;
+                    @include border-box;
+                    height: $datagrid-header-height;
+                    line-height: $datagrid-header-height - 1;
+                    background-color: $datagrid-header-bg-color;
+                    font-size: 14px;
+                    padding: 0 10px;
+
+                    border-left: $datagrid-border;
+                    border-bottom: solid 1px $color-d;
+                    
+                    &:first-child { border-left: 0; }
+
+                    &.aface.cb, &.aface.sn {
+                        width: $datagrid-header-height;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        &.datagrid-grid {
+            overflow: auto;
+            background-color: $datagrid-grid-row-hover-color;
+
+            &>div.noDataHint {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 80px;
+                text-align: center;
+                color: $color-9;
+                font-size: 12px;
+            }
+
+            &>table.aface.datagrid {
+                &>thead>tr>th {
+                    height: 0;
+
+                    &.aface.cb, &.aface.sn {
+                        width: $datagrid-header-height;
+                        text-align: center;
+                    }
+                }
+
+                &>tbody {
+                    &>tr {
+                        &>td {
+                            text-align: center;
+                            padding: 0 10px;
+                            height: $datagrid-grid-row-height;
+                            font-size: 12px;
+                            color: $color-5;
+                            background-color: $color-f;
+
+                            border-left: $datagrid-border;
+                            border-bottom: $datagrid-border;
+                            
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+
+                            &:first-child { border-left: 0; }
+                            &:last-child {
+                                border-bottom: 0;
+                                background-color:
+                                $datagrid-grid-row-hover-color;
+                            }
+
+                            &.aface.cb, &.aface.sn {
+                                width: $datagrid-header-height;
+                                text-align: center;
+                            }
+
+                            i.fa {
+                                display: inline-block;
+                                text-align: center;
+                                width: 20px;
+                                height: 20px;
+                                line-height: 20px;
+                                font-size: 14px !important;
+                                color: $color-3;
+
+                                &:hover {
+                                    color: $color-info;
+                                }
+                            }
+                            a.aface {
+                                color: $color-3;
+                                &:hover {
+                                    color: $color-info;
+                                }
+                            }
+                        }
+                        
+                        &:hover {
+                            &>td {
+                                background-color: $datagrid-grid-row-hover-color;
+
+                                &:last-child { background-color: $datagrid-grid-row-hover-color; }
+                            }
+                        }
+                    }
+
+                    &.no-x-scroll {
+                        &>tr:last-child {
+                            &>td { border-bottom: 0; }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.datagrid-pagination {
+            height: $datagrid-pagination-height;
+            line-height: $datagrid-pagination-height;
+            font-size: 12px;
+            background-color: $color-f;
+            border-top: $datagrid-border;
+            padding: 5px 0;
+            overflow: visible;
+
+            &>div.aface.pagination {
+                float: right;
+                margin-right: 5px;
+                &>a.aface.pagination {
+                    display: block;
+                    float: left;
+                    margin-left: 5px;
+                    text-align: center;
+                    width: $datagrid-pagination-item-height;
+                    height: $datagrid-pagination-item-height;
+                    line-height: $datagrid-pagination-item-height;
+                    font-size: 13px;
+                    color: $color-steel;
+
+                    &:hover, &.active {
+                        color: $color-f;
+                        background-color: $color-steel;
+                    }
+                    &>i.fa {
+                        font-size: 18px;
+                        width: $datagrid-pagination-item-height;
+                        height: $datagrid-pagination-item-height;
+                        line-height: $datagrid-pagination-item-height;
+                        text-align: center;
+                    }
+                }
+            }
+            &>span.aface.pagination {
+                display: block;
+                float: left;
+                height: $datagrid-pagination-item-height;
+                line-height: $datagrid-pagination-item-height;
+                margin-left: 5px;
+                font-size: 12px;
+            }
+            &>select.aface.pagination {
+                @include border-box;
+                outline: none;
+                margin-left: 5px;
+                float: left;
+                height: $datagrid-pagination-item-height;
+                line-height: $datagrid-pagination-item-height;
+                border: $datagrid-border;
+            }
+        }
+    }
+}
