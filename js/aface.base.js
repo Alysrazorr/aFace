@@ -13,10 +13,6 @@ Clazz.create = function(ms) {
             }
             return top.window.page.loader;
         };
-        this['hasUrlPermission'] = function(url) {
-            var menusMap = top.window.page.menusMap;
-            return this.isGod ? true : typeof menusMap[url] === 'undefined' ? false : menusMap[url];
-        };
 	};
 	return o;
 };
@@ -71,14 +67,3 @@ StringUtils.isNotNull = function(string) {
         return o;
     };
 })(jQuery);
-
-function clearForm(form) {
-    $(form).find('input:not([type="radio"])').val('');
-    $(form).find('textarea').html('');
-    $(form).find('input[type="radio"]').each(function(idx, elem) {
-        if ($(this).attr('checked')) { $(this).click(); }
-    });
-    $(form).find('select').each(function(idx, elem) {
-        this.selectedIndex = 0;
-    });
-};
