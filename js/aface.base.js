@@ -6,13 +6,6 @@ Clazz.create = function(ms) {
 	    };
 		this['init'] = !this['init'] ? undefined : this['init'];
 		this['uuid'] = !this['uuid'] ? undefined : this['uuid'];
-        this['getLoader'] = function() {
-            if (!top.window.page.loader) {
-                $(top.window.document.body).loader();
-                top.window.page.loader = $(top.window.document.body).target('loader');
-            }
-            return top.window.page.loader;
-        };
 	};
 	return o;
 };
@@ -25,45 +18,22 @@ UUID.generate = function() {
     }).toUpperCase();
 };
 
-var StringUtils = window.StringUtils || {};
-StringUtils.trim = function(string){
-    return string.replace(/(^\s*)|(\s*$)/g, "");
-};
-StringUtils.isNotBlank = function(string) {
-    if (string) {
-        if ('' === StringUtils.trim(string + '')) {
-            return false;
-        } else {
-            return true;
-        }
-    } else {
-        return false;
-    }
-};
-StringUtils.isNotNull = function(string) {
-    if ("null" == string) {
-        return false;
-    } else {
-        return StringUtils.isNotBlank(string);
-    }
-};
+// (function($) {
+// 	$.fn.target = function(options) {
+// 		return $($(this)[0]).data('tar.' + options);
+// 	};
 
-(function($) {
-	$.fn.target = function(options) {
-		return $($(this)[0]).data('tar.' + options);
-	};
-
-    jQuery.prototype.serializeObject = function() {
-        var a, o, h, i, e;
-        a = this.serializeArray();
-        o = {};
-        h = o.hasOwnProperty;
-        for (i = 0; i < a.length; i++) {
-            e = a[i];
-            if (!h.call(o, e.name)) {
-                o[e.name] = e.value.trim();
-            }
-        }
-        return o;
-    };
-})(jQuery);
+//     jQuery.prototype.serializeObject = function() {
+//         var a, o, h, i, e;
+//         a = this.serializeArray();
+//         o = {};
+//         h = o.hasOwnProperty;
+//         for (i = 0; i < a.length; i++) {
+//             e = a[i];
+//             if (!h.call(o, e.name)) {
+//                 o[e.name] = e.value.trim();
+//             }
+//         }
+//         return o;
+//     };
+// })(jQuery);
