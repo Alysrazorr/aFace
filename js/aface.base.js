@@ -42,10 +42,6 @@ StringUtils.isNotNull = function(string) {
 };
 
 (function($) {
-	$.fn.target = function(options) {
-		return $($(this)[0]).data('tar.' + options);
-	};
-
     jQuery.prototype.serializeObject = function() {
         var a, o, h, i, e;
         a = this.serializeArray();

@@ -110,7 +110,7 @@ a {
   user-select: none; }
 
 input {
-  outline: 0;
+  outline: none;
   height: 40px;
   font-size: 14px;
   font-family: 'Microsoft YaHei', 'Consolas';
@@ -118,10 +118,8 @@ input {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border: solid 1px #999;
-  border-radius: 2px;
-  transition: box-shadow 200ms;
-  box-shadow: 0 0 5px rgba(119, 119, 119, 0.7) inset; }
+  border: none;
+  border-bottom: solid 1px #999; }
   input:focus, input:active {
     border-color: #428bca;
     box-shadow: 0 0 5px rgba(66, 139, 202, 0.7) inset; }

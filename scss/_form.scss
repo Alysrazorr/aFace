@@ -4,7 +4,7 @@ $color-border: $color-9;
 $color-border-active: $color-7;
 
 input {
-    outline: 0;
+    outline: none;
     height: $form-item-height;
 
     font-size: 14px;
@@ -13,11 +13,8 @@ input {
     padding: 0 10px;
     @include border-box;
 
-    border: solid 1px $color-border;
-    border-radius: 2px;
-    transition: box-shadow $transition-speed;
-
-    box-shadow: 0 0 5px rgba($color-border-active, 0.7) inset;
+    border: none;
+    border-bottom: solid 1px $color-border;
 
     &:focus, &:active {
         border-color: $color-primary;
