@@ -1,20 +1,13 @@
 var Clazz = window.Clazz || {};
 Clazz.create = function(ms) {
-	var o = function() {
+	var obj = function() {
 		for (var m in ms) {
 		    this[m] = ms[m];
 	    };
 		this['init'] = !this['init'] ? undefined : this['init'];
 		this['uuid'] = !this['uuid'] ? undefined : this['uuid'];
-        this['getLoader'] = function() {
-            if (!top.window.page.loader) {
-                $(top.window.document.body).loader();
-                top.window.page.loader = $(top.window.document.body).target('loader');
-            }
-            return top.window.page.loader;
-        };
 	};
-	return o;
+	return obj;
 };
 
 var UUID = window.UUID || {};
@@ -47,23 +40,3 @@ StringUtils.isNotNull = function(string) {
         return StringUtils.isNotBlank(string);
     }
 };
-
-(function($) {
-	$.fn.target = function(options) {
-		return $($(this)[0]).data('tar.' + options);
-	};
-
-    jQuery.prototype.serializeObject = function() {
-        var a, o, h, i, e;
-        a = this.serializeArray();
-        o = {};
-        h = o.hasOwnProperty;
-        for (i = 0; i < a.length; i++) {
-            e = a[i];
-            if (!h.call(o, e.name)) {
-                o[e.name] = e.value.trim();
-            }
-        }
-        return o;
-    };
-})(jQuery);
