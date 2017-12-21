@@ -1,103 +1,61 @@
-$form-obj-height: 30px;
-$form-obj-inner-height: 28px;
-$form-obj-radius: 0;
-$input-height: $form-obj-height;
+$form-item-height: 40px;
 
-input.aface.textbox {
-    background-color: $color-f;
-    height: $input-height;
-    line-height: $input-height;
-    padding: 0 5px !important;
-    font-size: 12px;
+$color-border: $color-9;
+$color-border-active: $color-7;
+
+input {
+    outline: 0;
+    height: $form-item-height;
+
+    font-size: 14px;
+    font-family: 'Microsoft YaHei', 'Consolas';
+
+    padding: 0 10px;
+    @include border-box;
+
     border: solid 1px $color-border;
-    &:hover,&:focus,&.active {
-        border-color: $color-theme;
-    }
-}
+    border-radius: 2px;
+    transition: box-shadow $transition-speed;
 
-span.aface.searchbox {
-    @include zero;
-    font-size: 0;
-    display: inline-block;
-    height: $input-height;
-    line-height: $input-height;
-    border: solid 1px $color-border;
+    box-shadow: 0 0 5px rgba($color-border-active, 0.7) inset;
 
-    &>i.fa.fa-search {
-        float: left;
-        font-size: 14px;
-        text-align: center;
-        color: $color-border;
-        width: $form-obj-inner-height;
-        height: $form-obj-inner-height;
-        line-height: $form-obj-inner-height;
-        border: 0;
+    &:focus, &:active {
+        border-color: $color-primary;
+        box-shadow: 0 0 5px rgba($color-primary, 0.7) inset;
     }
 
-    &>input.aface.textbox {
-        float: left;
-        width: calc(100% - 28px);
-        height: $form-obj-inner-height;
-        line-height: $form-obj-inner-height;
-        border: 0;
-    }
-
-    &:hover,&:focus,&.active {
-        border-color: $color-theme;
-        &>i.fa.fa-search {
-            color: $color-theme;
+    &.aface-textbox {
+        &.primary {
+            border-color: $color-primary;
+            box-shadow: 0 0 5px rgba($color-primary, 0.7) inset;
+        }
+        &.success {
+            border-color: $color-success;
+            box-shadow: 0 0 5px rgba($color-success, 0.7) inset;
         }
     }
-}
 
-input::-webkit-input-placeholder {
-    color: #C4C6C8;
-}
+    &.aface-dropbox {
 
-$button-height: $form-obj-height;
-$button-padding: 10px;
-
-@mixin button-style($color) {
-    border-color: $color;
-    color: $color;
-    &:hover, &:active, &:focus {
-        color: $color-f;
-        border: solid 1px $color;
-        background-color: $color;
     }
 }
 
-button.aface.button {
-    display: inline-block;
+button {
+    &.aface-button {
+        height: $form-item-height;
+        cursor: pointer;
+        border-radius: 2px;
+        outline: none;
 
-    height: $button-height;
-    line-height: $button-height - 2px;
-
-    border-radius: $form-obj-radius;
-    background-color: $color-f;
-    color: $color-3;
-
-    padding: 0 $button-padding;
-    cursor: pointer;
-    font-size: 13px;
+        @include border-box;
     
-    &:hover, &:active, &:focus {
-        color: $color-f;
-        border: solid 1px $color-theme;
-        background-color: $color-theme;
-    }
+        border: solid 1px $color-border;
+        background-color: $color-e;
+        transition: box-shadow $transition-speed;
 
-    &.success {
-        @include button-style($color-success);
-    }
-}
-
-div.aface.toolbar {
-    &>* {
-        float: left;
-        margin-left: 5px;
-        &:first-child {
-            margin-left: 0;
+        &:active {
+            border-color: $color-border-active;
+            box-shadow: 0 0 5px rgba($color-border-active, 0.7) inset;
         }
     }
 }
