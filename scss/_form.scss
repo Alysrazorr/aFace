@@ -1,39 +1,78 @@
-$form-item-height: 40px;
+$form-item-height: 50px;
 
 $color-border: $color-9;
-$color-border-active: $color-7;
+$color-border-active: $color-a;
 
-input {
-    outline: none;
+span.aface {
+    &.aface-input {
+        &.input-title {
+            position: absolute;
+            top: -10px;
+            left: 6px;
+            background-color: $color-f;
+            padding: 0 4px;
+            color: $color-5;
+        
+            font-size: 16px;
+            font-weight: 600;
+        }
+        &.input-hint {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+
+            border-radius: 4px;
+
+            height: 30px;
+            line-height: 30px;
+
+            padding: 0 8px;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            &.primary {
+                color: $color-f;
+                background-color: $color-primary;
+            }
+        }
+    }
+}
+
+input.aface {
+    @include border-box;
+
     height: $form-item-height;
+    line-height: $form-item-height;
 
     font-size: 14px;
     font-family: 'Microsoft YaHei', 'Consolas';
 
     padding: 0 10px;
-    @include border-box;
-
-    border: none;
-    border-bottom: solid 1px $color-border;
-
-    &:focus, &:active {
-        border-color: $color-primary;
-        box-shadow: 0 0 5px rgba($color-primary, 0.7) inset;
-    }
+    transition: box-shadow $transition-speed;
 
     &.aface-textbox {
+        border: solid 1px $color-border;
+        border-bottom-width: 1px;
+        box-shadow: 0 2px 4px rgba($color-border, 0.7), 0 0 2px rgba($color-3, 0.7) inset;
+
+        &:active, &:focus {
+            border-color: $color-primary;
+            box-shadow: 0 2px 16px rgba($color-primary, 0.9), 0 0 2px rgba($color-primary, 0.6) inset;
+        }
+
         &.primary {
             border-color: $color-primary;
-            box-shadow: 0 0 5px rgba($color-primary, 0.7) inset;
+            box-shadow: 0 2px 4px rgba($color-primary, 0.7);
         }
         &.success {
             border-color: $color-success;
-            box-shadow: 0 0 5px rgba($color-success, 0.7) inset;
+            box-shadow: 0 2px 4px rgba($color-success, 0.7);
         }
     }
 
-    &.aface-dropbox {
-
+    &.fluid {
+        width: 100% !important;
     }
 }
 

@@ -10,32 +10,58 @@
         html,
         body {
             height: 100%;
-            padding: 10px !important;
-        }
-
-        body>* {
-            float: left;
-            margin-left: 10px;
         }
     </style>
 </head>
 
 <body class="aface">
-    <table style="width: 100%;">
-        <tr>
-            <td>
-                <input type="text" class="aface-textbox" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="text" class="aface-textbox success" />
-            </td>
-        </tr>
+    <table style="width: 50%; border-spacing: 20px;">
+        <colgroup>
+            <col style="width: 50%;" />
+            <col style="width: 50%;" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <td style="position: relative;">
+                    <span class="aface aface-input input-title">任务名称</span>
+                    <input type="text" class="aface aface-textbox fluid" data-aface-validator="number"/>
+                    <span class="aface aface-input input-hint primary">无效用户名</span>
+                </td>
+                <td style="position: relative;">
+                    <span class="aface aface-input input-title">任务标识</span>
+                    <input type="text" class="aface aface-textbox fluid" />
+                    <span class="aface aface-input input-hint primary">无效标识</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="position: relative;" colspan="2">
+                    <span class="aface aface-input input-title">接入资源</span>
+                    <input type="text" class="aface aface-textbox fluid" />
+                </td>
+            </tr>
+            <tr>
+                <td style="position: relative;" colspan="2">
+                    <span class="aface aface-input input-title">自动控制</span>
+                    <input type="text" class="aface aface-textbox fluid" />
+                </td>
+            </tr>
+            <tr>
+                <td style="position: relative;" colspan="2">
+                    <span class="aface aface-input input-title">调度时间</span>
+                    <input type="text" class="aface aface-textbox fluid" />
+                </td>
+            </tr>
+        </tbody>
     </table>
 </body>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="js/aface.base.js"></script>
-<script type="text/javascript"></script>
-
+<script type="text/javascript">
+$(function() {
+    $('input').on('input', function(e) {
+        var x = /^[1-9]\d*$/;
+        var y = $(this).val().trim();
+    });
+})
+</script>
 </html>

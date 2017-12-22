@@ -18,9 +18,14 @@ UUID.generate = function() {
     }).toUpperCase();
 };
 
+var Aface = window.Aface || {};
+
 var StringUtils = window.StringUtils || {};
 StringUtils.trim = function(string){
     return string.replace(/(^\s*)|(\s*$)/g, "");
+};
+StringUtils.isBlank = function() {
+
 };
 StringUtils.isNotBlank = function(string) {
     if (string) {

@@ -1,801 +1,87 @@
-﻿$container-width: 1024px;
-$topline-height: 25px;
-$banner-height: 130px;
-$navbar-height: 40px;
-$navbar-dropdown-height: 215px;
-$carousel-height: 400px;
-$footer-height: 300px;
-$copyright-height: 50px;
+﻿$color-header: rgb(244,244,244);
+// $color-header: rgb(25,25,25);
+$color-header-underline1:#6987ab;
+$color-header-underline2:#0082d7;
+$color-header-underline3:#98d5ff;
+$color-header-underline4:#F89101;
+$color-header-underline5:#ff3133;
+$color-header-underline6:#01a23c;
 
-body.aface.portal {
-    &.body {
-        background-color: #F4F6F8;
-    }
-}
+$height-header: 70px;
+$height-header-underline: 6px;
 
-div.aface.container {
-    width: $container-width;
-    height: 100%;
+div.aface.aface-container {
+    width: 1280px;
     margin: 0 auto;
 }
 
-nav.aface.portal {
-    &.banner {
-        height: $banner-height;
-        line-height: $banner-height;
-        background-color: $color-f;
-
-        &>div.aface.portal.container {
-            position: relative;
-
-            &>div.aface.portal.left-banner {
-                background-repeat: no-repeat;
-                background-position: 0% 0%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-            }
-            &>div.aface.portal.right-banner {
-                background-repeat: no-repeat;
-                background-position: 100% 0%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-            }
-        }
-    }
-
-    &.navbar {
+body.aface.aface-portal {
+    &>header.aface.aface-portal-header {
+        z-index: 2;
         position: relative;
-        height: $navbar-height;
-        line-height: $navbar-height;
-        background-color: $color-project;
-        box-shadow: 0 1px 10px rgba(0,0,0,0.1);
-        z-index: 19998;
+        height: $height-header;
+        background-color: $color-header;
+        box-shadow: 0 0 100px rgba($color-3, 0.5);
 
-        &>div.aface.portal.container {
-            &>ul {
-                width: 100%;
-                height: $navbar-height;
-                line-height: $navbar-height;
-
-                &>li {
-                    position: relative;
-                    width: 181px;
-                    height: $navbar-height;
-                    line-height: $navbar-height;
-                    transition: background-color $transition-speed;
-                    border-left: solid 1px darken($color-project, 5%);
-
-                    &:first-child {
-                        border-left: 0;
-                        width: 119px;
-
-                        &>a {
-                            width: 119px;
-                        }
-
-                        &:hover, &.active {
-                            &>a {
-                                background-color: transparent;
-                            }
-
-                            &>div.aface.dropdown-content {
-                                background-color: $color-f;
-                            }
-                        }
-                    }
-
-                    &>a {
-                        display: block;
-                        width: 180px;
-                        height: $navbar-height;
-                        line-height: $navbar-height;
-                        text-align: center;
-                        color: $color-f;
-                        transition: background-color $transition-speed;
-                    }
-
-                    &>div.aface.dropdown-content {
-                        position: absolute;
-                        left: 0;
-                        z-index: 30001;
-                        width: 180px;
-                        height: $navbar-dropdown-height;
-                        font-size: 18px;
-                        padding: 10px 0;
-                        transition: background-color $transition-speed, border-color $transition-speed;
-
-                        &>span {
-                            text-align: center;
-                            width: 180px;
-                            display: block;
-                            height: 30px;
-                            line-height: 30px;
-
-                            &>a.aface {
-                                display: inline-block;
-                                font-size: 15px;
-                                height: 25px;
-                                line-height: 25px;
-                                color: $color-6;
-
-                                &:hover {
-                                    border-bottom: solid 2px $color-project;
-                                }
-                            }
-                        }
-                    }
-
-                    &.active {
-                        &>a {
-                            background-color: $color-project-hover;
-                        }
-                        &>div.aface.dropdown-content {
-                            background-color: $color-f;
-                            background-color: rgba(255,255,255,0.8);
-                        }
-                    }
-                    &:hover {
-                        &>a {
-                            background-color: $color-project-hover;
-                        }
-                        &>div.aface.dropdown-content {
-                            &>span>a {
-                                color: $color-0 !important;
-                            }
-                            background-color: rgba(255,255,255,0.8);
-                        }
-                    }
-                }
-            }
+        &>div.aface.aface-portal-header-container {
+            width: 1280px;
+            height: $height-header - $height-header-underline;
+            margin: 0 auto;
         }
-
-        &>div.aface.portal.dropdown {
-            z-index: 30000;
-            background-color: rgba(234,234,234,0.7);
-            height: $navbar-dropdown-height;
+        &>div.aface.aface-portal-header-underline {
             position: absolute;
-            top: $navbar-height;
             left: 0;
             right: 0;
-            // box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        }
-    }
-
-    &.location {
-        position: absolute;
-        top: $banner-height + $navbar-height;
-        border: 0;
-        box-shadow: none;
-        left: 0;
-        right: 0;
-        background-color: transparent;
-        height: $location-height;
-        line-height: $location-height;
-
-        &>div>ul.aface.list {
-            &.location-lv>li.aface.list-item {
-                &:after {
-                    display: inline-block;
-                    content: '>';
-                    font-family: 'Consolas';
-                    width: 16px;
-                    text-align: center;
-                }
-
-                &:last-child {
-                    &:after { content: ''; }
-                }
-            }
-
-            &>li.aface.list-item {
-                height: $location-height;
-                line-height: $location-height;
-                color: $color-project;
-                font-size: 12px;
-            }
-        }
-    }
-}
-
-div.aface.portal {
-    &.carousel {
-        position: relative;
-        height: $carousel-height;
-        width: 100%;
-        z-index: 19988;
-        overflow: hidden;
-
-        &>div.aface.portal.container {
-            position: relative;
-            z-index: 19989;
-
-            &>div.aface.portal.slider-btns {
-                @include zero;
-                z-index: 19990;
-
-                position: absolute;
-                left: calc(50% - 46px);
-                bottom: 0;
-                height: 30px;
-
-                &>label.slider {
-                    @include zero;
-                    display: block;
-                    float: left;
-                    margin-left: 4px;
-                    height: 10px;
-                    width: 20px;
-                    cursor: pointer;
-
-                    background-color: rgba(0,0,0,0.4);
-                    transition: background-color $transition-speed;
-
-                    &:hover,&.active { background-color: $color-project; }
-                    &:first-child { margin-left: 0; }
-
-                    &>input[type="radio"] {
-                        @include zero;
-                        position: absolute;
-                        left: -99999px;
-                        width: 0;
-                        height: 0;
-                    }
-                }
-            }
-        }
-
-        &>div.aface.portal.slider-bgs {
+            bottom: 0;
             &>div {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                opacity: 0;
-                background-position: 50% 50%;
-                background-repeat: no-repeat;
-                background-size: cover;
-                transition: opacity $transition-speed;
-
-                &.active {
-                    opacity: 1;
-                }
-            }
-        }
-    }
-
-    &.sections {
-        &>div.aface.portal.section {
-            @include clearfix;
-            &:nth-child(even) {
-                background-color: #F4F6F8;
-            }
-            &:nth-child(odd) {
-                background-color: $color-f;
-            }
-            &>div.aface.portal.container {
-                &>div.aface.portal.chart {
-                    margin: 10px 0;
-                }
-
-                div.aface.portal.header {
-                    @include clearfix;
-                    height: 80px;
-                    line-height: 80px;
-                    padding: 0 10px;
-                    font-size: 26px;
-                    color: $color-6;
-                    border-bottom: solid 1px $color-d;
-                    font-family: '黑体';
-
-                    span.aface.project {
-                        color: $color-project;
-                        font-family: '黑体';
-                    }
-                }
-
-                div.aface.portal.news-list {
-                    float: left;
-                    height: 100%;
-                    width: 61.8%;
-
-                    ul.aface.portal.news-list {
-                        margin: 10px 0;
-
-                        &>li {
-                            height: 40px;
-                            line-height: 40px;
-                            padding: 0 10px;
-                            transition: background-color $transition-speed;
-
-                            &>span {
-                                font-size: 13px;
-                                color: $color-9;
-                                transition: color $transition-speed;
-                            }
-
-                            &>a.aface.title {
-                                color: $color-9;
-                                font-size: 13px;
-                                transition: color $transition-speed;
-                            }
-
-                            &:hover {
-                                background-color: lighten($color-steel-thin, 28%);
-
-                                &>a.aface.title,
-                                &>span {
-                                    color: $color-project;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                div.aface.portal.modules {
-                    float: left;
-                    height: 100%;
-                    width: 38.2%;
-                    padding-left: 10px;
-
-                    &>div.aface.portal.module {
-                        width: 30%;
-                        height: 42.5%;
-                        text-align: center;
-                        float: left;
-                        margin-left: 2.5%;
-                        margin-top: 4.5%;
-                        text-align: center;
-
-                        &>a.aface {
-                            display: inline-block;
-                            font-size: 13px;
-                            margin-top: 11px;
-
-                            &.module-icon {
-                                width: 60px;
-                                height: 60px;
-                                line-height: 60px;
-                                background-color: $color-project-hover;
-                                border-radius: 9999px;
-                                transition: background-color $transition-speed;
-
-                                &>img {
-                                    display: inline-block;
-                                    margin-top: 10px;
-                                }
-
-                                &:hover { background-color: $color-project; }
-                            }
-
-                            &.module-text {
-                                display: block;
-                            }
-                        }
-                    }
-                }
-
-                div.aface.portal.news-list-fluid {
-                    &>div.aface.portal.news-list-item {
-                        border-bottom: dashed 1px $color-d;
-                        margin: 10px 0;
-                        padding: 10px;
-                        &:last-child {
-                            border: 0;
-                        }
-                        &>a.aface.portal.news-title {
-                            font-size: 28px;
-                            font-family: '黑体';
-                            padding: 10px;
-                            display: block;
-                        }
-                        &>span.aface.portal.news-other {
-                            display: block;
-                            height: 30px;
-                            line-height: 30px;
-                            font-size: 12px;
-                            padding: 0 10px;
-                            &>i.fa {
-                                display: block;
-                                float: left;
-                                height: 30px;
-                                line-height: 30px;
-                                width: 20px;
-                                text-align: center;
-                                &.fa-pencil {
-                                    font-size: 17px;
-                                }
-                            }
-                            &>span {
-                                float: left;
-                            }
-                        }
-                        &>p.aface.portal.news-abstract {
-                            text-indent: 2em;
-                            line-height: 1.5em;
-                            font-size: 13px;
-                            padding: 10px;
-                        }
-                    }
-                }
-
-                div.aface.portal.news-detail {
-                    padding: 20px;
-                    &>h1.aface.portal.news-title {
-                        padding: 10px;
-                        text-align: center;
-                        font-size: 28px;
-                        font-family: '黑体';
-                        font-weight: 100;
-                    }
-                    &>div.aface.portal {
-                        text-align: center;
-
-                        &>span.aface.portal.news-other {
-                            display: inline-block;
-                            height: 30px;
-                            line-height: 30px;
-                            font-size: 12px;
-                            padding: 0 10px;
-                            &>i.fa {
-                                display: block;
-                                float: left;
-                                height: 30px;
-                                line-height: 30px;
-                                width: 20px;
-                                text-align: center;
-                                &.fa-pencil {
-                                    font-size: 17px;
-                                }
-                            }
-                            &>span {
-                                float: left;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    &.footer {
-        height: $footer-height;
-        color: $color-f;
-        font-size: 12px;
-        background-color: $color-steel;
-
-        &>div.aface.portal.container {
-            &>ul.aface.list {
+                height: $height-header-underline;
+                width: 12.5%;
                 float: left;
-                width: 20%;
-                color: $color-steel-thin;
-                padding: 10px;
-                &>li.aface {
-                    height: 30px;
-                    line-height: 30px;
-                    &.title {
-                        font-size: 18px;
-                        height: 70px;
-                        line-height: 70px;
-                        border-bottom: solid 1px $color-steel-hover;
-                        margin-bottom: 18px;
-                    }
-                    &>a.aface {
-                        font-size: 13px;
-                        color: $color-steel-thin;
-                        transition: color $transition-speed;
-
-                        &:hover {
-                            color: $color-f;
-                        }
-                    }
+                &:nth-child(1) {
+                    background-color: $color-header-underline1;
+                }
+                &:nth-child(2) {
+                    background-color: $color-header-underline2;
+                }
+                &:nth-child(3) {
+                    background-color: $color-header-underline3;
+                }
+                &:nth-child(4) {
+                    background-color: $color-header-underline4;
+                }
+                &:nth-child(5) {
+                    background-color: $color-header-underline5;
+                }
+                &:nth-child(6) {
+                    background-color: $color-header-underline6;
+                }
+                &:nth-child(7) {
+                    background-color: $color-header-underline2;
+                }
+                &:nth-child(8) {
+                    background-color: $color-header-underline1;
                 }
             }
         }
     }
-    &.copyright {
-        height: $copyright-height;
-        line-height: $copyright-height;
-        color: $color-steel-thin;
-        background-color: $color-steel-abyss;
-        font-size: 13px;
-        &>div.aface.portal.container {
-            text-align: center;
+    &>nav.aface.aface-portal-navbar {
+        z-index: 1;
+        height: 150px;
+        background-color: $color-f;
+        &>div.aface.aface-container>div.aface.aface-portal-navbar-brand {
+            height: 150px;
+            width: 300px;
+            float: left;
+            background-color: $color-3;
+        }
+        &>div.aface.aface-container>div.aface.aface-portal-navbar-menu {
+            height: 150px;
+            width: calc(100% - 300px);
+            float: left;
+            background-color: $color-9;
         }
     }
-}
-
-div.aface.modal-mask>div.aface.modal-window.jck {
-    position: relative;
-    border: 0;
-    background-color: $color-project-abyss;
-
-    &>div.aface.modal-title {
-        height: 80px;
-        border: 0;
-        background-color: $color-project-abyss;
-
-        &>span.aface.title {
-            float: none;
-            height: 50px;
-            line-height: 70px;
-            font-size: 26px;
-        }
-        &>span.aface.sub-title {
-            display: block;
-            margin-left: 10px;
-            height: 30px;
-            line-height: 30px;
-            font-size: 12px;
-        }
-        
-        &>i.fa {
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-    }
-
-    &>div.aface.modal-body {
-        height: calc(100% - 80px);
+    &>nav.aface.aface-portal-slider {
         position: relative;
-
-        div.aface.tabs {
-            &>ul.aface.tab-indices {
-                margin-left: 10px;
-
-                &>li.aface.tab-index {
-                    margin-left: 3px;
-                    background-color: $color-project-abyss;
-
-                    &:first-child {
-                        margin-left: 0;
-                    }
-                        color: $color-f;
-                        padding: 0 15px;
-						font-size: 14px;
-
-                    &:hover {
-                        background-color: $color-project;
-                    }
-                    &.active {
-                        color: $color-project;
-                        background-color: #F0F2F4;
-                    }
-                }
-
-                &>li.aface.tab-info {
-                    float: right;
-                    background: transparent;
-                    padding: 0 10px;
-                    color: $color-f;
-                    font-size: 12px;
-                }
-            }
-            &>div.aface.tab-contents {
-                position: absolute;
-                top: 25px;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: #F0F2F4;
-
-                &>div.aface.tab-content {
-                    height: 100%;
-                    overflow-y: scroll;
-                    overflow-x: hidden;
-
-                    table.aface.form {
-                        margin-top: 10px;
-                        background-color: lighten($color-steel-thin, 15%);
-                        &>tbody>tr {
-                            &>td {
-                                &.lbl {
-                                    color: $color-steel-abyss;
-                                    background-color: lighten($color-steel-thin, 20%);
-                                }
-                            }
-                        }
-                    }
-
-                    &.jck-xxzl {
-                        padding: 0 10px;
-                        padding-bottom: 10px;
-
-                        &>div.aface.section {
-							position: relative;
-                            background-color: $color-f;
-                            padding: 10px;
-                            margin-top: 10px;
-                            width: calc(100% - 300px);
-
-                            &>span.aface.title {
-                                @include border-box;
-                                display: inline-block;
-                                height: 40px;
-                                line-height: 40px;
-                                font-size: 18px;
-								
-								border-left: solid 3px $color-primary;
-								padding-left: 10px;
-                            }
-							
-							&>label.aface.badge {
-								background-color: $color-success;
-								color: $color-f;
-								padding: 1px 8px;
-								border-radius: 3px;
-								font-size: 12px;
-								position: absolute;
-								top: 21px;
-								margin-left: 5px;
-							}
-							
-                            &>i.fa.fa-angle-down {
-                                @include border-box;
-                                display: block;
-                                float: right;
-                                width: 40px;
-                                height: 40px;
-                                line-height: 40px;
-                                text-align: center;
-                                font-size: 30px;
-                                color: $color-steel-abyss;
-                                cursor: pointer;
-                                transition: transform $transition-speed;
-                            }
-
-                            &.collapsed {
-                                height: 60px;
-                                overflow: hidden;
-
-                                &>i.fa.fa-angle-down { @include rotate(-180deg); }
-                            }
-                        }
-
-                        &>div.aface.anchor {
-                            @include zero;
-                        }
-
-
-                        &>div.aface.nav-list {
-                            position: absolute;
-                            top: 10px;
-                            bottom: 10px;
-                            left: calc(100% - 317px);
-                            width: 290px;
-                            overflow: hidden;
-
-                            &>div.aface {
-                                width: 200%;
-                                height: 100%;
-                                overflow: auto;
-
-                                &>a.aface {
-                                    border-left: solid 0 $color-steel-abyss;
-                                    display: block;
-                                    width: 250px;
-                                    line-height: 24px;
-                                    font-size: 12px;
-                                    color: $color-steel;
-                                    padding-left: 7px;
-                                    transition: color $transition-speed, border-width $transition-speed / 4;
-                                    &.indent { padding-left: 27px; }
-                                    &.indent2 { padding-left: 47px; }
-                                    &.link:hover {
-										color: $color-project;
-										border-width: 3px;
-									}
-									&.link {
-										&>label.aface.badge {
-											background-color: $color-success;
-											color: $color-f;
-											padding: 0 8px;
-											border-radius: 3px;
-											font-size: 12px;
-											margin-left: 3px;
-										}
-									}
-                                    &.active {
-										color: $color-project;
-										border-width: 3px;
-									}
-                                }
-                            }
-                        }
-                    }
-
-                    &.jck-bmzs {
-                        &>div.aface.section {
-                            &.left {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                bottom: 0;
-                                width: 300px;
-                                overflow: hidden;
-
-                                &>div.aface {
-                                    width: 400px;
-                                    height: 100%;
-                                    overflow: auto;
-
-                                    &>ul.aface.org-list {
-                                        display: block;
-                                        width: 300px;
-                                        padding: 10px 0;
-                                        color: $color-steel-abyss;
-
-                                        &>li.aface {
-                                            font-size: 13px;
-                                            line-height: 40px;
-                                            cursor: pointer;
-                                            overflow: hidden;
-
-                                            span.aface.title { margin-left: 20px; }
-                                            span.aface.count { margin-left: 5px; }
-                                            
-                                            &:hover, &.active {
-                                                background-color: $color-steel;
-                                                color: #F4F6F8;;
-                                                &>span.aface.count { color: #F4F6F8; }
-                                            }
-                                            &>ul.aface.res-list {
-                                                background-color: $color-steel-abyss;
-                                                font-size: 12px;
-                                                &>li.aface {
-                                                    padding-left: 30px;
-                                                    padding-right: 20px;
-                                                    line-height: 35px;
-                                                    color: #F4F6F8;
-                                                    &:hover, &.active {
-                                                        color: $color-f;
-                                                        background-color: darken($color-steel-abyss, 5%);
-                                                        span.aface.count {
-                                                            color: $color-f;
-                                                        }
-                                                    }
-                                                    span.aface.count { margin-right: 0; }
-                                                }
-                                            }
-                                            &>i.fa.fa-angle-down {
-                                                display: block;
-                                                float: right;
-                                                margin-right: 20px;
-                                                height: 40px;
-                                                line-height: 40px;
-                                                text-align: center;
-                                                font-size: 20px;
-                                                transition: transform $transition-speed;
-                                            }
-                                            &.collapsed {
-                                                height: 40px;
-                                                overflow: hidden;
-
-                                                &>i.fa.fa-angle-down { @include rotate(-180deg); }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            &.right {
-                                margin-left: 300px;
-                                width: calc(100% - 300px);
-                                height: auto;
-                                min-height: 100%;
-                                background-color: $color-f;
-                                padding: 10px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 }
